@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="matrix">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>LOGAN SOLAMAN — The Store Architect</title>
+<meta name="description" content="Logan Solaman — Shopify architecture specialist. Ten years engineering storefronts that compound: design, development, SEO, growth systems. Hong Kong, working globally." />
+<meta name="theme-color" content="#050705" />
+<meta property="og:title" content="LOGAN SOLAMAN — The Store Architect" />
+<meta property="og:description" content="Stores don't grow by accident. They grow by architecture." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800;900&family=VT323&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23050705'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23b6ff3c' font-family='monospace'>L_</text></svg>" />
+</head>
+<body>
+
+<!-- ============ MATRIX BACKDROP (WebGL2 shader, one draw call) ============ -->
+<canvas id="matrix-gl" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="scanlines" aria-hidden="true"></div>
+<div class="crt-grid" id="crtGrid" aria-hidden="true"></div>
+
+<!-- ============ BOOT (once per session, skippable) ============ -->
+<div class="boot" id="boot" aria-hidden="true">
+  <pre class="boot__log" id="bootLog"></pre>
+  <p class="boot__skip">[ SPACE ] SKIP</p>
+</div>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- ============ HUD / NAV ============ -->
+<header class="hud">
+  <div class="hud__inner">
+    <a class="hud__logo" href="#home">LOGAN SOLAMAN<span>_</span></a>
+    <nav class="hud__nav" id="nav" aria-label="Sections">
+      <a href="#about"><i>01</i> ABOUT</a>
+      <a href="#services"><i>02</i> SERVICE</a>
+      <a href="#cases"><i>03</i> CASES</a>
+      <a href="#tools"><i>04</i> TOOLS</a>
+      <a href="#process"><i>05</i> PROCESS</a>
+      <a href="#contact"><i>06</i> CONTACT</a>
+    </nav>
+    <div class="hud__meta">
+      <span class="hud__rec"><i></i> REC</span>
+      <span id="clock">00:00:00</span>
+      <span class="hide-sm">THEME: <b id="themeName">MATRIX</b></span>
+      <button class="hud__lang" id="langSwitch" type="button" aria-label="Switch language">LANG: <b id="langName">EN</b></button>
+      <button class="hud__menu" id="menuBtn" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ OVERLAYS ============ -->
+<div class="overlay" id="helpOverlay" hidden>
+  <div class="overlay__panel glass" role="dialog" aria-modal="true" aria-label="Keyboard commands">
+    <button class="overlay__close" id="helpClose" type="button" aria-label="Close">×</button>
+    <p class="eyebrow">// SYSTEM</p>
+    <h2 class="overlay__title">KEYBOARD<br />PROTOCOL<span class="dot">_</span></h2>
+    <ul class="overlay__list">
+      <li><kbd>1</kbd>–<kbd>6</kbd> jump to section</li>
+      <li><kbd>/</kbd> command line</li>
+      <li><kbd>[</kbd> <kbd>]</kbd> cycle color theme</li>
+      <li><kbd>G</kbd> CRT grid · <kbd>M</kbd> matrix rain</li>
+      <li><kbd>T</kbd> glitch the title · <kbd>L</kbd> language</li>
+      <li><kbd>ESC</kbd> close / clear</li>
+      <li>type <code>help</code> in the command line</li>
+    </ul>
+  </div>
+</div>
+
+<div class="overlay" id="langModal" hidden>
+  <div class="overlay__panel glass" role="dialog" aria-modal="true" aria-label="Choose language">
+    <button class="overlay__close" id="langClose" type="button" aria-label="Close">×</button>
+    <p class="eyebrow">system://locale</p>
+    <h2 class="overlay__title">LANGUAGE<span class="dot">_</span></h2>
+    <div class="langgrid" id="langGrid" role="listbox" aria-label="Available languages"></div>
+    <p class="overlay__hint">auto-detects your browser language until you pick one</p>
+  </div>
+</div>
+
+<div class="cmdbar glass" id="cmdBar" hidden>
+  <span class="cmdbar__sign">logan@solaman:~$</span>
+  <input id="cmd" type="text" autocomplete="off" spellcheck="false" aria-label="Command line" placeholder="type a command…" />
+  <span class="cmdbar__esc">ESC</span>
+  <div class="cmdbar__out" id="cmdOut" aria-live="polite"></div>
+</div>
+
+<main id="main">
+
+  <!-- ============ 01 HERO ============ -->
+  <section class="hero" id="home">
+    <div class="wrap hero__inner">
+      <p class="eyebrow hero__eyebrow">// FILE 01 — THE STORE ARCHITECT · EST. 2016</p>
+      <h1 class="hero__title glitch" id="heroTitle" data-text="BY ACCIDENT.">
+        <span data-i18n="v2.hero.title_a">STORES DON'T GROW</span><br />
+        <em data-i18n="v2.hero.title_b">BY ACCIDENT.</em>
+      </h1>
+      <div class="hero__bottom">
+        <p class="hero__lede" data-i18n="v2.hero.lede">Ten years engineering storefronts that compound — design, development, SEO, growth systems. Hong Kong, working globally.</p>
+        <div class="actions">
+          <a class="btn" href="#cases" data-i18n="v2.hero.cta1">VIEW THE ARCHIVE ▸</a>
+          <a class="btn btn--ghost" href="#contact" data-i18n="v2.hero.cta2">START A CONSULT</a>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true"><span>SCROLL TO DECRYPT</span><i>▼</i></div>
+    </div>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>DESIGN → BUILD → OPTIMIZE → COMPOUND · <b>17 SYSTEMS</b> · ALL BUILT BY HAND · </span>
+        <span>DESIGN → BUILD → OPTIMIZE → COMPOUND · <b>17 SYSTEMS</b> · ALL BUILT BY HAND · </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="about.index">FILE 02 / MANIFESTO</p>
+      <div class="about__grid">
+        <h2 class="display reveal" data-reveal>
+          <span data-i18n="about.title_a">Stores don't grow by accident.</span><br />
+          <em data-i18n="about.title_b">They grow by architecture.</em>
+        </h2>
+        <div class="about__body">
+          <p class="prose reveal" data-reveal data-i18n-html="about.p1"></p>
+          <p class="prose reveal" data-reveal data-i18n-html="about.p2"></p>
+          <p class="prose reveal" data-reveal data-i18n-html="about.p3"></p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><strong data-count="10">0</strong><span data-i18n="hero.stat1">YRS ENGINEERING</span></div>
+        <div class="stat reveal"><strong data-count="15">0</strong><span data-i18n="hero.stat2">STOREFRONTS BUILT</span></div>
+        <div class="stat reveal"><strong data-count="50">0</strong><span data-i18n="hero.stat3">FREE MERCHANT TOOLS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 SERVICE (inverted ZEN panel) ============ -->
+  <section class="section section--invert" id="services">
+    <div class="wrap">
+      <div class="panel-invert">
+        <div class="panel-invert__head">
+          <p class="eyebrow eyebrow--dark" data-i18n="services.index">FILE 03 / SYSTEM MODULES</p>
+          <h2 class="display display--dark">
+            <span data-i18n="services.title_a">Five modules.</span><br />
+            <em data-i18n="services.title_b">One compounding machine.</em>
+          </h2>
+        </div>
+        <ol class="modules" id="modules">
+          <li class="module"><a href="#contact"><span class="module__n">M1</span><span class="module__name" data-i18n="m1.name">STOREFRONT ENGINEERING</span><span class="module__body" data-i18n="m1.body"></span><span class="module__arrow">↗</span></a></li>
+          <li class="module"><a href="#contact"><span class="module__n">M2</span><span class="module__name" data-i18n="m2.name">THEME CUSTOMIZATION</span><span class="module__body" data-i18n="m2.body"></span><span class="module__arrow">↗</span></a></li>
+          <li class="module"><a href="#contact"><span class="module__n">M3</span><span class="module__name" data-i18n="m3.name">APP DEVELOPMENT</span><span class="module__body" data-i18n="m3.body"></span><span class="module__arrow">↗</span></a></li>
+          <li class="module"><a href="#contact"><span class="module__n">M4</span><span class="module__name" data-i18n="m4.name">SEO &amp; VELOCITY</span><span class="module__body" data-i18n="m4.body"></span><span class="module__arrow">↗</span></a></li>
+          <li class="module"><a href="#contact"><span class="module__n">M5</span><span class="module__name" data-i18n="m5.name">GROWTH OPERATIONS</span><span class="module__body" data-i18n="m5.body"></span><span class="module__arrow">↗</span></a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 CASES (liquid-glass carousel) ============ -->
+  <section class="section cases" id="cases">
+    <div class="wrap">
+      <div class="section__head">
+        <div>
+          <p class="eyebrow" data-i18n="cases.index">FILE 04 / MISSION ARCHIVE — ALL 17</p>
+          <h2 class="display">
+            <span data-i18n="cases.title_a">Seventeen systems.</span><br />
+            <em data-i18n="cases.title_b">All built by hand. All on Shopify.</em>
+          </h2>
+        </div>
+        <p class="cases__hint">← → BROWSE · ENTER OPEN · ESC CLOSE</p>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter archive"></div>
+      <p class="cases__count" id="caseCount" aria-live="polite"></p>
+    </div>
+    <div class="rail" id="rail" tabindex="0" role="list" aria-label="Project archive"></div>
+    <div class="wrap rail__foot">
+      <button class="rail__btn" id="railPrev" type="button" aria-label="Previous project">←</button>
+      <div class="rail__progress"><i id="railProgress"></i></div>
+      <button class="rail__btn" id="railNext" type="button" aria-label="Next project">→</button>
+      <span class="rail__index" id="railIndex">01 / 17</span>
+    </div>
+  </section>
+
+  <!-- ============ 05 TOOLS ============ -->
+  <section class="section tools" id="tools">
+    <div class="wrap tools__grid">
+      <div>
+        <p class="eyebrow" data-i18n="tools.index">FILE 05 / OPEN ARMORY</p>
+        <h2 class="display">
+          <span data-i18n="tools.title_a">50 free tools.</span><br />
+          <em data-i18n="tools.title_b">Small brands deserve big infrastructure.</em>
+        </h2>
+      </div>
+      <div class="tools__body">
+        <p class="prose" data-i18n-html="tools.lede"></p>
+        <div class="actions">
+          <a class="btn" href="tools/" data-i18n="v2.tools.cta1">ENTER THE ARMORY ▸</a>
+          <a class="btn btn--ghost" href="tools/iching/" data-i18n="v2.tools.cta2">I CHING DECISION ▸</a>
+        </div>
+        <p class="tools__note">NO ACCOUNT · NO UPLOAD · NO UPSELL</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 PROCESS ============ -->
+  <section class="section process" id="process">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="process.index">FILE 06 / PROTOCOL</p>
+      <h2 class="display" data-i18n="process.title">Three steps. No mystery.</h2>
+      <ol class="steps">
+        <li class="step glass"><span class="step__n">01</span><h3 data-i18n="proc1.t">DECRYPT</h3><p data-i18n="proc1.b"></p></li>
+        <li class="step glass"><span class="step__n">02</span><h3 data-i18n="proc2.t">BLUEPRINT</h3><p data-i18n="proc2.b"></p></li>
+        <li class="step glass"><span class="step__n">03</span><h3 data-i18n="proc3.t">LAUNCH &amp; TUNE</h3><p data-i18n="proc3.b"></p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 07 CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact__grid">
+      <div>
+        <p class="eyebrow" data-i18n="contact.index">FILE 07 / OPEN CHANNEL</p>
+        <h2 class="display">
+          <span data-i18n="contact.title_a">The consultation is free.</span><br />
+          <em data-i18n="contact.title_b">The insight isn't cheap.</em>
+        </h2>
+        <p class="prose" data-i18n="contact.lede"></p>
+        <p class="contact__fine" data-i18n="contact.fine"></p>
+      </div>
+      <form class="form glass" id="contactForm">
+        <label for="f-name" data-i18n="contact.f_name">NAME</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ada Lovelace" />
+        <label for="f-mail" data-i18n="contact.f_mail">EMAIL</label>
+        <input id="f-mail" name="email" type="email" autocomplete="email" placeholder="ada@analytical.engine" required />
+        <label for="f-msg" data-i18n="contact.f_msg">TRANSMISSION</label>
+        <textarea id="f-msg" name="message" rows="5" placeholder="My store does X. I want Y. The problem is Z."></textarea>
+        <button class="btn" type="submit" id="submitBtn" data-i18n="contact.submit">TRANSMIT ▸</button>
+        <p class="form__note" id="formNote" aria-live="polite">OPENS YOUR MAIL CLIENT — NO DATA LEAVES THIS PAGE UNTIL YOU SEND.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__row">
+    <span class="footer__logo">LOGAN SOLAMAN<span class="dot">_</span></span>
+    <span class="footer__tag" data-i18n="footer.tag">THE STORE ARCHITECT — EST. 2016</span>
+  </div>
+  <div class="wrap footer__row footer__row--meta">
+    <span data-i18n="footer.copy">© 2026 · ALL SIGNALS RESERVED</span>
+    <span><a href="tools/">50 FREE TOOLS</a> · <a href="tools/iching/">I CHING</a> · <a href="https://github.com/logansolaman/logansolaman">SOURCE</a></span>
+    <span data-i18n="footer.sys">SYSTEM: ONLINE</span>
+  </div>
+</footer>
+
+<!-- ============ CASE DETAIL ============ -->
+<div class="casemodal" id="caseModal" hidden>
+  <div class="casemodal__panel glass" role="dialog" aria-modal="true" aria-label="Project detail">
+    <button class="overlay__close" id="caseClose" type="button" aria-label="Close">×</button>
+    <p class="eyebrow" id="caseMeta"></p>
+    <h2 class="casemodal__title" id="caseTitle"></h2>
+    <p class="prose" id="caseCopy"></p>
+    <a class="btn" id="caseLink" href="#" target="_blank" rel="noopener">VISIT SITE ↗</a>
+  </div>
+</div>
+
+<noscript><div class="wrap" style="padding:40px 0"><p>This site uses JavaScript for the matrix backdrop, the project archive and the 10-language switcher. All content is also available as plain text in <a href="locales/en.json">locales/en.json</a>.</p></div></noscript>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/matrix-gl.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
