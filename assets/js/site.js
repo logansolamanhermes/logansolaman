@@ -55,7 +55,7 @@
   }
   function setRain(on) {
     rainOn = on;
-    if (window.MatrixGL) window.MatrixGL.setDensity(on ? 0.85 : 0);
+    if (window.MatrixGL) window.MatrixGL.setDensity(on ? 1 : 0);
     document.body.classList.toggle("rain-off", !on);
   }
   function toggleGrid() { document.body.classList.toggle("grid-on"); }

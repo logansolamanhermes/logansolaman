@@ -8,6 +8,16 @@
    motion    expo.out 0.2–0.9s, reduced-motion honored
    ============================================================ */
 
+/* Embedded katakana subset used by the WebGL matrix-rain glyph atlas.
+   Self-hosted so the backdrop never depends on a CDN. */
+@font-face {
+  font-family: "MatrixKana";
+  src: url("../fonts/matrix-kana.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
 :root {
   --bg: #050705;
   --coal: #0a0e0a;

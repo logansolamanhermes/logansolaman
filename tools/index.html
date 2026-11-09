@@ -2,62 +2,95 @@
 <html lang="en" data-theme="matrix">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>THE ARMORY — 50 Free Merchant Tools · Logan Solaman</title>
 <meta name="description" content="50 free browser tools for ecommerce store owners: SEO, pricing, logistics, marketing, analytics. No account, no upload, no upsell." />
+<meta name="theme-color" content="#050705" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=VT323&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800;900&family=VT323&display=swap" rel="stylesheet" />
+<!-- Same design framework as the main site -->
+<link rel="stylesheet" href="../assets/css/main.css" />
 <link rel="stylesheet" href="assets/tools.css" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23050505'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%2333FF00' font-family='monospace'>L_</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23050705'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23b6ff3c' font-family='monospace'>L_</text></svg>" />
 </head>
 <body>
 
+<!-- same matrix backdrop as the main site -->
+<canvas id="matrix-gl" aria-hidden="true"></canvas>
+<div class="veil" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
 <div class="scanlines" aria-hidden="true"></div>
+<div class="crt-grid" id="crtGrid" aria-hidden="true"></div>
 
-<div class="statusbar" aria-hidden="true">
-  <span class="statusbar__item statusbar__rec"><span class="statusbar__dot"></span><span data-i18n="armory.rec">ARMORY</span></span>
-  <span class="statusbar__item" id="clock">00:00:00</span>
-  <span class="statusbar__item statusbar__hide-sm" data-i18n="armory.meta">50 TOOLS · 0 ACCOUNTS · 0 UPLOADS</span>
-  <button class="statusbar__item statusbar__lang" id="langSwitch" type="button" aria-label="Switch language">LANG: <span id="langName">EN</span></button>
-  <span class="statusbar__item statusbar__keys"><a href="../" data-i18n="armory.back">← BACK TO TERMINAL</a></span>
-</div>
+<a class="skip" href="#main">Skip to main content</a>
 
-<header class="armory-head">
-  <h1 class="armory-title" data-i18n="armory.title">THE ARMORY</h1>
-  <p class="armory-sub" data-i18n="armory.sub">50 free tools for people who run stores. Everything runs in your browser — your data never leaves the machine.</p>
-  <div class="armory-controls">
-    <div class="search">
-      <span class="search__sign">grep</span>
-      <input id="search" type="text" autocomplete="off" spellcheck="false" data-i18n-attr="placeholder:armory.search_ph;aria-label:armory.search_aria" placeholder="filter tools… (press /)" aria-label="Search tools" />
+<header class="hud">
+  <div class="hud__inner">
+    <a class="hud__logo" href="../">LOGAN SOLAMAN<span>_</span></a>
+    <nav class="hud__nav" id="nav" aria-label="Sections">
+      <a href="../"><i>01</i> SITE</a>
+      <a href="../#services"><i>02</i> SERVICE</a>
+      <a href="../#cases"><i>03</i> CASES</a>
+      <a href="./" class="is-active"><i>04</i> ARMORY</a>
+    </nav>
+    <div class="hud__meta">
+      <span class="hud__rec"><i></i> REC</span>
+      <span id="clock">00:00:00</span>
+      <span class="hide-sm">THEME: <b id="themeName">MATRIX</b></span>
+      <button class="hud__lang" id="langSwitch" type="button" aria-label="Switch language">LANG: <b id="langName">EN</b></button>
+      <button class="hud__menu" id="menuBtn" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
     </div>
-    <nav class="tabs" id="tabs" aria-label="Tool categories"></nav>
   </div>
-  <p class="armory-count" id="count" aria-live="polite"></p>
 </header>
 
-<main class="grid" id="grid"></main>
+<main id="main">
+  <section class="armory-head wrap">
+    <p class="eyebrow">// FILE 05 — OPEN ARMORY</p>
+    <h1 class="display armory-title" data-i18n="armory.title">THE ARMORY</h1>
+    <p class="prose armory-sub" data-i18n="armory.sub">50 free tools for people who run stores. Everything runs in your browser — your data never leaves the machine.</p>
 
-<footer class="armory-foot">
-  <span><span data-i18n="armory.builtby">BUILT BY</span> <a href="../">LOGAN SOLAMAN</a> — <span data-i18n="footer.tag">THE STORE ARCHITECT</span></span>
-  <span data-i18n="armory.foot">NO ACCOUNT · NO UPLOAD · NO UPSELL</span>
+    <div class="armory-controls">
+      <div class="search">
+        <span class="search__sign">grep</span>
+        <input id="search" type="text" autocomplete="off" spellcheck="false" data-i18n-attr="placeholder:armory.search_ph;aria-label:armory.search_aria" placeholder="filter tools… (press /)" aria-label="Search tools" />
+      </div>
+      <nav class="tabs" id="tabs" aria-label="Tool categories"></nav>
+    </div>
+    <p class="armory-count" id="count" aria-live="polite"></p>
+  </section>
+
+  <section class="wrap armory-body">
+    <div class="grid" id="grid"></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__row">
+    <span class="footer__logo">LOGAN SOLAMAN<span class="dot">_</span></span>
+    <span class="footer__tag" data-i18n="footer.tag">THE STORE ARCHITECT — EST. 2016</span>
+  </div>
+  <div class="wrap footer__row footer__row--meta">
+    <span data-i18n="footer.copy">© 2026 · ALL SIGNALS RESERVED</span>
+    <span><a href="../">← BACK TO SITE</a> · <a href="https://github.com/logansolamanhermes/logansolaman">SOURCE</a></span>
+    <span data-i18n="armory.foot">NO ACCOUNT · NO UPLOAD · NO UPSELL</span>
+  </div>
 </footer>
 
-<!-- language picker modal -->
-<div class="overlay langmodal" id="langModal" hidden>
-  <div class="crt__bezel langmodal__bezel">
-    <div class="crt__screen langmodal__screen" role="dialog" aria-label="Choose language">
-      <button class="overlay__close" id="langClose" aria-label="Close language picker">×</button>
-      <p class="langmodal__sysline">system://locale — SELECT DISPLAY LANGUAGE</p>
-      <h2 class="overlay__title">LANGUAGE</h2>
-      <div class="langmodal__grid" id="langGrid" role="listbox" aria-label="Available languages"></div>
-    </div>
+<!-- language picker — shared overlay styles -->
+<div class="overlay" id="langModal" hidden>
+  <div class="overlay__panel glass" role="dialog" aria-modal="true" aria-label="Choose language">
+    <button class="overlay__close" id="langClose" type="button" aria-label="Close">×</button>
+    <p class="eyebrow">system://locale</p>
+    <h2 class="overlay__title">LANGUAGE<span class="dot">_</span></h2>
+    <div class="langgrid" id="langGrid" role="listbox" aria-label="Available languages"></div>
+    <p class="overlay__hint">auto-detects your browser language until you pick one</p>
   </div>
 </div>
 
 <!-- tool workspace modal -->
-<div class="ws" id="ws" hidden role="dialog" aria-modal="true" aria-label="Tool workspace">  <div class="ws__panel">
+<div class="ws" id="ws" hidden role="dialog" aria-modal="true" aria-label="Tool workspace">
+  <div class="ws__panel glass">
     <div class="ws__head">
       <div>
         <h2 class="ws__name" id="wsName"></h2>
@@ -80,6 +113,8 @@
 
 <script src="data.js"></script>
 <script src="../assets/js/i18n.js"></script>
+<script src="../assets/js/matrix-gl.js"></script>
 <script src="assets/tools-app.js"></script>
+<script src="assets/theme.js"></script>
 </body>
 </html>

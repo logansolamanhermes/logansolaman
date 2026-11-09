@@ -14,18 +14,18 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 - `index.html` — one page, seven sections: Hero, About, **Service**, **Cases**, Tools, Process, Contact
 - `assets/css/main.css` — design tokens, layout, responsive, RTL, reduced-motion
-- `assets/js/matrix-gl.js` — matrix rain as one WebGL2 draw call (inline GLSL), with a 2D canvas fallback
+- `assets/js/matrix-gl.js` — matrix rain as one WebGL2 draw call sampling a real katakana glyph atlas, with a 2D canvas fallback
+- `assets/fonts/matrix-kana.ttf` — self-hosted 85-character katakana subset for the atlas
 - `assets/js/site.js` — keyboard protocol, command line, i18n picker, reveals, cases rail + filters + detail modal, contact form
 - `assets/js/i18n.js` — 10-language engine, flat JSON dictionaries in `locales/`
-- `locales/*.json` — 10 languages, ~489 keys each
-- `tools/` — the 50-tool browser armory (client-side only)
-- `tools/iching/` — I Ching decision tool, 64 hexagrams × 10 languages
+- `locales/*.json` — 10 languages, ~487 keys each
+- `tools/` — the 50-tool browser armory (client-side only), sharing `assets/css/main.css` and the same matrix backdrop
 - `robots.txt`, `sitemap.xml`, `404.html`
 
 ## Design decisions
 
 - **Primary surface: Decide/Learn** — one idea per section, hero-led. **Secondary: Explore** inside Cases (filters + horizontal rail + peek detail). The five service modules are an editorial numbered list inside an inverted panel, not a feature-tile grid.
-- **Matrix backdrop stays.** The ZEN template's bright ivory is used only for the Service panel; the rest sits on the dark WebGL2 glyph field. A focus mask in the shader dims rain behind headlines so large type stays readable.
+- **Matrix backdrop stays.** The ZEN template's bright ivory is used only for the Service panel; the rest sits on the dark WebGL2 glyph field. Rain uses real katakana characters baked into a 64-cell atlas from a self-hosted font — no procedural pixel glyphs, no wave distortion. A focus mask dims rain behind headlines so large type stays readable.
 - **Type**: Outfit for display, JetBrains Mono for data/labels, VT323 for CRT accents. HUD/nav/filter labels are intentionally English — they are terminal chrome, not prose.
 - **Color themes** (`[` / `]`): matrix lime, synth magenta, vapor cyan. A uniform swap in the shader, plus a CSS variable swap.
 - **Contact form has no backend.** It builds a `mailto:` link and opens the visitor's mail client — nothing is stored or transmitted by the site. **Change `CONTACT_EMAIL` in `assets/js/site.js`** to the inbox you actually monitor before publishing (currently `hello@logansolaman.com`).

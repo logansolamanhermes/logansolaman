@@ -496,13 +496,11 @@
   "tool.text_diff.f.a.ph": "...",
   "tool.text_diff.f.b.label": "버전 B",
   "tool.text_diff.f.b.ph": "...",
-  "tools.iching_blurb": "동전을 던지고, 괘를 읽고, 결정하세요. 64괘, 모든 교, 열 가지 언어, 휴대폰에서.",
   "v2.hero.title_a": "스토어는 우연히",
   "v2.hero.title_b": "성장하지 않는다.",
   "v2.hero.lede": "10년간 복리로 쌓이는 스토어를 설계해 왔습니다: 디자인, 개발, SEO, 그로스 시스템. 홍콩 기반, 글로벌 작업.",
   "v2.hero.cta1": "아카이브 보기 ▸",
   "v2.hero.cta2": "상담 시작",
   "v2.tools.cta1": "툴 라이브러리 ▸",
-  "v2.tools.cta2": "주역 디시전 ▸",
   "v2.contact.opened": "✓ 메일 클라이언트 열림"
 }
