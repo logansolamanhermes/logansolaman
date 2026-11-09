@@ -6,7 +6,9 @@ A static, dependency-free portfolio site: ZEN-template design language (big edit
 
 ## Live
 
-`https://logansolaman.github.io/logansolaman/`
+`https://logansolamanhermes.github.io/logansolaman/`
+
+Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 ## Layout
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://logansolaman.github.io/logansolaman/sitemap.xml
+Sitemap: https://logansolamanhermes.github.io/logansolaman/sitemap.xml
