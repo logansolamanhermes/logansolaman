@@ -6,7 +6,7 @@ A static, dependency-free portfolio site: ZEN-template design language (big edit
 
 ## Live
 
-`https://logansolamanhermes.github.io/logansolaman/`
+`https://logansolaman.com/`
 
 Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
@@ -43,7 +43,13 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 ## Hosting
 
-GitHub Pages → `main` branch, `/ (root)`. Push to `main` and Pages rebuilds. `.nojekyll` keeps all files served as-is.
+**Source:** GitHub Pages on this repo, `main` branch, `/ (root)`. Push to `main` and Pages rebuilds. `.nojekyll` keeps every file served as-is. Pages URL: `https://logansolamanhermes.github.io/logansolaman/`.
+
+**Public domain:** `https://logansolaman.com/` is proxied through Cloudflare to that Pages URL. A Cloudflare Worker (`deploy/worker.js`, script `ls-site-proxy`) owns two routes — `logansolaman.com/*` and `www.logansolaman.com/*` — and prefixes every path with `/logansolaman`, redirects `http → https` and `www → apex`, and rewrites origin redirects back to the public hostname. The four apex A records and the `www` CNAME are proxied (orange cloud); Cloudflare's Universal SSL certificate covers `logansolaman.com` and `*.logansolaman.com`, so TLS is terminated at Cloudflare and `ssl` mode is `strict`.
+
+This route exists because `logansolaman.com` was already claimed as the custom domain of the older `logansolaman/logansolaman.github.io` Pages site, and GitHub will not attach the same domain to a repo owned by another account. The repo stays the single source of truth; the Worker is pure routing. That older repo is untouched.
+
+`.well-known/` (Apple Pay / certificate validation), `BingSiteAuth.xml`, the legacy `.htaccess`/`403.shtml`/`404.shtml`, `project/`, `news-archive/` and the data JSONs are kept so those URLs continue to resolve through the proxy.
 
 ## Local preview
 
