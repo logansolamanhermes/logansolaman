@@ -11,14 +11,15 @@
    and proxies to the new repo's Pages URL.
 
    Behaviour:
-   - http -> https (301)
-   - www  -> apex (301)
+   - http -> https (301), www -> apex (301)
    - all other paths get the /logansolaman prefix
    - origin redirects are rewritten back to the public hostname
+   - HTML is marked no-cache so a stale build never lingers in a browser
    ============================================================ */
 const ORIGIN_HOST = "logansolamanhermes.github.io";
 const BASE = "/logansolaman";
 const CANON = "https://logansolaman.com";
+const CACHE_BUST = "v2"; // bump after a deploy to invalidate any intermediary cache
 
 export default {
   async fetch(request) {
@@ -43,6 +44,18 @@ export default {
     }
     const upstream = await fetch(new Request(target, init));
 
+    const out = new Headers(upstream.headers);
+    const ct = (out.get("content-type") || "").toLowerCase();
+    if (ct.includes("text/html")) {
+      // GitHub Pages sends max-age=600; overriding prevents an old build
+      // from sitting in browser/edge caches after a cutover.
+      out.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      out.delete("etag");
+      out.delete("last-modified");
+      out.delete("expires");
+    }
+    out.set("x-site-build", CACHE_BUST);
+
     const location = upstream.headers.get("Location");
     if (location && upstream.status >= 300 && upstream.status < 400) {
       try {
@@ -50,12 +63,11 @@ export default {
         if (dest.hostname === ORIGIN_HOST) {
           let p = dest.pathname;
           if (p === BASE || p.startsWith(BASE + "/")) p = p.slice(BASE.length) || "/";
-          const h = new Headers(upstream.headers);
-          h.set("Location", CANON + p + dest.search);
-          return new Response(upstream.body, { status: upstream.status, headers: h });
+          out.set("Location", CANON + p + dest.search);
+          return new Response(upstream.body, { status: upstream.status, headers: out });
         }
       } catch (_) { /* keep original Location */ }
     }
-    return new Response(upstream.body, { status: upstream.status, headers: upstream.headers });
+    return new Response(upstream.body, { status: upstream.status, headers: out });
   },
 };
