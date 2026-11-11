@@ -69,6 +69,18 @@ def nav(crumb):
 </header>'''
 
 
+def breadcrumb_ld(crumbs):
+    """BreadcrumbList JSON-LD that mirrors the visible .detail__crumbs nav."""
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": i, "name": name, "item": url}
+            for i, (name, url) in enumerate(crumbs, 1)
+        ],
+    }
+
+
 def footer():
     return '''<footer class="detail__footer">
   <p>// LOGAN SOLAMAN — THE STORE ARCHITECT · HONG KONG · EST. 2016</p>
@@ -140,8 +152,15 @@ def case_page(c, cases, loc):
         "image": f"https://logansolaman.com/assets/cases/{slug}.webp",
     }
     ld_json = json.dumps(ld, ensure_ascii=False, indent=2)
+    bc_json = json.dumps(breadcrumb_ld([
+        ("Home", "https://logansolaman.com/"),
+        ("Project archive", "https://logansolaman.com/#cases"),
+        (name, canonical),
+    ]), ensure_ascii=False, indent=2)
 
-    return head(title, desc, canonical, f'<script type="application/ld+json">\n{ld_json}\n</script>\n') + nav(name) + f'''
+    return head(title, desc, canonical,
+                f'<script type="application/ld+json">\n{ld_json}\n</script>\n'
+                f'<script type="application/ld+json">\n{bc_json}\n</script>\n') + nav(name) + f'''
 <main class="detail__main">
   <p class="eyebrow">// ARCHIVE / TAPE {k:02d} / {html.escape(c["cat"])}</p>
   <h1 class="detail__title">{html.escape(name)}</h1>
@@ -210,8 +229,15 @@ def service_page(n, cases, loc):
         "url": canonical,
     }
     ld_json = json.dumps(ld, ensure_ascii=False, indent=2)
+    bc_json = json.dumps(breadcrumb_ld([
+        ("Home", "https://logansolaman.com/"),
+        ("Services", "https://logansolaman.com/#services"),
+        (name, canonical),
+    ]), ensure_ascii=False, indent=2)
     others = "".join(f'<a href="/services/{SERVICE_SLUG[m]}/" class="detail__svc{" is-current" if m == n else ""}">M{m} · {html.escape(loc[f"m{m}.name"])}</a>' for m in range(1, 6))
-    return head(title, desc, canonical, f'<script type="application/ld+json">\n{ld_json}\n</script>\n') + nav(name) + f'''
+    return head(title, desc, canonical,
+                f'<script type="application/ld+json">\n{ld_json}\n</script>\n'
+                f'<script type="application/ld+json">\n{bc_json}\n</script>\n') + nav(name) + f'''
 <main class="detail__main">
   <p class="eyebrow">// SERVICE / MODULE M{n}</p>
   <h1 class="detail__title">{html.escape(name)}</h1>

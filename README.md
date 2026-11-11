@@ -13,9 +13,10 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 ## Layout
 
 - `index.html` — one page, eight sections: Hero, About, **Service**, **Cases**, Tools, Process, **FAQ**, Contact
-- `index.html` head — canonical, OG/Twitter cards, and a JSON-LD `@graph` (WebSite, Person, 2 × ItemList, WebApplication, FAQPage)
-- `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, CreativeWork JSON-LD, canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
-- `services/<slug>/` — 5 static service pages with scope, process, related cases and Service JSON-LD
+- `index.html` head — canonical, OG/Twitter cards, and a JSON-LD `@graph` (WebSite, Person, 2 × ItemList). No `FAQPage`: Google retired that rich result in May 2026.
+- `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, CreativeWork + BreadcrumbList JSON-LD, canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
+- `services/<slug>/` — 5 static service pages with scope, process, related cases, and Service + BreadcrumbList JSON-LD
+- `tools/index.html` — canonical + OG, WebApplication JSON-LD, and a `<noscript>` index of all 50 tool names
 - `scripts/generate_pages.py` — regenerates all 22 pages from `assets/js/site.js` (CASES) + `locales/en.json`. Run after changing case metadata or copy.
 - `assets/cases/*.webp` — 14 real storefront captures (desktop + mobile) and 3 honest placeholders, ~976 KB total
 - `scripts/capture_stores.py` — headless-Chromium CDP capture with lazy-image wake, popup dismissal, video-poster substitution, mobile-UA reload and browser-error retries. Recaptures all live cases; `scripts/make_video_posters.py` regenerates the video frames.
@@ -30,7 +31,8 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 - `assets/js/i18n.js` — 10-language engine, flat JSON dictionaries in `locales/`
 - `locales/*.json` — 10 languages, ~487 keys each
 - `tools/` — the 50-tool browser armory (client-side only), sharing `assets/css/main.css` and the same matrix backdrop
-- `robots.txt`, `sitemap.xml`, `llms.txt`, `og-image.jpg`, `404.html`
+- `robots.txt` (no Disallow; Content-Signal + Google-Extended), `sitemap.xml` (accurate `<lastmod>`, image entries, no ignored `priority`/`changefreq`), `llms.txt`, `og-image.jpg`, `404.html` (`noindex`)
+- `docs/seo-2026-research.md` — grounded audit of 2026 Google/Web.dev guidance and the changes applied here
 - `CNAME` — custom domain `logansolaman.com`
 
 ## Design decisions

@@ -38,7 +38,7 @@ A static portfolio with 17 individual case-study pages and 5 service pages for L
 
 What do you actually do · Is this just a theme with a logo · Can you work on an existing Shopify theme · What if the app I need doesn't exist · Is SEO bolted on at the end · What happens after launch · What does the first conversation cost · What do I get before any code is written · How do you decide what ships · Where are you based / do you work remotely · How quickly do you reply · Are the 50 tools really free.
 
-Answers are drawn from the same service, process, manifesto and contact copy used elsewhere on the site; they are published as `FAQPage` JSON-LD in the page head.
+Answers are drawn from the same service, process, manifesto and contact copy used elsewhere on the site. They are visible as HTML on the home page; no `FAQPage` structured data is emitted, because Google retired the FAQ rich result in May 2026.
 
 ## Facts at a glance
 
@@ -100,10 +100,12 @@ The consultation is free. Use the form at https://logansolaman.com/#contact — 
 
 - Keyboard: `1`–`7` jump to sections; `/` opens the command line; `[` `]` cycle color themes; `G` toggles the CRT grid; `M` toggles matrix rain; `T` glitches the title; `L` opens the language picker; `?` opens help; `ESC` closes.
 - Command line supports: `about`, `services`, `cases`, `tools`, `process`, `faq`, `contact`, `theme`, `grid`, `rain`, `glitch`, `langs`, `lang <code>`, `filter <category>`, `ls`, `clear`, `help`.
-- The 17 case cards are rendered client-side from `assets/js/site.js`; their names and descriptions come from `locales/<lang>.json`. Each card links to a static case-study page at `/cases/caseNN/` with real desktop and mobile storefront screenshots, metadata, and CreativeWork JSON-LD. The five service modules link to `/services/<slug>/` pages with Service JSON-LD.
+- The home page ships its English copy as static HTML, so important content is available without JavaScript. The 17 case cards are rendered client-side from `assets/js/site.js` with names/descriptions from `locales/<lang>.json`, but each contains a real crawlable `<a>` to a static case-study page at `/cases/caseNN/`. A `<noscript>` block lists all 17 cases and 5 services as plain links. Case pages carry CreativeWork + BreadcrumbList JSON-LD; service pages carry Service + BreadcrumbList JSON-LD; `/tools/` carries WebApplication JSON-LD.
 - `prefers-reduced-motion` renders a static shader frame and disables reveals.
 - No analytics, no cookies, no tracking, no third-party storage. All fonts are self-hosted as local woff2; no third-party font requests.
 
 ## Content usage
 
-Content signals are declared in `robots.txt`. Search indexing, AI input/grounding, and AI training are all permitted.
+Content signals are declared in `robots.txt`. Search indexing, AI input/grounding, and AI training are all permitted. `robots.txt` blocks nothing: CSS, JS and locale files must remain crawlable for Googlebot to render the page.
+
+Note: Google Search does not use `llms.txt` for ranking or AI Overviews; this file is maintained for other services and agents that do consume it. It is not a substitute for crawlable HTML.

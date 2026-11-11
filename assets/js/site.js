@@ -170,7 +170,8 @@
       const name = T("case" + c.k + ".name", "PROJECT " + c.k);
       const copy = T("case" + c.k + ".copy", "");
       const tape = String(i + 1).padStart(2, "0");
-      return `<article class="card glass" role="listitem" tabindex="0" data-i="${i}" data-cat="${c.cat}" data-status="${c.status}">
+      const url = "/cases/case" + String(c.k).padStart(2, "0") + "/";
+      return `<article class="card glass" role="listitem" data-i="${i}" data-cat="${c.cat}" data-status="${c.status}">
         <div class="card__top"><span class="card__tape">TAPE ${tape}</span>
           <span class="card__status ${c.status === "building" ? "is-building" : ""}"><i></i>${c.status === "building" ? "BUILDING" : "LIVE"}</span></div>
         <div class="card__media">
@@ -183,7 +184,7 @@
         <span class="card__cat">${c.cat} · ${c.city}</span>
         <h3 class="card__name">${esc(name)}</h3>
         <p class="card__copy">${copy}</p>
-        <span class="card__view">OPEN CASE STUDY ▸</span>
+        <a class="card__view" href="${url}" aria-label="Read the ${esc(name)} case study">OPEN CASE STUDY ▸</a>
       </article>`;
     }
     function render() {
@@ -200,10 +201,18 @@
     }
 
     function bindCards() {
+      // Cards contain real <a> links now (crawlable, keyboard-native, works
+      // without JS). Only the rail's click-to-view affordance needs JS.
       $$(".card", rail).forEach(card => {
-        const go = () => { location.href = "/cases/case" + String(CASES[parseInt(card.dataset.i, 10)].k).padStart(2, "0") + "/"; };
-        card.addEventListener("click", go);
-        card.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); go(); } });
+        const link = card.querySelector("a.card__view");
+        if (!link) return;
+        card.addEventListener("click", e => {
+          if (e.target.closest("a")) return;
+          link.click();
+        });
+        card.addEventListener("keydown", e => {
+          if (e.key === "Enter" && !e.target.closest("a")) { e.preventDefault(); link.click(); }
+        });
       });
     }
 

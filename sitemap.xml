@@ -1,159 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://logansolaman.com/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://logansolaman.com/tools/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case01/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case01.webp</image:loc>
+      <image:title>Desktop screenshot of the case 01 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case01-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 01 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case02/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case02.webp</image:loc>
+      <image:title>Desktop screenshot of the case 02 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case02-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 02 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case03/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case03.webp</image:loc>
+      <image:title>Desktop screenshot of the case 03 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case03-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 03 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case04/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case04.webp</image:loc>
+      <image:title>Desktop screenshot of the case 04 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case04-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 04 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case05/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case05.webp</image:loc>
+      <image:title>Desktop screenshot of the case 05 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case05-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 05 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case06/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case06.webp</image:loc>
+      <image:title>Desktop screenshot of the case 06 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case06-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 06 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case07/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case07.webp</image:loc>
+      <image:title>Desktop screenshot of the case 07 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case07-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 07 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case08/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case08.webp</image:loc>
+      <image:title>Desktop screenshot of the case 08 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case08-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 08 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case09/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case09.webp</image:loc>
+      <image:title>Desktop screenshot of the case 09 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case09-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 09 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case10/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case10.webp</image:loc>
+      <image:title>Desktop screenshot of the case 10 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case10-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 10 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case11/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case11.webp</image:loc>
+      <image:title>Desktop screenshot of the case 11 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case11-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 11 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case12/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case12.webp</image:loc>
+      <image:title>Desktop screenshot of the case 12 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case12-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 12 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case13/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case13.webp</image:loc>
+      <image:title>Desktop screenshot of the case 13 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case13-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 13 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case14/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case14.webp</image:loc>
+      <image:title>Desktop screenshot of the case 14 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case14-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 14 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case15/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case15.webp</image:loc>
+      <image:title>Desktop screenshot of the case 15 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case16/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case16.webp</image:loc>
+      <image:title>Desktop screenshot of the case 16 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case16-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 16 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/cases/case17/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case17.webp</image:loc>
+      <image:title>Desktop screenshot of the case 17 storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case17-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the case 17 storefront</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://logansolaman.com/services/app-development/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://logansolaman.com/services/growth-operations/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://logansolaman.com/services/seo-velocity/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://logansolaman.com/services/storefront-engineering/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://logansolaman.com/services/theme-customization/</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://logansolaman.com/llms.txt</loc>
     <lastmod>2026-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://logansolaman.com/project/canada-rockies-2026-itinerary/</loc>
-    <lastmod>2026-11-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <lastmod>2026-11-09</lastmod>
   </url>
 </urlset>
