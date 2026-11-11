@@ -18,24 +18,333 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "@id": "https://logansolaman.com/tools/#app",
-  "name": "The Armory — 50 free merchant tools",
-  "url": "https://logansolaman.com/tools/",
-  "description": "50 free browser tools for ecommerce store owners: SEO, pricing, logistics, marketing, analytics. No account, no upload, no upsell.",
-  "applicationCategory": "BusinessApplication",
-  "browserRequirements": "Requires JavaScript. Runs entirely in the browser.",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "isAccessibleForFree": true,
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman",
-    "url": "https://logansolaman.com/"
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "inLanguage": "en"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "@id": "https://logansolaman.com/tools/#app",
+      "name": "The Armory — 50 free merchant tools",
+      "url": "https://logansolaman.com/tools/",
+      "description": "50 free browser tools for ecommerce store owners: SEO, pricing, logistics, marketing, analytics. No account, no upload, no upsell.",
+      "applicationCategory": "BusinessApplication",
+      "browserRequirements": "Requires JavaScript. Runs entirely in the browser.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "isAccessibleForFree": true,
+      "author": {
+        "@type": "Person",
+        "@id": "https://logansolaman.com/#person",
+        "name": "Logan Solaman",
+        "url": "https://logansolaman.com/"
+      },
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/tools/#webpage",
+      "url": "https://logansolaman.com/tools/",
+      "name": "THE ARMORY — 50 Free Merchant Tools · Logan Solaman",
+      "description": "50 free browser tools for ecommerce store owners: SEO, pricing, logistics, marketing, analytics. No account, no upload, no upsell.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/tools/#app"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/tools/#breadcrumb"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://logansolaman.com/tools/#tool-list",
+      "name": "The Armory — 50 free merchant tools",
+      "numberOfItems": 50,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "slug_cleaner"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "alt_text_forge"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "meta_writer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "json_ld_builder"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "sku_mapper"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "csv_converter"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "image_resizer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "base64_inliner"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "collection_namer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "product_scraper"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "margin_calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 12,
+          "name": "price_from_markup"
+        },
+        {
+          "@type": "ListItem",
+          "position": 13,
+          "name": "breakeven_calc"
+        },
+        {
+          "@type": "ListItem",
+          "position": 14,
+          "name": "aov_calc"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "ltv_calculator"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "roas_calc"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "cac_calc"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "discount_stacker"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "currency_convert"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "invoice_gen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "seo_auditor"
+        },
+        {
+          "@type": "ListItem",
+          "position": 22,
+          "name": "keyword_density"
+        },
+        {
+          "@type": "ListItem",
+          "position": 23,
+          "name": "utm_builder"
+        },
+        {
+          "@type": "ListItem",
+          "position": 24,
+          "name": "qrcode_gen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 25,
+          "name": "subject_line_tester"
+        },
+        {
+          "@type": "ListItem",
+          "position": 26,
+          "name": "social_char_counter"
+        },
+        {
+          "@type": "ListItem",
+          "position": 27,
+          "name": "hashtag_kit"
+        },
+        {
+          "@type": "ListItem",
+          "position": 28,
+          "name": "ab_test_calc"
+        },
+        {
+          "@type": "ListItem",
+          "position": 29,
+          "name": "coupon_gen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 30,
+          "name": "launch_countdown"
+        },
+        {
+          "@type": "ListItem",
+          "position": 31,
+          "name": "order_emails"
+        },
+        {
+          "@type": "ListItem",
+          "position": 32,
+          "name": "dim_weight_calc"
+        },
+        {
+          "@type": "ListItem",
+          "position": 33,
+          "name": "reorder_point"
+        },
+        {
+          "@type": "ListItem",
+          "position": 34,
+          "name": "stock_turn_calc"
+        },
+        {
+          "@type": "ListItem",
+          "position": 35,
+          "name": "pdf-ocr"
+        },
+        {
+          "@type": "ListItem",
+          "position": 36,
+          "name": "csv_splitter"
+        },
+        {
+          "@type": "ListItem",
+          "position": 37,
+          "name": "bulk_find_replace"
+        },
+        {
+          "@type": "ListItem",
+          "position": 38,
+          "name": "ean_upc_check"
+        },
+        {
+          "@type": "ListItem",
+          "position": 39,
+          "name": "shipping_rates"
+        },
+        {
+          "@type": "ListItem",
+          "position": 40,
+          "name": "packing_list_gen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 41,
+          "name": "conversion_funnel"
+        },
+        {
+          "@type": "ListItem",
+          "position": 42,
+          "name": "profit_per_order"
+        },
+        {
+          "@type": "ListItem",
+          "position": 43,
+          "name": "refund_rate_calc"
+        },
+        {
+          "@type": "ListItem",
+          "position": 44,
+          "name": "review_responder"
+        },
+        {
+          "@type": "ListItem",
+          "position": 45,
+          "name": "nps_score"
+        },
+        {
+          "@type": "ListItem",
+          "position": 46,
+          "name": "cohort_retention"
+        },
+        {
+          "@type": "ListItem",
+          "position": 47,
+          "name": "launch_clock"
+        },
+        {
+          "@type": "ListItem",
+          "position": 48,
+          "name": "unit_converter"
+        },
+        {
+          "@type": "ListItem",
+          "position": 49,
+          "name": "token_gen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 50,
+          "name": "text_diff"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/tools/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Armory",
+          "item": "https://logansolaman.com/tools/"
+        }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="preload" href="../assets/css/fonts.css" as="style" />

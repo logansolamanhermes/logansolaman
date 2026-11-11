@@ -22,43 +22,83 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "TWO MORE GLASSES",
-  "description": "Bordeaux, Burgundy, Champagne and rare vintages — a catalog deep enough to drown in, so I architected region-by-region navigation instead. Four locales, one cellar, zero overwhelm.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "SHOPIFY",
-    "4 LOCALES"
-  ],
-  "url": "https://logansolaman.com/cases/case09/",
-  "image": "https://logansolaman.com/assets/cases/case09.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case09/#work",
       "name": "TWO MORE GLASSES",
-      "item": "https://logansolaman.com/cases/case09/"
+      "description": "Bordeaux, Burgundy, Champagne and rare vintages — a catalog deep enough to drown in, so I architected region-by-region navigation instead. Four locales, one cellar, zero overwhelm.",
+      "url": "https://logansolaman.com/cases/case09/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "WINE, GLOBAL, SHOPIFY, 4 LOCALES",
+      "image": "https://logansolaman.com/assets/cases/case09.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "sameAs": "https://www.twomoreglasses.com"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case09/#webpage",
+      "url": "https://logansolaman.com/cases/case09/",
+      "name": "TWO MORE GLASSES — Case Study | Logan Solaman",
+      "description": "Bordeaux, Burgundy, Champagne and rare vintages — a catalog deep enough to drown in, so I architected region-by-region navigation instead. Four locales,…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case09/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case09/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case09/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "TWO MORE GLASSES",
+          "item": "https://logansolaman.com/cases/case09/"
+        }
+      ]
     }
   ]
 }

@@ -22,43 +22,83 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "SUUNTO HK",
-  "description": "Finnish precision instruments for the toughest conditions — sports watches, dive computers, compasses. Engineered the official Hong Kong storefront to the same standard the brand builds hardware to.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "SHOPIFY",
-    "LOCALIZATION"
-  ],
-  "url": "https://logansolaman.com/cases/case02/",
-  "image": "https://logansolaman.com/assets/cases/case02.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case02/#work",
       "name": "SUUNTO HK",
-      "item": "https://logansolaman.com/cases/case02/"
+      "description": "Finnish precision instruments for the toughest conditions — sports watches, dive computers, compasses. Engineered the official Hong Kong storefront to the same standard the brand builds hardware to.",
+      "url": "https://logansolaman.com/cases/case02/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "OUTDOOR, HONG KONG, SHOPIFY, LOCALIZATION",
+      "image": "https://logansolaman.com/assets/cases/case02.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "sameAs": "https://suunto.com.hk"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case02/#webpage",
+      "url": "https://logansolaman.com/cases/case02/",
+      "name": "SUUNTO HK — Case Study | Logan Solaman",
+      "description": "Finnish precision instruments for the toughest conditions — sports watches, dive computers, compasses. Engineered the official Hong Kong storefront to the…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case02/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case02/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case02/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SUUNTO HK",
+          "item": "https://logansolaman.com/cases/case02/"
+        }
+      ]
     }
   ]
 }

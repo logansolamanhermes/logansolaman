@@ -22,40 +22,92 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "GROWTH OPERATIONS",
-  "description": "Conversion systems after launch: CRO, analytics, A/B discipline, retention flows. The store is never finished — it's tuned.",
-  "provider": {
-    "@type": "Person",
-    "name": "Logan Solaman",
-    "url": "https://logansolaman.com/"
-  },
-  "areaServed": "Worldwide",
-  "url": "https://logansolaman.com/services/growth-operations/"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://logansolaman.com/#services"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "Service",
+      "@id": "https://logansolaman.com/services/growth-operations/#service",
       "name": "GROWTH OPERATIONS",
-      "item": "https://logansolaman.com/services/growth-operations/"
+      "description": "Conversion systems after launch: CRO, analytics, A/B discipline, retention flows. The store is never finished — it's tuned.",
+      "provider": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "areaServed": "Worldwide",
+      "url": "https://logansolaman.com/services/growth-operations/",
+      "isRelatedTo": [
+        {
+          "@type": "CreativeWork",
+          "@id": "https://logansolaman.com/cases/case10/#work",
+          "name": "INHERE"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "https://logansolaman.com/cases/case12/#work",
+          "name": "TOPICKSTORE"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "https://logansolaman.com/cases/case17/#work",
+          "name": "MASTER PEST HK"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/services/growth-operations/#webpage",
+      "url": "https://logansolaman.com/services/growth-operations/",
+      "name": "GROWTH OPERATIONS — Service | Logan Solaman",
+      "description": "Conversion systems after launch: CRO, analytics, A/B discipline, retention flows. The store is never finished — it's…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/services/growth-operations/#service"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/services/growth-operations/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/services/growth-operations/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://logansolaman.com/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "GROWTH OPERATIONS",
+          "item": "https://logansolaman.com/services/growth-operations/"
+        }
+      ]
     }
   ]
 }

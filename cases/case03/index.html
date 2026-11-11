@@ -22,43 +22,83 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "KAVU HK",
-  "description": "Seattle outdoor soul, born 1993, shipped with “happy living” stitched in. Localized the full apparel line for HK without losing the brand's grin — playful tone, serious commerce underneath.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "SHOPIFY",
-    "LOCALIZATION"
-  ],
-  "url": "https://logansolaman.com/cases/case03/",
-  "image": "https://logansolaman.com/assets/cases/case03.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case03/#work",
       "name": "KAVU HK",
-      "item": "https://logansolaman.com/cases/case03/"
+      "description": "Seattle outdoor soul, born 1993, shipped with “happy living” stitched in. Localized the full apparel line for HK without losing the brand's grin — playful tone, serious commerce underneath.",
+      "url": "https://logansolaman.com/cases/case03/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "OUTDOOR, HONG KONG, SHOPIFY, LOCALIZATION",
+      "image": "https://logansolaman.com/assets/cases/case03.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "sameAs": "https://kavu.hk"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case03/#webpage",
+      "url": "https://logansolaman.com/cases/case03/",
+      "name": "KAVU HK — Case Study | Logan Solaman",
+      "description": "Seattle outdoor soul, born 1993, shipped with “happy living” stitched in. Localized the full apparel line for HK without losing the brand's grin — playful…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case03/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case03/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case03/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "KAVU HK",
+          "item": "https://logansolaman.com/cases/case03/"
+        }
+      ]
     }
   ]
 }

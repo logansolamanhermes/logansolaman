@@ -22,42 +22,82 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "RAB EQUIPMENT HK",
-  "description": "British mountain engineering — down, shells, and protection built for altitude. Wiring the HK storefront so alpine-grade technical kit gets a commerce system worthy of its fabric.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "SHOPIFY"
-  ],
-  "url": "https://logansolaman.com/cases/case05/",
-  "image": "https://logansolaman.com/assets/cases/case05.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case05/#work",
       "name": "RAB EQUIPMENT HK",
-      "item": "https://logansolaman.com/cases/case05/"
+      "description": "British mountain engineering — down, shells, and protection built for altitude. Wiring the HK storefront so alpine-grade technical kit gets a commerce system worthy of its fabric.",
+      "url": "https://logansolaman.com/cases/case05/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "OUTDOOR, HONG KONG, SHOPIFY",
+      "image": "https://logansolaman.com/assets/cases/case05.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case05/#webpage",
+      "url": "https://logansolaman.com/cases/case05/",
+      "name": "RAB EQUIPMENT HK — Case Study | Logan Solaman",
+      "description": "British mountain engineering — down, shells, and protection built for altitude. Wiring the HK storefront so alpine-grade technical kit gets a commerce…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case05/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case05/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case05/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "RAB EQUIPMENT HK",
+          "item": "https://logansolaman.com/cases/case05/"
+        }
+      ]
     }
   ]
 }

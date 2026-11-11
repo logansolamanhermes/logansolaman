@@ -22,43 +22,82 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "HKU PRESS — POS",
-  "description": "Not a storefront — the brain behind one. A custom point-of-sale system for the university press, syncing counter sales with inventory and keeping the shelves honest at checkout speed.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "CUSTOM POS",
-    "INVENTORY SYNC"
-  ],
-  "url": "https://logansolaman.com/cases/case15/",
-  "image": "https://logansolaman.com/assets/cases/case15.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case15/#work",
       "name": "HKU PRESS — POS",
-      "item": "https://logansolaman.com/cases/case15/"
+      "description": "Not a storefront — the brain behind one. A custom point-of-sale system for the university press, syncing counter sales with inventory and keeping the shelves honest at checkout speed.",
+      "url": "https://logansolaman.com/cases/case15/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "INFRA, HONG KONG, CUSTOM POS, INVENTORY SYNC",
+      "image": "https://logansolaman.com/assets/cases/case15.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case15/#webpage",
+      "url": "https://logansolaman.com/cases/case15/",
+      "name": "HKU PRESS — POS — Case Study | Logan Solaman",
+      "description": "Not a storefront — the brain behind one. A custom point-of-sale system for the university press, syncing counter sales with inventory and keeping the…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case15/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case15/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case15/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "HKU PRESS — POS",
+          "item": "https://logansolaman.com/cases/case15/"
+        }
+      ]
     }
   ]
 }

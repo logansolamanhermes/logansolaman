@@ -22,43 +22,83 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "INFINITY LEARNING",
-  "description": "Australian private tuition and master maths classes — commerce infrastructure for an education brand. One-to-one and small-group bookings flow from a storefront that reassures parents in one scroll.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "SHOPIFY",
-    "BOOKINGS"
-  ],
-  "url": "https://logansolaman.com/cases/case13/",
-  "image": "https://logansolaman.com/assets/cases/case13.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case13/#work",
       "name": "INFINITY LEARNING",
-      "item": "https://logansolaman.com/cases/case13/"
+      "description": "Australian private tuition and master maths classes — commerce infrastructure for an education brand. One-to-one and small-group bookings flow from a storefront that reassures parents in one scroll.",
+      "url": "https://logansolaman.com/cases/case13/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "SERVICE, AUSTRALIA, SHOPIFY, BOOKINGS",
+      "image": "https://logansolaman.com/assets/cases/case13.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "sameAs": "https://infinitylearning.au"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case13/#webpage",
+      "url": "https://logansolaman.com/cases/case13/",
+      "name": "INFINITY LEARNING — Case Study | Logan Solaman",
+      "description": "Australian private tuition and master maths classes — commerce infrastructure for an education brand. One-to-one and small-group bookings flow from a…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case13/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case13/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case13/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "INFINITY LEARNING",
+          "item": "https://logansolaman.com/cases/case13/"
+        }
+      ]
     }
   ]
 }

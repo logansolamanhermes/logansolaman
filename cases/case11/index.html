@@ -22,44 +22,83 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "PRODUCTPRO 百得好",
-  "description": "Gadgets, smart wallets, backpacks, electronics — a thousand SKUs that needed one coherent machine. Catalog restructure, logistics wired, technical SEO turned into a steady organic intake.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "SHOPIFY",
-    "SEO",
-    "LOGISTICS"
-  ],
-  "url": "https://logansolaman.com/cases/case11/",
-  "image": "https://logansolaman.com/assets/cases/case11.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case11/#work",
       "name": "PRODUCTPRO 百得好",
-      "item": "https://logansolaman.com/cases/case11/"
+      "description": "Gadgets, smart wallets, backpacks, electronics — a thousand SKUs that needed one coherent machine. Catalog restructure, logistics wired, technical SEO turned into a steady organic intake.",
+      "url": "https://logansolaman.com/cases/case11/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "RETAIL, HONG KONG, SHOPIFY, SEO, LOGISTICS",
+      "image": "https://logansolaman.com/assets/cases/case11.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "sameAs": "https://www.productpro.com.hk"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case11/#webpage",
+      "url": "https://logansolaman.com/cases/case11/",
+      "name": "PRODUCTPRO 百得好 — Case Study | Logan Solaman",
+      "description": "Gadgets, smart wallets, backpacks, electronics — a thousand SKUs that needed one coherent machine. Catalog restructure, logistics wired, technical SEO…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case11/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case11/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case11/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PRODUCTPRO 百得好",
+          "item": "https://logansolaman.com/cases/case11/"
+        }
+      ]
     }
   ]
 }

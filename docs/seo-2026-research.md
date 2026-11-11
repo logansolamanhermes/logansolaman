@@ -110,6 +110,36 @@ a build change, not a metadata tweak.
 8. **Docs corrected.** README and `llms.txt` no longer claim FAQ schema is
    published or that llms.txt helps Google ranking.
 
+## Structured data: connected entity graph
+
+The site now emits one self-contained `@graph` per page (24 pages). Every
+`@id` reference resolves inside its own page, so no entity depends on
+off-page markup — a requirement Google states for multi-page sites.[S5]
+
+- **Home**: WebSite (name + canonical url, still supported for Site
+  Names),[S10] Person, WebPage, and the two ItemLists linked via `hasPart`.
+- **Case pages**: WebSite, Person, CreativeWork (`@id`…`#work`, author,
+  keywords from visible tags, real screenshot image, `sameAs` only when a
+  live site exists), WebPage (`mainEntity`), BreadcrumbList.
+- **Service pages**: WebSite, Person, Service (`provider`, `isRelatedTo`
+  pointing at the three visibly-linked case studies), WebPage,
+  BreadcrumbList.
+- **Tools**: WebSite, WebApplication, WebPage, a 50-item ItemList generated
+  from the visible `<noscript>` index, BreadcrumbList.
+
+Deliberately **not** added: `Organization` (this is a personal portfolio,
+not a company; the GitHub link is the site source, not an identity
+profile),[S3] `ProfilePage` (Google requires the page's primary focus to be a
+single person; the home page is a service portfolio with eight sections),[S2]
+`LocalBusiness` / `PostalAddress` (no street address exists), `AggregateRating`
+/ `Review` (no real client quotes), `FAQPage` and `HowTo` (retired), and
+`SearchAction` (Google removed the sitelinks search box in November 2024;
+`WebSite` markup remains valid for Site Names).[S4] `dateCreated` was omitted
+because only "EST. 2016" is visible, not a precise date.
+
+All 17 sampled schema claims were checked against the visible text of their
+page; all matched.
+
 ## Not applied, and why
 
 - **Response headers (cache semantics, CSP, X-Frame-Options, nosniff).**
@@ -146,3 +176,14 @@ a build change, not a metadata tweak.
 [23] https://developers.google.com/search/docs/appearance/structured-data/breadcrumb
 [25] https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview
 [26] https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+
+### Sources (schema — separate ledger)
+
+[S2] https://developers.google.com/search/docs/appearance/structured-data/profile-page
+[S3] https://developers.google.com/search/docs/appearance/structured-data/organization
+[S4] https://developers.google.com/search/blog/2024/10/sitelinks-search-box
+[S5] https://developers.google.com/search/docs/appearance/structured-data/sd-policies
+[S10] https://developers.google.com/search/docs/appearance/site-names
+[S1] https://developers.google.com/search/docs/appearance/structured-data/search-gallery
+[S6] https://developers.google.com/search/docs/appearance/structured-data/breadcrumb
+[S11] https://developers.google.com/search/docs/appearance/establish-business-details

@@ -13,10 +13,10 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 ## Layout
 
 - `index.html` — one page, eight sections: Hero, About, **Service**, **Cases**, Tools, Process, **FAQ**, Contact
-- `index.html` head — canonical, OG/Twitter cards, and a JSON-LD `@graph` (WebSite, Person, 2 × ItemList). No `FAQPage`: Google retired that rich result in May 2026.
-- `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, CreativeWork + BreadcrumbList JSON-LD, canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
-- `services/<slug>/` — 5 static service pages with scope, process, related cases, and Service + BreadcrumbList JSON-LD
-- `tools/index.html` — canonical + OG, WebApplication JSON-LD, and a `<noscript>` index of all 50 tool names
+- `index.html` head — canonical, OG/Twitter cards, and one connected JSON-LD `@graph` (WebSite, Person, WebPage, 2 × ItemList). No `FAQPage` (retired May 2026), `ProfilePage` (home is a service portfolio, not a person profile), `Organization` (personal site, not a company), or `SearchAction` (sitelinks searchbox retired Nov 2024).
+- `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, a 5-node `@graph` (WebSite, Person, CreativeWork, WebPage, BreadcrumbList), canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
+- `services/<slug>/` — 5 static service pages with scope, process, related cases, and a 5-node `@graph` (WebSite, Person, Service, WebPage, BreadcrumbList)
+- `tools/index.html` — canonical + OG, one `@graph` (WebSite, WebApplication, WebPage, 50-item ItemList, BreadcrumbList), and a `<noscript>` index of all 50 tool names. ItemList names come from that visible index.
 - `scripts/generate_pages.py` — regenerates all 22 pages from `assets/js/site.js` (CASES) + `locales/en.json`. Run after changing case metadata or copy.
 - `assets/cases/*.webp` — 14 real storefront captures (desktop + mobile) and 3 honest placeholders, ~976 KB total
 - `scripts/capture_stores.py` — headless-Chromium CDP capture with lazy-image wake, popup dismissal, video-poster substitution, mobile-UA reload and browser-error retries. Recaptures all live cases; `scripts/make_video_posters.py` regenerates the video frames.

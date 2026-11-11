@@ -22,44 +22,83 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "INHERE",
-  "description": "Minimal fashion, maximal logistics. Engineered the online-to-offline system: memberships, payments, delivery — one inventory brain for physical racks and digital carts, sharp on every screen.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "SHOPIFY",
-    "O2O",
-    "PAYMENTS"
-  ],
-  "url": "https://logansolaman.com/cases/case10/",
-  "image": "https://logansolaman.com/assets/cases/case10.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case10/#work",
       "name": "INHERE",
-      "item": "https://logansolaman.com/cases/case10/"
+      "description": "Minimal fashion, maximal logistics. Engineered the online-to-offline system: memberships, payments, delivery — one inventory brain for physical racks and digital carts, sharp on every screen.",
+      "url": "https://logansolaman.com/cases/case10/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "RETAIL, HONG KONG, SHOPIFY, O2O, PAYMENTS",
+      "image": "https://logansolaman.com/assets/cases/case10.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "sameAs": "https://inherehk.com"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case10/#webpage",
+      "url": "https://logansolaman.com/cases/case10/",
+      "name": "INHERE — Case Study | Logan Solaman",
+      "description": "Minimal fashion, maximal logistics. Engineered the online-to-offline system: memberships, payments, delivery — one inventory brain for physical racks and…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case10/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case10/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case10/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "INHERE",
+          "item": "https://logansolaman.com/cases/case10/"
+        }
+      ]
     }
   ]
 }

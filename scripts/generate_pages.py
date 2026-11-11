@@ -69,11 +69,60 @@ def nav(crumb):
 </header>'''
 
 
-def breadcrumb_ld(crumbs):
+WEB_SITE_ID = "https://logansolaman.com/#website"
+PERSON_ID = "https://logansolaman.com/#person"
+
+
+def site_stub():
+    """Compact WebSite node so every page's graph is self-contained."""
+    return {
+        "@type": "WebSite",
+        "@id": WEB_SITE_ID,
+        "url": "https://logansolaman.com/",
+        "name": "LOGAN SOLAMAN — The Store Architect",
+        "alternateName": "The Store Architect",
+        "inLanguage": "en",
+    }
+
+
+def person_stub():
+    """Minimal Person identity. Only name + url are visible on every page
+    (brand wordmark and footer). Richer claims live on the home page only."""
+    return {
+        "@type": "Person",
+        "@id": PERSON_ID,
+        "name": "Logan Solaman",
+        "url": "https://logansolaman.com/",
+    }
+
+
+def webpage_ld(canonical, title, desc, about_id, main_id, page_id=None):
+    """WebPage connects the site, the person/work, and the breadcrumb."""
+    node = {
+        "@type": "WebPage",
+        "@id": canonical + "#webpage",
+        "url": canonical,
+        "name": title,
+        "description": desc,
+        "inLanguage": "en",
+        "isPartOf": {"@id": WEB_SITE_ID},
+        "about": {"@id": about_id},
+        "mainEntity": {"@id": main_id},
+        "breadcrumb": {"@id": canonical + "#breadcrumb"},
+    }
+    return node
+
+
+def graph_ld(nodes):
+    return json.dumps({"@context": "https://schema.org", "@graph": nodes},
+                      ensure_ascii=False, indent=2)
+
+
+def breadcrumb_ld(crumbs, canonical):
     """BreadcrumbList JSON-LD that mirrors the visible .detail__crumbs nav."""
     return {
-        "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": canonical + "#breadcrumb",
         "itemListElement": [
             {"@type": "ListItem", "position": i, "name": name, "item": url}
             for i, (name, url) in enumerate(crumbs, 1)
@@ -141,26 +190,33 @@ def case_page(c, cases, loc):
     prev_k = ((k - 2) % 17) + 1
     next_k = (k % 17) + 1
 
-    ld = {
-        "@context": "https://schema.org",
+    work_id = canonical + "#work"
+    creative = {
         "@type": "CreativeWork",
+        "@id": work_id,
         "name": name,
         "description": plain,
-        "author": {"@type": "Person", "name": "Logan Solaman"},
-        "about": c["stack"],
         "url": canonical,
+        "author": {"@id": PERSON_ID},
+        "creator": {"@id": PERSON_ID},
+        "keywords": ", ".join([c["cat"], c["city"]] + c["stack"]),
         "image": f"https://logansolaman.com/assets/cases/{slug}.webp",
+        "isPartOf": {"@id": WEB_SITE_ID},
     }
-    ld_json = json.dumps(ld, ensure_ascii=False, indent=2)
-    bc_json = json.dumps(breadcrumb_ld([
+    if c["url"]:
+        creative["sameAs"] = c["url"]
+    bc = breadcrumb_ld([
         ("Home", "https://logansolaman.com/"),
         ("Project archive", "https://logansolaman.com/#cases"),
         (name, canonical),
-    ]), ensure_ascii=False, indent=2)
+    ], canonical)
+    ld_json = graph_ld([
+        site_stub(), person_stub(), creative,
+        webpage_ld(canonical, title, desc, PERSON_ID, work_id), bc,
+    ])
 
     return head(title, desc, canonical,
-                f'<script type="application/ld+json">\n{ld_json}\n</script>\n'
-                f'<script type="application/ld+json">\n{bc_json}\n</script>\n') + nav(name) + f'''
+                f'<script type="application/ld+json">\n{ld_json}\n</script>\n') + nav(name) + f'''
 <main class="detail__main">
   <p class="eyebrow">// ARCHIVE / TAPE {k:02d} / {html.escape(c["cat"])}</p>
   <h1 class="detail__title">{html.escape(name)}</h1>
@@ -219,25 +275,31 @@ def service_page(n, cases, loc):
                alt="Screenshot of {html.escape(loc[f"case{ck}.name"])}" />
           <span><b>{html.escape(loc[f"case{ck}.name"])}</b><i>{html.escape(c["city"])} · {html.escape(" · ".join(c["stack"][:2]))}</i></span>
         </a>'''
-    ld = {
-        "@context": "https://schema.org",
+    service_id = canonical + "#service"
+    service = {
         "@type": "Service",
+        "@id": service_id,
         "name": name,
         "description": plain,
-        "provider": {"@type": "Person", "name": "Logan Solaman", "url": "https://logansolaman.com/"},
+        "provider": {"@id": PERSON_ID},
         "areaServed": "Worldwide",
         "url": canonical,
+        "isRelatedTo": [{"@type": "CreativeWork",
+                          "@id": f"https://logansolaman.com/cases/case{c['k']:02d}/#work",
+                          "name": loc[f"case{c['k']}.name"]} for c in rel],
     }
-    ld_json = json.dumps(ld, ensure_ascii=False, indent=2)
-    bc_json = json.dumps(breadcrumb_ld([
+    bc = breadcrumb_ld([
         ("Home", "https://logansolaman.com/"),
         ("Services", "https://logansolaman.com/#services"),
         (name, canonical),
-    ]), ensure_ascii=False, indent=2)
+    ], canonical)
+    ld_json = graph_ld([
+        site_stub(), person_stub(), service,
+        webpage_ld(canonical, title, desc, PERSON_ID, service_id), bc,
+    ])
     others = "".join(f'<a href="/services/{SERVICE_SLUG[m]}/" class="detail__svc{" is-current" if m == n else ""}">M{m} · {html.escape(loc[f"m{m}.name"])}</a>' for m in range(1, 6))
     return head(title, desc, canonical,
-                f'<script type="application/ld+json">\n{ld_json}\n</script>\n'
-                f'<script type="application/ld+json">\n{bc_json}\n</script>\n') + nav(name) + f'''
+                f'<script type="application/ld+json">\n{ld_json}\n</script>\n') + nav(name) + f'''
 <main class="detail__main">
   <p class="eyebrow">// SERVICE / MODULE M{n}</p>
   <h1 class="detail__title">{html.escape(name)}</h1>

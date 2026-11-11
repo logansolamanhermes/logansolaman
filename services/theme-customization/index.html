@@ -22,40 +22,92 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "THEME CUSTOMIZATION",
-  "description": "Off-the-shelf themes are starting points, not destinations. Deep Liquid/JS customization that keeps upgrade paths clean.",
-  "provider": {
-    "@type": "Person",
-    "name": "Logan Solaman",
-    "url": "https://logansolaman.com/"
-  },
-  "areaServed": "Worldwide",
-  "url": "https://logansolaman.com/services/theme-customization/"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Services",
-      "item": "https://logansolaman.com/#services"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "Service",
+      "@id": "https://logansolaman.com/services/theme-customization/#service",
       "name": "THEME CUSTOMIZATION",
-      "item": "https://logansolaman.com/services/theme-customization/"
+      "description": "Off-the-shelf themes are starting points, not destinations. Deep Liquid/JS customization that keeps upgrade paths clean.",
+      "provider": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "areaServed": "Worldwide",
+      "url": "https://logansolaman.com/services/theme-customization/",
+      "isRelatedTo": [
+        {
+          "@type": "CreativeWork",
+          "@id": "https://logansolaman.com/cases/case02/#work",
+          "name": "SUUNTO HK"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "https://logansolaman.com/cases/case03/#work",
+          "name": "KAVU HK"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "https://logansolaman.com/cases/case09/#work",
+          "name": "TWO MORE GLASSES"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/services/theme-customization/#webpage",
+      "url": "https://logansolaman.com/services/theme-customization/",
+      "name": "THEME CUSTOMIZATION — Service | Logan Solaman",
+      "description": "Off-the-shelf themes are starting points, not destinations. Deep Liquid/JS customization that keeps upgrade paths…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/services/theme-customization/#service"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/services/theme-customization/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/services/theme-customization/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://logansolaman.com/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "THEME CUSTOMIZATION",
+          "item": "https://logansolaman.com/services/theme-customization/"
+        }
+      ]
     }
   ]
 }

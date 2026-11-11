@@ -22,42 +22,83 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "CHI WAI STUDIO",
-  "description": "A Hong Kong artist's digital gallery, built to let the work lead: a quiet, image-first archive for paintings, exhibitions, and a lifetime of making.",
-  "author": {
-    "@type": "Person",
-    "name": "Logan Solaman"
-  },
-  "about": [
-    "SHOPIFY"
-  ],
-  "url": "https://logansolaman.com/cases/case16/",
-  "image": "https://logansolaman.com/assets/cases/case16.webp"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@graph": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://logansolaman.com/"
+      "@type": "WebSite",
+      "@id": "https://logansolaman.com/#website",
+      "url": "https://logansolaman.com/",
+      "name": "LOGAN SOLAMAN — The Store Architect",
+      "alternateName": "The Store Architect",
+      "inLanguage": "en"
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Project archive",
-      "item": "https://logansolaman.com/#cases"
+      "@type": "Person",
+      "@id": "https://logansolaman.com/#person",
+      "name": "Logan Solaman",
+      "url": "https://logansolaman.com/"
     },
     {
-      "@type": "ListItem",
-      "position": 3,
+      "@type": "CreativeWork",
+      "@id": "https://logansolaman.com/cases/case16/#work",
       "name": "CHI WAI STUDIO",
-      "item": "https://logansolaman.com/cases/case16/"
+      "description": "A Hong Kong artist's digital gallery, built to let the work lead: a quiet, image-first archive for paintings, exhibitions, and a lifetime of making.",
+      "url": "https://logansolaman.com/cases/case16/",
+      "author": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "creator": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "keywords": "ART, HONG KONG, SHOPIFY",
+      "image": "https://logansolaman.com/assets/cases/case16.webp",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "sameAs": "https://chiwaistudio.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://logansolaman.com/cases/case16/#webpage",
+      "url": "https://logansolaman.com/cases/case16/",
+      "name": "CHI WAI STUDIO — Case Study | Logan Solaman",
+      "description": "A Hong Kong artist's digital gallery, built to let the work lead: a quiet, image-first archive for paintings, exhibitions, and a lifetime of…",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://logansolaman.com/#website"
+      },
+      "about": {
+        "@id": "https://logansolaman.com/#person"
+      },
+      "mainEntity": {
+        "@id": "https://logansolaman.com/cases/case16/#work"
+      },
+      "breadcrumb": {
+        "@id": "https://logansolaman.com/cases/case16/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://logansolaman.com/cases/case16/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://logansolaman.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project archive",
+          "item": "https://logansolaman.com/#cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CHI WAI STUDIO",
+          "item": "https://logansolaman.com/cases/case16/"
+        }
+      ]
     }
   ]
 }
