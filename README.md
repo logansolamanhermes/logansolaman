@@ -12,7 +12,8 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 ## Layout
 
-- `index.html` — one page, seven sections: Hero, About, **Service**, **Cases**, Tools, Process, Contact
+- `index.html` — one page, eight sections: Hero, About, **Service**, **Cases**, Tools, Process, **FAQ**, Contact
+- `index.html` head — canonical, OG/Twitter cards, and a JSON-LD `@graph` (WebSite, Person, 2 × ItemList, WebApplication, FAQPage)
 - `assets/css/main.css` — design tokens, layout, responsive, RTL, reduced-motion
 - `assets/js/matrix-gl.js` — matrix rain as one WebGL2 draw call sampling a real katakana glyph atlas, with a 2D canvas fallback
 - `assets/fonts/matrix-kana.ttf` — self-hosted 85-character katakana subset for the atlas
@@ -20,7 +21,8 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 - `assets/js/i18n.js` — 10-language engine, flat JSON dictionaries in `locales/`
 - `locales/*.json` — 10 languages, ~487 keys each
 - `tools/` — the 50-tool browser armory (client-side only), sharing `assets/css/main.css` and the same matrix backdrop
-- `robots.txt`, `sitemap.xml`, `404.html`
+- `robots.txt`, `sitemap.xml`, `llms.txt`, `og-image.jpg`, `404.html`
+- `CNAME` — custom domain `logansolaman.com`
 
 ## Design decisions
 
@@ -34,7 +36,7 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 | Key | Action |
 |---|---|
-| `1`–`6` | jump to section |
+| `1`–`7` | jump to section |
 | `/` | command line (`help`, `about`, `cases`, `filter outdoor`, `lang ja`, `theme`, …) |
 | `[` `]` | cycle color theme |
 | `G` | CRT grid · `M` | matrix rain · `T` | glitch title |

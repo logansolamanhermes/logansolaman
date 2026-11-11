@@ -34,6 +34,20 @@ A single-page static portfolio for Logan Solaman's Shopify storefront architectu
 2. **Blueprint** — custom plan with scope, stack and numbers.
 3. **Launch & Tune** — ship, then iterate from day one of traffic.
 
+## FAQ — 12 questions answered on the home page
+
+What do you actually do · Is this just a theme with a logo · Can you work on an existing Shopify theme · What if the app I need doesn't exist · Is SEO bolted on at the end · What happens after launch · What does the first conversation cost · What do I get before any code is written · How do you decide what ships · Where are you based / do you work remotely · How quickly do you reply · Are the 50 tools really free.
+
+Answers are drawn from the same service, process, manifesto and contact copy used elsewhere on the site; they are published as `FAQPage` JSON-LD in the page head.
+
+## Facts at a glance
+
+- 10 years engineering · 15 storefronts built · 17 systems in the archive · 50 free merchant tools · 10 languages · established 2016
+- First consult: free, no obligation
+- Before build: written blueprint with scope, stack and numbers
+- Reply time: usually within one day, worldwide
+- The 50-tool armory runs entirely client-side: no account, no upload, no upsell
+
 ## Mission archive — 17 systems, all built by hand, all on Shopify
 
 - **ALPAKA GEAR HK** (Outdoor, live) — https://alpakagear.hk
