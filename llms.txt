@@ -11,7 +11,7 @@
 
 ## What this site is
 
-A single-page static portfolio for Logan Solaman's Shopify storefront architecture practice, plus a browser-based 50-tool armory. There is no build step: plain HTML, CSS and JavaScript served by GitHub Pages. The visual background is a WebGL2 matrix-rain shader built from a self-hosted katakana glyph atlas. All content is available in 10 languages via `locales/*.json`.
+A static portfolio with 17 individual case-study pages and 5 service pages for Logan Solaman's Shopify storefront architecture practice, plus a browser-based 50-tool armory. There is no build step at deploy time: plain HTML, CSS and JavaScript served by GitHub Pages. Case and service pages are generated from `assets/js/site.js` and `locales/en.json` by `scripts/generate_pages.py`. The visual background is a WebGL2 matrix-rain shader built from a self-hosted katakana glyph atlas. All content is available in 10 languages via `locales/*.json`.
 
 ## Positioning
 
@@ -84,17 +84,25 @@ https://logansolaman.com/tools/ — 50 browser-based merchant tools across five 
 - This file: https://logansolaman.com/llms.txt
 - OG image: https://logansolaman.com/og-image.jpg
 
+## Static page index
+
+- Home: https://logansolaman.com/
+- Tool armory (50 tools): https://logansolaman.com/tools/
+- Service pages: /services/storefront-engineering/, /services/theme-customization/, /services/app-development/, /services/seo-velocity/, /services/growth-operations/
+- Case studies (17, real screenshots): /cases/case01/ through /cases/case17/ — each has its own canonical URL, description, CreativeWork JSON-LD, desktop and mobile captures, client/market/stack metadata and prev/next navigation.
+- Full URL list: https://logansolaman.com/sitemap.xml (26 URLs)
+
 ## Contact
 
 The consultation is free. Use the form at https://logansolaman.com/#contact — it builds a `mailto:` draft in the visitor's own mail client; the site stores nothing. Reply target is configured in `assets/js/site.js` (`CONTACT_EMAIL`).
 
 ## Interaction notes (for agents rendering the page)
 
-- Keyboard: `1`–`6` jump to sections; `/` opens the command line; `[` `]` cycle color themes; `G` toggles the CRT grid; `M` toggles matrix rain; `T` glitches the title; `L` opens the language picker; `?` opens help; `ESC` closes.
-- Command line supports: `about`, `services`, `cases`, `tools`, `process`, `contact`, `theme`, `grid`, `rain`, `glitch`, `langs`, `lang <code>`, `filter <category>`, `ls`, `clear`, `help`.
-- The 17 case cards are rendered client-side from `assets/js/site.js`; their names and descriptions come from `locales/<lang>.json`.
+- Keyboard: `1`–`7` jump to sections; `/` opens the command line; `[` `]` cycle color themes; `G` toggles the CRT grid; `M` toggles matrix rain; `T` glitches the title; `L` opens the language picker; `?` opens help; `ESC` closes.
+- Command line supports: `about`, `services`, `cases`, `tools`, `process`, `faq`, `contact`, `theme`, `grid`, `rain`, `glitch`, `langs`, `lang <code>`, `filter <category>`, `ls`, `clear`, `help`.
+- The 17 case cards are rendered client-side from `assets/js/site.js`; their names and descriptions come from `locales/<lang>.json`. Each card links to a static case-study page at `/cases/caseNN/` with real desktop and mobile storefront screenshots, metadata, and CreativeWork JSON-LD. The five service modules link to `/services/<slug>/` pages with Service JSON-LD.
 - `prefers-reduced-motion` renders a static shader frame and disables reveals.
-- No analytics, no cookies, no tracking, no third-party storage. Fonts are loaded from Google Fonts.
+- No analytics, no cookies, no tracking, no third-party storage. All fonts are self-hosted as local woff2; no third-party font requests.
 
 ## Content usage
 

@@ -173,19 +173,37 @@
       return `<article class="card glass" role="listitem" tabindex="0" data-i="${i}" data-cat="${c.cat}" data-status="${c.status}">
         <div class="card__top"><span class="card__tape">TAPE ${tape}</span>
           <span class="card__status ${c.status === "building" ? "is-building" : ""}"><i></i>${c.status === "building" ? "BUILDING" : "LIVE"}</span></div>
-        <span class="card__big" aria-hidden="true">${tape}</span>
+        <div class="card__media">
+          <img class="card__img" src="assets/cases/case${String(c.k).padStart(2,"0")}-400.webp"
+               srcset="assets/cases/case${String(c.k).padStart(2,"0")}-400.webp 400w, assets/cases/case${String(c.k).padStart(2,"0")}.webp 800w"
+               sizes="(max-width: 700px) 85vw, 380px" width="400" height="300" loading="${i < 3 ? "eager" : "lazy"}" decoding="async"
+               alt="Screenshot of the ${esc(name)} storefront" />
+          <span class="card__big" aria-hidden="true">${tape}</span>
+        </div>
         <span class="card__cat">${c.cat} · ${c.city}</span>
         <h3 class="card__name">${esc(name)}</h3>
         <p class="card__copy">${copy}</p>
-        <span class="card__view">VIEW ▸</span>
+        <span class="card__view">OPEN CASE STUDY ▸</span>
       </article>`;
     }
-    function render() { rail.innerHTML = CASES.map(cardHTML).join(""); bindCards(); applyFilter(); }
+    function render() {
+      rail.innerHTML = CASES.map(cardHTML).join(""); bindCards(); applyFilter();
+      // Horizontal rails don't reliably trigger native lazy loading. Force any
+      // image whose card is currently near the viewport to load immediately.
+      const wake = () => $$(".card__img[loading='lazy']", rail).forEach(img => {
+        const r = img.getBoundingClientRect();
+        if (r.right > -400 && r.left < innerWidth + 400) img.loading = "eager";
+      });
+      wake();
+      rail.addEventListener("scroll", wake, { passive: true });
+      addEventListener("resize", wake, { passive: true });
+    }
 
     function bindCards() {
       $$(".card", rail).forEach(card => {
-        card.addEventListener("click", () => openCase(parseInt(card.dataset.i, 10)));
-        card.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); openCase(parseInt(card.dataset.i, 10)); } });
+        const go = () => { location.href = "/cases/case" + String(CASES[parseInt(card.dataset.i, 10)].k).padStart(2, "0") + "/"; };
+        card.addEventListener("click", go);
+        card.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); go(); } });
       });
     }
 
@@ -245,6 +263,8 @@
       const meta = $("#caseMetaExtra");
       if (meta) meta.textContent = `${c.city} · ${c.stack.join(" · ")}`;
       const link = $("#caseLink");
+    const dl = $("#caseDetail");
+    if (dl) dl.href = "/cases/case" + String(c.k).padStart(2, "0") + "/";
       if (c.url) { link.href = c.url; link.hidden = false; }
       else { link.hidden = true; }
       modal.hidden = false;

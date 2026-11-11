@@ -2,7 +2,7 @@
 
 A static, dependency-free portfolio site: ZEN-template design language (big editorial type, one acid-lime accent, an inverted ivory panel, glass surfaces, a liquid-glass project rail) over a WebGL2 matrix-rain backdrop.
 
-**No build step.** Everything is authored HTML/CSS/JS and served verbatim by GitHub Pages. No npm, no bundler, no framework, no server.
+**No build step at deploy time.** Everything is authored HTML/CSS/JS and served verbatim by GitHub Pages. Case and service pages are generated once from existing sources by `scripts/generate_pages.py` (no npm, no bundler, no framework, no server).
 
 ## Live
 
@@ -14,6 +14,12 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 - `index.html` — one page, eight sections: Hero, About, **Service**, **Cases**, Tools, Process, **FAQ**, Contact
 - `index.html` head — canonical, OG/Twitter cards, and a JSON-LD `@graph` (WebSite, Person, 2 × ItemList, WebApplication, FAQPage)
+- `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, CreativeWork JSON-LD, canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
+- `services/<slug>/` — 5 static service pages with scope, process, related cases and Service JSON-LD
+- `scripts/generate_pages.py` — regenerates all 22 pages from `assets/js/site.js` (CASES) + `locales/en.json`. Run after changing case metadata or copy.
+- `assets/cases/*.webp` — 14 real storefront captures (desktop + mobile) and 2 honest "under construction" placeholders, ~650 KB total
+- `assets/css/detail.css` — shared styling for the static detail pages
+- `assets/css/fonts.css` + `assets/fonts/*.woff2` — all fonts self-hosted; zero third-party font requests
 - `assets/css/main.css` — design tokens, layout, responsive, RTL, reduced-motion
 - `assets/js/matrix-gl.js` — matrix rain as one WebGL2 draw call sampling a real katakana glyph atlas, with a 2D canvas fallback
 - `assets/fonts/matrix-kana.ttf` — self-hosted 85-character katakana subset for the atlas
