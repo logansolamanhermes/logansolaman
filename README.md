@@ -43,13 +43,15 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 ## Hosting
 
-**Source:** GitHub Pages on this repo, `main` branch, `/ (root)`. Push to `main` and Pages rebuilds. `.nojekyll` keeps every file served as-is. Pages URL: `https://logansolamanhermes.github.io/logansolaman/`.
+**Fully native GitHub Pages.** This repo (`main` branch, `/ (root)`) is the single source of truth and serves `https://logansolaman.com/` directly. The root `CNAME` file contains `logansolaman.com`; Pages reports `cname: logansolaman.com`, `https_enforced: true`. Push to `main` and Pages rebuilds. `.nojekyll` keeps every file served as-is. The project Pages URL `https://logansolamanhermes.github.io/logansolaman/` also still works.
 
-**Public domain:** `https://logansolaman.com/` is proxied through Cloudflare to that Pages URL. A Cloudflare Worker (`deploy/worker.js`, script `ls-site-proxy`) owns two routes — `logansolaman.com/*` and `www.logansolaman.com/*` — and prefixes every path with `/logansolaman`, redirects `http → https` and `www → apex`, and rewrites origin redirects back to the public hostname. The four apex A records and the `www` CNAME are proxied (orange cloud); Cloudflare's Universal SSL certificate covers `logansolaman.com` and `*.logansolaman.com`, so TLS is terminated at Cloudflare and `ssl` mode is `strict`.
+DNS (Cloudflare, DNS-only / grey cloud): four apex `A` records → GitHub Pages IPs `185.199.108–111.153`, and `www` `CNAME` → `logansolamanhermes.github.io`. GitHub issues and renews the Let's Encrypt certificate for the apex; `http → https` and `www → apex` are handled by GitHub Pages.
 
-This route exists because `logansolaman.com` was already claimed as the custom domain of the older `logansolaman/logansolaman.github.io` Pages site, and GitHub will not attach the same domain to a repo owned by another account. The repo stays the single source of truth; the Worker is pure routing. That older repo is untouched.
+`logansolaman/logansolaman.github.io` (the older site's repo) released the custom domain; its Pages `cname` is now `null`. It is otherwise untouched.
 
-`.well-known/` (Apple Pay / certificate validation), `BingSiteAuth.xml`, the legacy `.htaccess`/`403.shtml`/`404.shtml`, `project/`, `news-archive/` and the data JSONs are kept so those URLs continue to resolve through the proxy.
+A Cloudflare Worker was used temporarily to route the domain before the old repo released it. It has been fully retired — routes deleted, script deleted. No proxy layer remains.
+
+`.well-known/` (Apple Pay / certificate validation), `BingSiteAuth.xml`, the legacy `.htaccess`/`403.shtml`/`404.shtml`, `project/`, `news-archive/` and the data JSONs are kept so those URLs continue to resolve.
 
 ## Local preview
 
