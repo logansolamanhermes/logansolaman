@@ -149,6 +149,11 @@ def case_page(c, cases, loc):
 
   <div class="detail__tags">{tags}</div>
 
+  <section class="detail__shots detail__shots--lead" aria-label="Storefront screenshots">
+    <p class="eyebrow">// SCREEN CAPTURE — {shot_label}</p>
+    <div class="shots">{imgs}</div>
+  </section>
+
   <div class="detail__body">
     <div class="detail__lead">
       <h2>THE BUILD</h2>
@@ -164,11 +169,6 @@ def case_page(c, cases, loc):
       </dl>
     </div>
   </div>
-
-  <section class="detail__shots" aria-label="Storefront screenshots">
-    <p class="eyebrow">// SCREEN CAPTURE — {shot_label}</p>
-    <div class="shots">{imgs}</div>
-  </section>
 
   <nav class="detail__pager" aria-label="Case navigation">
     <a href="/cases/case{prev_k:02d}/">← TAPE {prev_k:02d} · {html.escape(loc[f"case{prev_k}.name"])}</a>
