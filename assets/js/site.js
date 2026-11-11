@@ -18,24 +18,27 @@
 
   /* ---------- 17-case archive. Keys map to caseN.name / caseN.copy
      in locales/*.json, so all ten languages come from the dictionaries. ---------- */
+  /* ---------- 17-case archive. Keys map to caseN.name / caseN.copy
+     in locales/*.json, so all ten languages come from the dictionaries.
+     year/stack fields are omitted rather than guessed. ---------- */
   const CASES = [
-    { k: 1,  cat: "OUTDOOR", status: "live",     url: "https://alpakagear.hk" },
-    { k: 2,  cat: "OUTDOOR", status: "live",     url: "https://suunto.com.hk" },
-    { k: 3,  cat: "OUTDOOR", status: "live",     url: "https://kavu.hk" },
-    { k: 4,  cat: "OUTDOOR", status: "building", url: "" },
-    { k: 5,  cat: "OUTDOOR", status: "building", url: "" },
-    { k: 6,  cat: "LUXURY", status: "live",     url: "https://www.heliumwatches.com" },
-    { k: 7,  cat: "LUXURY", status: "live",     url: "https://www.natachavan.com" },
-    { k: 8,  cat: "ART",    status: "live",     url: "https://kbfineart.com" },
-    { k: 9,  cat: "WINE",   status: "live",     url: "https://www.twomoreglasses.com" },
-    { k: 10, cat: "RETAIL", status: "live",     url: "https://inherehk.com" },
-    { k: 11, cat: "RETAIL", status: "live",     url: "https://www.productpro.com.hk" },
-    { k: 12, cat: "RETAIL", status: "live",     url: "https://topickstorehk.com" },
-    { k: 13, cat: "SERVICE",status: "live",     url: "https://infinitylearning.au" },
-    { k: 14, cat: "AUDIO",  status: "live",     url: "https://fonocoaudio.com" },
-    { k: 15, cat: "INFRA",  status: "live",     url: "" },
-    { k: 16, cat: "ART",    status: "live",     url: "https://chiwaistudio.com/" },
-    { k: 17, cat: "SERVICE",status: "live",     url: "https://masterpesthk.com/" },
+    { k: 1,  cat: "OUTDOOR", status: "live",     url: "https://alpakagear.hk",           city: "HONG KONG",     stack: ["SHOPIFY"] },
+    { k: 2,  cat: "OUTDOOR", status: "live",     url: "https://suunto.com.hk",           city: "HONG KONG",     stack: ["SHOPIFY", "LOCALIZATION"] },
+    { k: 3,  cat: "OUTDOOR", status: "live",     url: "https://kavu.hk",                 city: "HONG KONG",     stack: ["SHOPIFY", "LOCALIZATION"] },
+    { k: 4,  cat: "OUTDOOR", status: "building", url: "",                                city: "HONG KONG",     stack: ["SHOPIFY"] },
+    { k: 5,  cat: "OUTDOOR", status: "building", url: "",                                city: "HONG KONG",     stack: ["SHOPIFY"] },
+    { k: 6,  cat: "LUXURY",  status: "live",     url: "https://www.heliumwatches.com",   city: "GLOBAL",        stack: ["SHOPIFY", "MULTI-CURRENCY", "MULTILINGUAL"] },
+    { k: 7,  cat: "LUXURY",  status: "live",     url: "https://www.natachavan.com",      city: "GLOBAL",        stack: ["SHOPIFY", "LIQUID"] },
+    { k: 8,  cat: "ART",     status: "live",     url: "https://kbfineart.com",           city: "GLOBAL",        stack: ["SHOPIFY"] },
+    { k: 9,  cat: "WINE",    status: "live",     url: "https://www.twomoreglasses.com",  city: "GLOBAL",        stack: ["SHOPIFY", "4 LOCALES"] },
+    { k: 10, cat: "RETAIL",  status: "live",     url: "https://inherehk.com",            city: "HONG KONG",     stack: ["SHOPIFY", "O2O", "PAYMENTS"] },
+    { k: 11, cat: "RETAIL",  status: "live",     url: "https://www.productpro.com.hk",   city: "HONG KONG",     stack: ["SHOPIFY", "SEO", "LOGISTICS"] },
+    { k: 12, cat: "RETAIL",  status: "live",     url: "https://topickstorehk.com",       city: "HONG KONG",     stack: ["SHOPIFY", "SOURCING"] },
+    { k: 13, cat: "SERVICE", status: "live",     url: "https://infinitylearning.au",     city: "AUSTRALIA",     stack: ["SHOPIFY", "BOOKINGS"] },
+    { k: 14, cat: "AUDIO",   status: "live",     url: "https://fonocoaudio.com",         city: "TW · CA · US",  stack: ["SHOPIFY", "MULTI-CURRENCY"] },
+    { k: 15, cat: "INFRA",   status: "live",     url: "",                                city: "HONG KONG",     stack: ["CUSTOM POS", "INVENTORY SYNC"] },
+    { k: 16, cat: "ART",     status: "live",     url: "https://chiwaistudio.com/",       city: "HONG KONG",     stack: ["SHOPIFY"] },
+    { k: 17, cat: "SERVICE", status: "live",     url: "https://masterpesthk.com/",       city: "HONG KONG",     stack: ["SHOPIFY", "BOOKINGS"] },
   ];
   const FILTERS = ["ALL", "OUTDOOR", "LUXURY", "ART", "RETAIL", "SERVICE", "WINE", "AUDIO", "INFRA", "BUILDING"];
 
@@ -66,12 +69,10 @@
     if (!el) return;
     if (reduced || sessionStorage.getItem("ls_booted")) { el.classList.add("is-done"); return; }
     const lines = [
-      "SOLAMAN-CLASS PERSONAL SITE v4.0 — BIOS OK",
-      "MEM CHECK ............ 64K OK",
-      "LOADING MATRIX.SHADER ... OK [WEBGL2]",
-      "MOUNTING /ARCHIVE ......... 17 SYSTEMS",
-      "LOCALE .................... READY",
-      "SYSTEM ONLINE_",
+      "LOGAN.SYS v4.0 — ONLINE",
+      "MATRIX.SHADER [WEBGL2]",
+      "ARCHIVE 17 · LOCALE 10",
+      "READY_",
     ];
     let i = 0;
     const done = () => {
@@ -80,10 +81,10 @@
       // Hard hide: in a background tab CSS transitions can be throttled forever.
       setTimeout(() => { el.style.display = "none"; }, 600);
     };
-    setTimeout(done, 4000); // never let boot strand the page
+    setTimeout(done, 1800); // never let boot strand the page
     const step = () => {
-      if (i < lines.length) { log.textContent += lines[i++] + "\n"; setTimeout(step, reduced ? 0 : 90 + Math.random() * 90); }
-      else setTimeout(done, reduced ? 0 : 320);
+      if (i < lines.length) { log.textContent += lines[i++] + "\n"; setTimeout(step, reduced ? 0 : 45 + Math.random() * 40); }
+      else setTimeout(done, reduced ? 0 : 160);
     };
     addEventListener("keydown", e => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); done(); } }, { once: true });
     el.addEventListener("click", done, { once: true });
@@ -173,7 +174,7 @@
         <div class="card__top"><span class="card__tape">TAPE ${tape}</span>
           <span class="card__status ${c.status === "building" ? "is-building" : ""}"><i></i>${c.status === "building" ? "BUILDING" : "LIVE"}</span></div>
         <span class="card__big" aria-hidden="true">${tape}</span>
-        <span class="card__cat">${c.cat}</span>
+        <span class="card__cat">${c.cat} · ${c.city}</span>
         <h3 class="card__name">${esc(name)}</h3>
         <p class="card__copy">${copy}</p>
         <span class="card__view">VIEW ▸</span>
@@ -241,6 +242,8 @@
       $("#caseMeta").textContent = `TAPE ${String(i + 1).padStart(2, "0")} · ${c.cat} · ${c.status === "building" ? "BUILDING" : "LIVE"}`;
       $("#caseTitle").textContent = T("case" + c.k + ".name", "PROJECT " + c.k);
       $("#caseCopy").innerHTML = T("case" + c.k + ".copy", "");
+      const meta = $("#caseMetaExtra");
+      if (meta) meta.textContent = `${c.city} · ${c.stack.join(" · ")}`;
       const link = $("#caseLink");
       if (c.url) { link.href = c.url; link.hidden = false; }
       else { link.hidden = true; }

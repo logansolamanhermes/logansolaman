@@ -50,23 +50,23 @@ Answers are drawn from the same service, process, manifesto and contact copy use
 
 ## Mission archive — 17 systems, all built by hand, all on Shopify
 
-- **ALPAKA GEAR HK** (Outdoor, live) — https://alpakagear.hk
-- **SUUNTO HK** (Outdoor, live) — https://suunto.com.hk
-- **KAVU HK** (Outdoor, live) — https://kavu.hk
-- **DOD CAMP HK** (Outdoor, building)
-- **RAB EQUIPMENT HK** (Outdoor, building)
-- **HELIUM WATCHES** (Luxury, live) — https://www.heliumwatches.com
-- **NATACHA VAN** (Luxury, live) — https://www.natachavan.com
-- **KB FINE ART GALLERY** (Art, live) — https://kbfineart.com
-- **TWO MORE GLASSES** (Wine & cellar, live) — https://www.twomoreglasses.com
-- **INHERE** (Retail, live) — https://inherehk.com
-- **PRODUCTPRO 百得好** (Retail, live) — https://www.productpro.com.hk
-- **TOPICKSTORE** (Retail, live) — https://topickstorehk.com
-- **INFINITY LEARNING** (Service, live) — https://infinitylearning.au
-- **FONOCO AUDIO** (Audio, live) — https://fonocoaudio.com
-- **HKU PRESS — POS** (Infrastructure, internal) — custom point-of-sale system, not a storefront
-- **CHI WAI STUDIO** (Art, live) — https://chiwaistudio.com/
-- **MASTER PEST HK** (Service, live) — https://masterpesthk.com/
+- **ALPAKA GEAR HK** (Outdoor, live, Hong Kong · Shopify) — https://alpakagear.hk
+- **SUUNTO HK** (Outdoor, live, Hong Kong · Shopify, localization) — https://suunto.com.hk
+- **KAVU HK** (Outdoor, live, Hong Kong · Shopify, localization) — https://kavu.hk
+- **DOD CAMP HK** (Outdoor, building, Hong Kong · Shopify)
+- **RAB EQUIPMENT HK** (Outdoor, building, Hong Kong · Shopify)
+- **HELIUM WATCHES** (Luxury, live, global · Shopify, multi-currency, multilingual) — https://www.heliumwatches.com
+- **NATACHA VAN** (Luxury, live, global · Shopify, Liquid) — https://www.natachavan.com
+- **KB FINE ART GALLERY** (Art, live, global · Shopify) — https://kbfineart.com
+- **TWO MORE GLASSES** (Wine & cellar, live, global · Shopify, 4 locales) — https://www.twomoreglasses.com
+- **INHERE** (Retail, live, Hong Kong · Shopify, O2O, payments) — https://inherehk.com
+- **PRODUCTPRO 百得好** (Retail, live, Hong Kong · Shopify, SEO, logistics) — https://www.productpro.com.hk
+- **TOPICKSTORE** (Retail, live, Hong Kong · Shopify, sourcing) — https://topickstorehk.com
+- **INFINITY LEARNING** (Service, live, Australia · Shopify, bookings) — https://infinitylearning.au
+- **FONOCO AUDIO** (Audio, live, TW/CA/US · Shopify, multi-currency) — https://fonocoaudio.com
+- **HKU PRESS — POS** (Infrastructure, Hong Kong · custom POS, inventory sync) — internal system, not a storefront
+- **CHI WAI STUDIO** (Art, live, Hong Kong · Shopify) — https://chiwaistudio.com/
+- **MASTER PEST HK** (Service, live, Hong Kong · Shopify, bookings) — https://masterpesthk.com/
 
 ## Open Armory — 50 free tools
 

@@ -26,9 +26,10 @@
 <meta name="twitter:description" content="Stores don't grow by accident. They grow by architecture." />
 <meta name="twitter:image" content="https://logansolaman.com/og-image.jpg" />
 <meta name="twitter:image:alt" content="LOGAN SOLAMAN — THE STORE ARCHITECT, on a dark matrix-rain background" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800;900&family=VT323&display=swap" rel="stylesheet" />
+<link rel="preload" href="assets/css/fonts.css" as="style" />
+<link rel="preload" href="assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="assets/css/fonts.css" />
 <link rel="stylesheet" href="assets/css/main.css" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23050705'/><text x='50' y='70' font-size='58' text-anchor='middle' fill='%23b6ff3c' font-family='monospace'>L_</text></svg>" />
 <script type="application/ld+json">
@@ -523,11 +524,12 @@
   </section>
 
   <!-- ============ 07 FAQ ============ -->
-  <section class="section faq" id="faq">
+  <section class="section section--invert faq" id="faq">
     <div class="wrap">
-      <p class="eyebrow">// FILE 07 — FIELD NOTES / OBJECTIONS</p>
-      <h2 class="display">Questions, <em>answered plainly.</em></h2>
-      <p class="prose faq__lede">Twelve things people ask before we start. Answers come from the working brief, not a sales script.</p>
+      <div class="panel-invert faq__panel">
+        <p class="eyebrow eyebrow--dark">// FILE 07 — FIELD NOTES / OBJECTIONS</p>
+        <h2 class="display display--dark">Questions, <em>answered plainly.</em></h2>
+        <p class="prose faq__lede">Twelve things people ask before we start. Answers come from the working brief, not a sales script.</p>
       <div class="faq__list" id="faqList">
         <details class="faq__item"><summary class="faq__q">What do you actually do?</summary><p class="faq__a" data-i18n="about.p1" data-i18n-html="about.p1"></p></details>
         <details class="faq__item"><summary class="faq__q">Is this just a theme with a logo?</summary><p class="faq__a" data-i18n="m1.body"></p></details>
@@ -541,6 +543,7 @@
         <details class="faq__item"><summary class="faq__q">Where are you based, and do you work remotely?</summary><p class="faq__a" data-i18n="about.p3" data-i18n-html="about.p3"></p></details>
         <details class="faq__item"><summary class="faq__q">How quickly do you reply?</summary><p class="faq__a" data-i18n="contact.fine"></p></details>
         <details class="faq__item"><summary class="faq__q">Are the 50 tools really free?</summary><p class="faq__a" data-i18n="tools.lede" data-i18n-html="tools.lede"></p></details>
+      </div>
       </div>
     </div>
   </section>
@@ -603,6 +606,7 @@
   <div class="casemodal__panel glass" role="dialog" aria-modal="true" aria-label="Project detail">
     <button class="overlay__close" id="caseClose" type="button" aria-label="Close">×</button>
     <p class="eyebrow" id="caseMeta"></p>
+    <p class="casemodal__meta" id="caseMetaExtra"></p>
     <h2 class="casemodal__title" id="caseTitle"></h2>
     <p class="prose" id="caseCopy"></p>
     <a class="btn" id="caseLink" href="#" target="_blank" rel="noopener">VISIT SITE ↗</a>
