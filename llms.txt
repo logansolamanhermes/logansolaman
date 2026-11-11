@@ -1,0 +1,87 @@
+# LOGAN SOLAMAN — The Store Architect
+
+> Shopify architecture specialist. Ten years engineering storefronts that compound: design, development, SEO, growth systems. Based in Hong Kong, working globally. Stores don't grow by accident — they grow by architecture.
+
+- **Website**: https://logansolaman.com/
+- **Canonical URL**: https://logansolaman.com/
+- **Tagline**: THE STORE ARCHITECT — EST. 2016
+- **Location**: Hong Kong; works globally
+- **Languages**: 10 — English, 繁體中文, 简体中文, Español, العربية, Français, Português, 日本語, Tiếng Việt, 한국어
+- **At a glance**: 10 years engineering · 15 storefronts built · 50 free merchant tools · 17 systems in the mission archive
+
+## What this site is
+
+A single-page static portfolio for Logan Solaman's Shopify storefront architecture practice, plus a browser-based 50-tool armory. There is no build step: plain HTML, CSS and JavaScript served by GitHub Pages. The visual background is a WebGL2 matrix-rain shader built from a self-hosted katakana glyph atlas. All content is available in 10 languages via `locales/*.json`.
+
+## Positioning
+
+- **Stores don't grow by accident. They grow by architecture.**
+- A storefront is a machine that turns attention into orders; every part either compounds or leaks.
+- Approach: theme engineering that survives updates, apps that earn their keep, SEO wired into the structure rather than painted on, and growth loops measured in weeks, not vibes. If it can't be measured, it doesn't ship.
+- Mission: give small brands the infrastructure of big ones — which is why the entire merchant toolset is free.
+
+## Services — five modules, one compounding machine
+
+1. **Storefront Engineering** — full Shopify builds from blank repo to launch day. Custom architecture tuned to brand and traffic, not a theme with a logo.
+2. **Theme Customization** — deep Liquid/JS customization that keeps upgrade paths clean.
+3. **App Development** — private apps, checkout extensions, integrations that earn their monthly cost.
+4. **SEO & Velocity** — technical SEO built into the structure: Core Web Vitals, schema, international routing.
+5. **Growth Operations** — post-launch conversion systems: CRO, analytics, A/B discipline, retention flows.
+
+## Process — three steps
+
+1. **Decrypt** — a free consult; find the real constraint.
+2. **Blueprint** — custom plan with scope, stack and numbers.
+3. **Launch & Tune** — ship, then iterate from day one of traffic.
+
+## Mission archive — 17 systems, all built by hand, all on Shopify
+
+- **ALPAKA GEAR HK** (Outdoor, live) — https://alpakagear.hk
+- **SUUNTO HK** (Outdoor, live) — https://suunto.com.hk
+- **KAVU HK** (Outdoor, live) — https://kavu.hk
+- **DOD CAMP HK** (Outdoor, building)
+- **RAB EQUIPMENT HK** (Outdoor, building)
+- **HELIUM WATCHES** (Luxury, live) — https://www.heliumwatches.com
+- **NATACHA VAN** (Luxury, live) — https://www.natachavan.com
+- **KB FINE ART GALLERY** (Art, live) — https://kbfineart.com
+- **TWO MORE GLASSES** (Wine & cellar, live) — https://www.twomoreglasses.com
+- **INHERE** (Retail, live) — https://inherehk.com
+- **PRODUCTPRO 百得好** (Retail, live) — https://www.productpro.com.hk
+- **TOPICKSTORE** (Retail, live) — https://topickstorehk.com
+- **INFINITY LEARNING** (Service, live) — https://infinitylearning.au
+- **FONOCO AUDIO** (Audio, live) — https://fonocoaudio.com
+- **HKU PRESS — POS** (Infrastructure, internal) — custom point-of-sale system, not a storefront
+- **CHI WAI STUDIO** (Art, live) — https://chiwaistudio.com/
+- **MASTER PEST HK** (Service, live) — https://masterpesthk.com/
+
+## Open Armory — 50 free tools
+
+https://logansolaman.com/tools/ — 50 browser-based merchant tools across five categories: Catalog & Content, Pricing & Finance, Marketing & SEO, Operations & Logistics, Analytics & Utilities. No account, no upload, no upsell. Everything runs client-side in the visitor's browser; no data leaves the machine.
+
+- Tool registry: https://logansolaman.com/tools/data.js
+- Site design tokens / shared CSS: https://logansolaman.com/assets/css/main.css
+
+## Key pages
+
+- Home: https://logansolaman.com/
+- The Armory (50 tools): https://logansolaman.com/tools/
+- Sitemap: https://logansolaman.com/sitemap.xml
+- Robots / content signals: https://logansolaman.com/robots.txt
+- This file: https://logansolaman.com/llms.txt
+- OG image: https://logansolaman.com/og-image.jpg
+
+## Contact
+
+The consultation is free. Use the form at https://logansolaman.com/#contact — it builds a `mailto:` draft in the visitor's own mail client; the site stores nothing. Reply target is configured in `assets/js/site.js` (`CONTACT_EMAIL`).
+
+## Interaction notes (for agents rendering the page)
+
+- Keyboard: `1`–`6` jump to sections; `/` opens the command line; `[` `]` cycle color themes; `G` toggles the CRT grid; `M` toggles matrix rain; `T` glitches the title; `L` opens the language picker; `?` opens help; `ESC` closes.
+- Command line supports: `about`, `services`, `cases`, `tools`, `process`, `contact`, `theme`, `grid`, `rain`, `glitch`, `langs`, `lang <code>`, `filter <category>`, `ls`, `clear`, `help`.
+- The 17 case cards are rendered client-side from `assets/js/site.js`; their names and descriptions come from `locales/<lang>.json`.
+- `prefers-reduced-motion` renders a static shader frame and disables reveals.
+- No analytics, no cookies, no tracking, no third-party storage. Fonts are loaded from Google Fonts.
+
+## Content usage
+
+Content signals are declared in `robots.txt`. Search indexing, AI input/grounding, and AI training are all permitted.

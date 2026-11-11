@@ -1,4 +1,37 @@
+# Content Signals — https://contentsignals.org/
+# search   = indexing for search results
+# ai-input = use as input/grounding for AI answers (RAG, AI Overviews)
+# ai-train = training / fine-tuning AI models
+#
+# Crawlers that share a policy are grouped under one User-agent block so
+# the Content-Signal line applies to all of them (RFC 9309: a crawler obeys
+# exactly one group, the most specific match).
+#
+# No Disallow rules: the site is a static, fully public, client-rendered
+# page. Blocking /assets/js/ would prevent Googlebot and AI renderers from
+# seeing the hero, cases and tools.
+
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+Allow: /
+
+# Search engines and citation-driving AI crawlers — same policy, restated
+# because these agents do not read the * group.
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Yandex
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: OAI-SearchBot
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+User-agent: Google-Extended
+User-agent: CCBot
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
 Allow: /
 
 Sitemap: https://logansolaman.com/sitemap.xml
