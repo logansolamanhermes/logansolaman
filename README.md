@@ -17,7 +17,10 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 - `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, CreativeWork JSON-LD, canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
 - `services/<slug>/` — 5 static service pages with scope, process, related cases and Service JSON-LD
 - `scripts/generate_pages.py` — regenerates all 22 pages from `assets/js/site.js` (CASES) + `locales/en.json`. Run after changing case metadata or copy.
-- `assets/cases/*.webp` — 14 real storefront captures (desktop + mobile) and 2 honest "under construction" placeholders, ~650 KB total
+- `assets/cases/*.webp` — 14 real storefront captures (desktop + mobile) and 3 honest placeholders, ~976 KB total
+- `scripts/capture_stores.py` — headless-Chromium CDP capture with lazy-image wake, popup dismissal, video-poster substitution, mobile-UA reload and browser-error retries. Recaptures all live cases; `scripts/make_video_posters.py` regenerates the video frames.
+- `scripts/local_proxy.py` — temporary HTTP/1.1 proxy for one storefront whose HTTP/2 is broken; screenshot-only, never deployed as a route.
+- `assets/cases/hero-posters/*.jpg` — real frames extracted from hero `<video>` elements whose own frame-0 poster is solid black
 - `assets/css/detail.css` — shared styling for the static detail pages
 - `assets/css/fonts.css` + `assets/fonts/*.woff2` — all fonts self-hosted; zero third-party font requests
 - `assets/css/main.css` — design tokens, layout, responsive, RTL, reduced-motion
