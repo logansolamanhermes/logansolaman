@@ -4,8 +4,24 @@
    ============================================================ */
 
 .detail { min-height: 100vh; background: var(--bg); color: var(--ink);
-  font-family: var(--body); -webkit-font-smoothing: antialiased; }
+  font-family: var(--display); -webkit-font-smoothing: antialiased; }
 .detail a { color: var(--accent); }
+
+/* Language switcher on static detail pages. */
+.detail__lang { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px;
+  min-height: 34px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 999px;
+  background: transparent; color: var(--dim); cursor: pointer;
+  font: 600 10px/1 var(--mono); letter-spacing: .12em; white-space: nowrap; }
+.detail__lang:hover { border-color: var(--accent); color: var(--accent); }
+.detail__lang b { color: var(--ink); font-weight: 700; }
+.langmodal { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center;
+  padding: 24px; background: rgba(3, 6, 3, .82); backdrop-filter: blur(12px); }
+.langmodal[hidden] { display: none !important; }
+.langmodal__grid { display: grid; grid-template-columns: repeat(2, minmax(150px, 1fr)); gap: 10px;
+  width: min(520px, 100%); max-height: 80vh; overflow-y: auto;
+  padding: clamp(20px, 4vw, 32px); border: 1px solid var(--line-strong); border-radius: 20px;
+  background: var(--coal); box-shadow: 0 30px 80px rgba(0,0,0,.7); }
+@media (max-width: 480px) { .langmodal__grid { grid-template-columns: 1fr; } }
 
 .detail__hud { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 24px;
   padding: 14px clamp(20px, 5vw, 64px); border-bottom: 1px solid var(--line);

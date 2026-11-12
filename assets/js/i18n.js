@@ -185,6 +185,22 @@
     },
   };
 
+  /* ---------- self-contained switcher for static pages ----------
+     Detail pages (cases, services, privacy) load i18n.js without site.js,
+     so wire any #detailLang / #detailLangModal pair right here. */
+  function initStaticSwitcher() {
+    const btn = document.getElementById("detailLang");
+    const modal = document.getElementById("detailLangModal");
+    const grid = document.getElementById("detailLangGrid");
+    if (!btn || !modal || !grid) return;
+    const close = () => { modal.hidden = true; };
+    const open = () => { window.I18N.renderMenu(grid, close); modal.hidden = false; };
+    btn.addEventListener("click", () => modal.hidden ? open() : close());
+    modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+    listeners.push(() => { if (!modal.hidden) window.I18N.refreshMenu(grid); });
+  }
+
   /* ---------- boot ---------- */
   // Always load en.json as the JS-string fallback, plus the active locale on top.
   const bootPromise = (async () => {
@@ -195,6 +211,7 @@
     } else {
       await set(preferred, false, false);   // auto-detected, NOT a manual choice
     }
+    initStaticSwitcher();
     return current;
   })();
 })();

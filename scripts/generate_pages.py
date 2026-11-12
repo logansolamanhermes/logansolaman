@@ -136,7 +136,7 @@ def breadcrumb_ld(crumbs, canonical):
 def footer():
     return '''<footer class="detail__footer">
   <p data-i18n="detail.footer">// LOGAN SOLAMAN — THE STORE ARCHITECT · HONG KONG · EST. 2016</p>
-  <nav><a href="/">HOME</a> · <a href="/#services" data-i18n="detail.services">SERVICES</a> · <a href="/#cases">ARCHIVE</a> · <a href="/#faq" data-i18n="detail.faq">FAQ</a> · <a href="/#contact" data-i18n="detail.contact">CONTACT</a> · <a href="/privacy/" data-i18n="detail.privacy">PRIVACY</a></nav>
+  <nav><a href="/" data-i18n="detail.home">HOME</a> · <a href="/#services" data-i18n="detail.services">SERVICES</a> · <a href="/#cases" data-i18n="detail.archive">ARCHIVE</a> · <a href="/#faq" data-i18n="detail.faq">FAQ</a> · <a href="/#contact" data-i18n="detail.contact">CONTACT</a> · <a href="/privacy/" data-i18n="detail.privacy">PRIVACY</a></nav>
 </footer>'''
 
 
