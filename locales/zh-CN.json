@@ -46,8 +46,8 @@
   "contact.lede": "跟我聊聊你的商店 — 或你还没开的那一间。通常一天内回复。",
   "contact.f_name": "姓名",
   "contact.f_mail": "邮箱",
-  "contact.f_msg": "信息",
-  "contact.submit": "发送 ▸",
+  "contact.f_msg": "你的店铺 / 遇到的问题",
+  "contact.submit": "打开邮件草稿 ▸",
   "contact.fine": "香港基地 · 全球回复 · 通常一天内",
   "footer.tag": "THE STORE ARCHITECT — 始于 2016",
   "footer.copy": "© 2026 · 版权所有",
@@ -502,5 +502,16 @@
   "v2.hero.cta1": "查看作品档案 ▸",
   "v2.hero.cta2": "开始咨询",
   "v2.tools.cta1": "进入工具库 ▸",
-  "v2.contact.opened": "✓ 已开启邮件客户端"
+  "v2.contact.opened": "✓ 已开启邮件客户端",
+  "contact.f_work": "你需要什么协助",
+  "contact.opt_unknown": "还不确定 — 一起理清",
+  "contact.opt_new": "全新的店铺",
+  "contact.opt_theme": "现有主题需要修改",
+  "contact.opt_app": "定制 App / 集成",
+  "contact.opt_seo": "SEO 与速度",
+  "contact.opt_growth": "上线后的增长",
+  "faq.cost": "每个项目都在免费初次咨询中界定范围。在写任何代码之前，你会收到一份包含范围、技术栈与数字的书面蓝图 — 看过并认可这些数字后才会开工。",
+  "faq.timeline": "工期也放在同一份书面蓝图里，因为它取决于范围。在看过你的店铺与真正的问题之前，我不会报出时长。",
+  "faq.form": "按钮会在你自己的邮件程序中打开一封已填好内容的草稿。本站不传送、也不存储任何数据；是否发送由你决定。完整数据政策请见<a href=\"/privacy/\">隐私页面</a>。",
+  "faq.proof": "可以 — 上方档案库收录了 17 个系统，每一个都有实际上线店铺的桌面与手机截图、市场和使用的技术。每张卡片都能打开独立的案例页。"
 }

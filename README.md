@@ -12,7 +12,7 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 ## Layout
 
-- `index.html` — one page, eight sections: Hero, About, **Service**, **Cases**, Tools, Process, **FAQ**, Contact
+- `index.html` — one page, eight sections: Hero, About, **Service**, **Cases**, Tools, Process, **FAQ (16 questions)**, Contact. The contact form has a service-type selector and an honest "OPEN EMAIL DRAFT" label.
 - `index.html` head — canonical, OG/Twitter cards, and one connected JSON-LD `@graph` (WebSite, Person, WebPage, 2 × ItemList). No `FAQPage` (retired May 2026), `ProfilePage` (home is a service portfolio, not a person profile), `Organization` (personal site, not a company), or `SearchAction` (sitelinks searchbox retired Nov 2024).
 - `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, a 5-node `@graph` (WebSite, Person, CreativeWork, WebPage, BreadcrumbList), canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
 - `services/<slug>/` — 5 static service pages with scope, process, related cases, and a 5-node `@graph` (WebSite, Person, Service, WebPage, BreadcrumbList)
@@ -32,6 +32,8 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 - `locales/*.json` — 10 languages, ~487 keys each
 - `tools/` — the 50-tool browser armory (client-side only), sharing `assets/css/main.css` and the same matrix backdrop
 - `robots.txt` (no Disallow; Content-Signal + Google-Extended), `sitemap.xml` (accurate `<lastmod>`, image entries, no ignored `priority`/`changefreq`), `llms.txt`, `og-image.jpg`, `404.html` (`noindex`)
+- `privacy/` — static data policy: no analytics, no cookies, no storage; mailto-draft behaviour stated plainly
+- `scripts/case_scope.py` — per-case brief / build / verifiable-evidence notes, grounded in existing copy; no invented outcomes
 - `docs/seo-2026-research.md` — grounded audit of 2026 Google/Web.dev guidance and the changes applied here
 - `CNAME` — custom domain `logansolaman.com`
 

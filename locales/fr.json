@@ -46,8 +46,8 @@
   "contact.lede": "Parlez-moi de la boutique — ou de celle que vous n'avez pas encore créée. Une réponse, généralement sous un jour.",
   "contact.f_name": "NOM",
   "contact.f_mail": "EMAIL",
-  "contact.f_msg": "TRANSMISSION",
-  "contact.submit": "TRANSMETTRE ▸",
+  "contact.f_msg": "VOTRE BOUTIQUE / LE PROBLÈME",
+  "contact.submit": "OUVRIR LE BROUILLON ▸",
   "contact.fine": "Basé à HK · réponses dans le monde entier · généralement sous un jour",
   "footer.tag": "THE STORE ARCHITECT — DEPUIS 2016",
   "footer.copy": "© 2026 · TOUS SIGNAUX RÉSERVÉS",
@@ -502,5 +502,16 @@
   "v2.hero.cta1": "VOIR LES ARCHIVES ▸",
   "v2.hero.cta2": "DÉMARRER UN ÉCHANGE",
   "v2.tools.cta1": "OUVRIR L’ARSENAL ▸",
-  "v2.contact.opened": "✓ CLIENT MAIL OUVERT"
+  "v2.contact.opened": "✓ CLIENT MAIL OUVERT",
+  "contact.f_work": "DE QUOI AVEZ-VOUS BESOIN",
+  "contact.opt_unknown": "Pas encore sûr — définissons-le ensemble",
+  "contact.opt_new": "Une nouvelle boutique",
+  "contact.opt_theme": "Thème existant à retravailler",
+  "contact.opt_app": "Une app / intégration sur mesure",
+  "contact.opt_seo": "SEO et vitesse",
+  "contact.opt_growth": "Croissance après lancement",
+  "faq.cost": "Chaque projet est cadré lors du premier entretien gratuit. Avant toute ligne de code, vous recevez un plan écrit avec le périmètre, la stack et les chiffres ; rien ne démarre avant que vous les ayez vus et validés.",
+  "faq.timeline": "Le calendrier figure dans ce même plan, car il dépend du périmètre. Je n'annonce pas de durée avant d'avoir vu la boutique et la contrainte réelle.",
+  "faq.form": "Le bouton ouvre un brouillon dans votre propre messagerie avec votre message déjà rempli. Ce site ne transmet et ne stocke rien ; c'est vous qui décidez d'envoyer. Voir la <a href=\"/privacy/\">politique de confidentialité</a>.",
+  "faq.proof": "Oui — les 17 systèmes sont dans l'archive ci-dessus, chacun avec de vraies captures bureau et mobile de la boutique en ligne, le marché et la stack utilisée. Chaque carte ouvre sa propre étude de cas."
 }

@@ -46,8 +46,8 @@
   "contact.lede": "Cuéntame sobre la tienda — o la que aún no has construido. Una respuesta, normalmente en un día.",
   "contact.f_name": "NOMBRE",
   "contact.f_mail": "EMAIL",
-  "contact.f_msg": "TRANSMISIÓN",
-  "contact.submit": "TRANSMITIR ▸",
+  "contact.f_msg": "TU TIENDA / EL PROBLEMA",
+  "contact.submit": "ABRIR BORRADOR ▸",
   "contact.fine": "Base en HK · respondo a todo el mundo · normalmente en un día",
   "footer.tag": "THE STORE ARCHITECT — EST. 2016",
   "footer.copy": "© 2026 · TODAS LAS SEÑALES RESERVADAS",
@@ -502,5 +502,16 @@
   "v2.hero.cta1": "VER EL ARCHIVO ▸",
   "v2.hero.cta2": "INICIAR CONSULTA",
   "v2.tools.cta1": "ENTRAR AL ARMERÍA ▸",
-  "v2.contact.opened": "✓ CLIENTE DE CORREO ABIERTO"
+  "v2.contact.opened": "✓ CLIENTE DE CORREO ABIERTO",
+  "contact.f_work": "¿QUÉ NECESITAS",
+  "contact.opt_unknown": "Aún no lo sé — lo definimos juntos",
+  "contact.opt_new": "Una tienda nueva",
+  "contact.opt_theme": "Tema existente, necesita trabajo",
+  "contact.opt_app": "Una app / integración a medida",
+  "contact.opt_seo": "SEO y velocidad",
+  "contact.opt_growth": "Crecimiento tras el lanzamiento",
+  "faq.cost": "Cada proyecto se define en la consulta gratuita. Antes de escribir código recibes un plan por escrito con alcance, stack y cifras; no empezamos hasta que hayas visto y aprobado esas cifras.",
+  "faq.timeline": "El calendario está en ese mismo plan, porque depende del alcance. No doy una duración antes de ver la tienda y el problema real.",
+  "faq.form": "El botón abre un borrador en tu propio cliente de correo con el mensaje ya rellenado. Este sitio no transmite ni almacena nada; tú decides si lo envías. Consulta la <a href=\"/privacy/\">política de privacidad</a>.",
+  "faq.proof": "Sí — los 17 sistemas están en el archivo de arriba, cada uno con capturas reales de escritorio y móvil de la tienda en vivo, el mercado y el stack usado. Cada tarjeta abre su propio caso de estudio."
 }

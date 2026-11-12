@@ -500,7 +500,7 @@
       <div class="panel-invert faq__panel">
         <p class="eyebrow eyebrow--dark">// FILE 07 — FIELD NOTES / OBJECTIONS</p>
         <h2 class="display display--dark">Questions, <em>answered plainly.</em></h2>
-        <p class="prose faq__lede">Twelve things people ask before we start. Answers come from the working brief, not a sales script.</p>
+        <p class="prose faq__lede">Sixteen things people ask before we start. Answers come from the working brief, not a sales script.</p>
       <div class="faq__list" id="faqList">
         <details class="faq__item"><summary class="faq__q">What do you actually do?</summary><p class="faq__a" data-i18n="about.p1" data-i18n-html="about.p1">For ten years I've done both jobs that usually fight each other: <strong>the operator chasing revenue</strong> and <strong>the engineer chasing clean systems</strong>. That tension is the whole craft — a storefront is not a website, it's a machine that turns attention into orders, and every part either compounds or leaks.</p></details>
         <details class="faq__item"><summary class="faq__q">Is this just a theme with a logo?</summary><p class="faq__a" data-i18n="m1.body">Full Shopify builds from blank repo to launch day. Custom architecture tuned to your brand and your traffic — not a theme with a logo.</p></details>
@@ -514,6 +514,10 @@
         <details class="faq__item"><summary class="faq__q">Where are you based, and do you work remotely?</summary><p class="faq__a" data-i18n="about.p3" data-i18n-html="about.p3">Based in Hong Kong. Working globally. The mission is simple: <strong>give small brands the infrastructure of big ones</strong> — which is why my entire merchant toolset is free.</p></details>
         <details class="faq__item"><summary class="faq__q">How quickly do you reply?</summary><p class="faq__a" data-i18n="contact.fine">HK based · replies worldwide · usually within a day</p></details>
         <details class="faq__item"><summary class="faq__q">Are the 50 tools really free?</summary><p class="faq__a" data-i18n="tools.lede" data-i18n-html="tools.lede">The merchant toolset I use daily, opened to everyone — no account, no upsell. A few from the rack:</p></details>
+        <details class="faq__item"><summary class="faq__q">How much does a build cost?</summary><p class="faq__a" data-i18n="faq.cost">Every project is scoped in the free first consult. You receive a written blueprint with scope, stack and numbers before any code is written — no build starts until you have seen and approved those numbers.</p></details>
+        <details class="faq__item"><summary class="faq__q">How long will it take?</summary><p class="faq__a" data-i18n="faq.timeline">The schedule is part of that same written blueprint, because it depends on the scope. I don't quote a duration before I have seen the store and the constraint.</p></details>
+        <details class="faq__item"><summary class="faq__q">What happens when I use the contact form?</summary><p class="faq__a" data-i18n="faq.form" data-i18n-html="faq.form">The button opens a draft in your own mail application with your message already filled in. This site transmits nothing and stores nothing; you decide whether to press send. See the <a href="/privacy/">privacy page</a> for the full data policy.</p></details>
+        <details class="faq__item"><summary class="faq__q">Can I see the actual work before we talk?</summary><p class="faq__a" data-i18n="faq.proof">Yes — all 17 systems are in the archive above, each with real desktop and mobile screenshots of the live storefront, the market, and the stack used. Every card opens its own case study.</p></details>
       </div>
       </div>
     </div>
@@ -550,10 +554,19 @@
         <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Ada Lovelace" />
         <label for="f-mail" data-i18n="contact.f_mail">EMAIL</label>
         <input id="f-mail" name="email" type="email" autocomplete="email" placeholder="ada@analytical.engine" required />
-        <label for="f-msg" data-i18n="contact.f_msg">TRANSMISSION</label>
+        <label for="f-work" data-i18n="contact.f_work">WHAT DO YOU NEED</label>
+        <select id="f-work" name="work">
+          <option value="Not sure yet" data-i18n="contact.opt_unknown">Not sure yet — let's work it out</option>
+          <option value="New storefront" data-i18n="contact.opt_new">A new storefront</option>
+          <option value="Theme customization" data-i18n="contact.opt_theme">Existing theme, needs work</option>
+          <option value="Custom app" data-i18n="contact.opt_app">A custom app / integration</option>
+          <option value="SEO & velocity" data-i18n="contact.opt_seo">SEO & page speed</option>
+          <option value="Growth operations" data-i18n="contact.opt_growth">Post-launch growth</option>
+        </select>
+        <label for="f-msg" data-i18n="contact.f_msg">WHAT'S THE STORE / THE PROBLEM</label>
         <textarea id="f-msg" name="message" rows="5" placeholder="My store does X. I want Y. The problem is Z."></textarea>
-        <button class="btn" type="submit" id="submitBtn" data-i18n="contact.submit">TRANSMIT ▸</button>
-        <p class="form__note" id="formNote" aria-live="polite">OPENS A DRAFT IN YOUR MAIL CLIENT. NOTHING IS STORED ON THIS SITE. USUALLY REPLIES WITHIN ONE DAY.</p>
+        <button class="btn" type="submit" id="submitBtn" data-i18n="contact.submit">OPEN EMAIL DRAFT ▸</button>
+        <p class="form__note" id="formNote" aria-live="polite">THIS OPENS A DRAFT IN YOUR OWN MAIL CLIENT. NOTHING IS SENT OR STORED UNTIL YOU HIT SEND. USUALLY REPLIES WITHIN ONE DAY.</p>
       </form>
     </div>
   </section>
@@ -567,7 +580,7 @@
   </div>
   <div class="wrap footer__row footer__row--meta">
     <span data-i18n="footer.copy">© 2026 · ALL SIGNALS RESERVED</span>
-    <span><a href="tools/">50 FREE TOOLS</a> · <a href="https://github.com/logansolamanhermes/logansolaman">SOURCE</a></span>
+    <span><a href="tools/">50 FREE TOOLS</a> · <a href="privacy/">PRIVACY</a> · <a href="https://github.com/logansolamanhermes/logansolaman">SOURCE</a></span>
     <span data-i18n="footer.sys">SYSTEM: ONLINE</span>
   </div>
 </footer>

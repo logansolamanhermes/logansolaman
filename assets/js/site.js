@@ -388,16 +388,17 @@
       e.preventDefault();
       const name = $("#f-name").value.trim() || "—";
       const email = $("#f-mail").value.trim();
+      const work = $("#f-work")?.value.trim() || "—";
       const msg = $("#f-msg").value.trim();
       const subject = `Store architecture consult — ${name}`;
-      const body = `NAME: ${name}\nEMAIL: ${email}\n\n${msg}\n\n— sent from logansolaman.com`;
+      const body = `NAME: ${name}\nEMAIL: ${email}\nNEED: ${work}\n\n${msg}\n\n— drafted on logansolaman.com`;
       const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       const btn = $("#submitBtn"), note = $("#formNote");
-      btn.textContent = T("v2.contact.opened", "✓ MAIL CLIENT OPENED");
+      btn.textContent = T("v2.contact.opened", "✓ DRAFT OPENED");
       btn.disabled = true;
-      if (note) note.textContent = "YOUR MAIL CLIENT HAS THE DRAFT — SEND IT TO COMPLETE. NOTHING WAS STORED ON THIS SITE.";
+      if (note) note.textContent = "YOUR MAIL CLIENT HAS THE DRAFT — HIT SEND TO COMPLETE IT. NOTHING WAS STORED OR TRANSMITTED BY THIS SITE.";
       window.location.href = href;
-      setTimeout(() => { btn.textContent = T("contact.submit", "TRANSMIT ▸"); btn.disabled = false; }, 6000);
+      setTimeout(() => { btn.textContent = T("contact.submit", "OPEN EMAIL DRAFT ▸"); btn.disabled = false; }, 6000);
     });
   }
 

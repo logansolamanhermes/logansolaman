@@ -269,11 +269,13 @@ body.grid-on .crt-grid { opacity: 1; }
 .faq__a strong { color: var(--ivory-ink); font-weight: 700; }
 .form { border-radius: 24px; padding: clamp(26px, 3.6vw, 46px); display: flex; flex-direction: column; }
 .form label { font: 500 10px/1 var(--mono); letter-spacing: .18em; color: var(--dim); margin: 0 0 10px; }
-.form input, .form textarea { width: 100%; border-radius: 12px; border: 1px solid var(--line-strong);
+.form input, .form textarea, .form select { width: 100%; border-radius: 12px; border: 1px solid var(--line-strong);
   background: rgba(5,7,5,.55); color: var(--ink); padding: 15px 18px; margin-bottom: 24px;
   font: 400 .9rem/1.5 var(--mono); resize: vertical; transition: border-color .25s, box-shadow .25s; }
 .form input::placeholder, .form textarea::placeholder { color: rgba(143,160,140,.55); }
-.form input:focus, .form textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+.form input:focus, .form textarea:focus, .form select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+.form select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--accent) 50%), linear-gradient(135deg, var(--accent) 50%, transparent 50%); background-position: calc(100% - 24px) 52%, calc(100% - 18px) 52%; background-size: 6px 6px, 6px 6px; background-repeat: no-repeat; padding-right: 44px; cursor: pointer; }
+.form select option { background: #0a0e0a; color: var(--ink); }
 .form .btn { align-self: flex-start; }
 .form__note { font: 500 9px/1.6 var(--mono); letter-spacing: .12em; color: var(--dim); margin: 20px 0 0; }
 

@@ -46,8 +46,8 @@
   "contact.lede": "Tell me about the store — or the store you haven't built yet. One reply, usually within a day.",
   "contact.f_name": "NAME",
   "contact.f_mail": "EMAIL",
-  "contact.f_msg": "TRANSMISSION",
-  "contact.submit": "TRANSMIT ▸",
+  "contact.f_msg": "WHAT'S THE STORE / THE PROBLEM",
+  "contact.submit": "OPEN EMAIL DRAFT ▸",
   "contact.fine": "HK based · replies worldwide · usually within a day",
   "footer.tag": "THE STORE ARCHITECT — EST. 2016",
   "footer.copy": "© 2026 · ALL SIGNALS RESERVED",
@@ -500,5 +500,16 @@
   "v2.hero.cta1": "VIEW THE ARCHIVE ▸",
   "v2.hero.cta2": "START A CONSULT",
   "v2.tools.cta1": "ENTER THE ARMORY ▸",
-  "v2.contact.opened": "✓ MAIL CLIENT OPENED"
+  "v2.contact.opened": "✓ MAIL CLIENT OPENED",
+  "contact.f_work": "WHAT DO YOU NEED",
+  "contact.opt_unknown": "Not sure yet — let's work it out",
+  "contact.opt_new": "A new storefront",
+  "contact.opt_theme": "Existing theme, needs work",
+  "contact.opt_app": "A custom app / integration",
+  "contact.opt_seo": "SEO & page speed",
+  "contact.opt_growth": "Post-launch growth",
+  "faq.cost": "Every project is scoped in the free first consult. You receive a written blueprint with scope, stack and numbers before any code is written — no build starts until you have seen and approved those numbers.",
+  "faq.timeline": "The schedule is part of that same written blueprint, because it depends on the scope. I don't quote a duration before I have seen the store and the constraint.",
+  "faq.form": "The button opens a draft in your own mail application with your message already filled in. This site transmits nothing and stores nothing; you decide whether to press send. See the <a href=\"/privacy/\">privacy page</a> for the full data policy.",
+  "faq.proof": "Yes — all 17 systems are in the archive above, each with real desktop and mobile screenshots of the live storefront, the market, and the stack used. Every card opens its own case study."
 }

@@ -46,8 +46,8 @@
   "contact.lede": "跟我聊聊你的商店 — 或你還沒開的那一間。通常一天內回覆一次。",
   "contact.f_name": "姓名",
   "contact.f_mail": "電郵",
-  "contact.f_msg": "訊息",
-  "contact.submit": "傳送 ▸",
+  "contact.f_msg": "你的商店 / 遇到的問題",
+  "contact.submit": "開啟郵件草稿 ▸",
   "contact.fine": "香港基地 · 全球回覆 · 通常一天內",
   "footer.tag": "THE STORE ARCHITECT — 創於 2016",
   "footer.copy": "© 2026 · 版權所有",
@@ -502,5 +502,16 @@
   "v2.hero.cta1": "查看作品檔案 ▸",
   "v2.hero.cta2": "開始諮詢",
   "v2.tools.cta1": "進入工具庫 ▸",
-  "v2.contact.opened": "✓ 已開啟郵件客戶端"
+  "v2.contact.opened": "✓ 已開啟郵件客戶端",
+  "contact.f_work": "你需要什麼協助",
+  "contact.opt_unknown": "還不確定 — 一起釐清",
+  "contact.opt_new": "全新的商店",
+  "contact.opt_theme": "現有主題需要修改",
+  "contact.opt_app": "客製 App / 整合",
+  "contact.opt_seo": "SEO 與速度",
+  "contact.opt_growth": "上線後的成長",
+  "faq.cost": "每個專案都在免費初次諮詢中界定範圍。在撰寫任何程式之前，你會收到一份包含範圍、技術堆疊與數字的書面藍圖 — 看過並同意這些數字後才會開工。",
+  "faq.timeline": "時程也放在同一份書面藍圖裡，因為它取決於範圍。在看過你的商店與真正的瓶頸之前，我不會報出工期。",
+  "faq.form": "按鈕會在你自己的郵件程式中開啟一封已填好內容的草稿。本站不傳送、也不儲存任何資料；是否寄出由你決定。完整資料政策請見<a href=\"/privacy/\">隱私頁面</a>。",
+  "faq.proof": "可以 — 上方檔案庫收錄了 17 個系統，每一個都有實際上線商店的桌機與手機截圖、市場與使用的技術。每張卡片都能打開獨立的案例頁。"
 }

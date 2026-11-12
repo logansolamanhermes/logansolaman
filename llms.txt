@@ -34,9 +34,9 @@ A static portfolio with 17 individual case-study pages and 5 service pages for L
 2. **Blueprint** — custom plan with scope, stack and numbers.
 3. **Launch & Tune** — ship, then iterate from day one of traffic.
 
-## FAQ — 12 questions answered on the home page
+## FAQ — 16 questions answered on the home page
 
-What do you actually do · Is this just a theme with a logo · Can you work on an existing Shopify theme · What if the app I need doesn't exist · Is SEO bolted on at the end · What happens after launch · What does the first conversation cost · What do I get before any code is written · How do you decide what ships · Where are you based / do you work remotely · How quickly do you reply · Are the 50 tools really free.
+What do you actually do · Is this just a theme with a logo · Can you work on an existing Shopify theme · What if the app I need doesn't exist · Is SEO bolted on at the end · What happens after launch · What does the first conversation cost · What do I get before any code is written · How do you decide what ships · Where are you based / do you work remotely · How quickly do you reply · Are the 50 tools really free · How much does a build cost · How long will it take · What happens when I use the contact form · Can I see the actual work before we talk.
 
 Answers are drawn from the same service, process, manifesto and contact copy used elsewhere on the site. They are visible as HTML on the home page; no `FAQPage` structured data is emitted, because Google retired the FAQ rich result in May 2026.
 
@@ -82,6 +82,7 @@ https://logansolaman.com/tools/ — 50 browser-based merchant tools across five 
 - Sitemap: https://logansolaman.com/sitemap.xml
 - Robots / content signals: https://logansolaman.com/robots.txt
 - This file: https://logansolaman.com/llms.txt
+- Privacy: https://logansolaman.com/privacy/ — no analytics, no cookies, no storage; the contact form opens a local mail draft
 - OG image: https://logansolaman.com/og-image.jpg
 
 ## Static page index
@@ -94,7 +95,7 @@ https://logansolaman.com/tools/ — 50 browser-based merchant tools across five 
 
 ## Contact
 
-The consultation is free. Use the form at https://logansolaman.com/#contact — it builds a `mailto:` draft in the visitor's own mail client; the site stores nothing. Reply target is configured in `assets/js/site.js` (`CONTACT_EMAIL`).
+The consultation is free. Use the form at https://logansolaman.com/#contact — it opens a `mailto:` draft in the visitor's own mail client; the site stores nothing and transmits nothing until the visitor presses send. The form includes a service-type selector so enquiries arrive pre-qualified. See the privacy page for the full data policy. Reply target is configured in `assets/js/site.js` (`CONTACT_EMAIL`).
 
 ## Interaction notes (for agents rendering the page)
 

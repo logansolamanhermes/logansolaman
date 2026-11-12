@@ -46,8 +46,8 @@
   "contact.lede": "귀사의 스토어 — 또는 아직 만들지 않은 스토어에 대해 들려주세요. 보통 하루 안에 답변드립니다.",
   "contact.f_name": "이름",
   "contact.f_mail": "이메일",
-  "contact.f_msg": "전송 내용",
-  "contact.submit": "전송 ▸",
+  "contact.f_msg": "스토어 / 문제 상황",
+  "contact.submit": "메일 초안 열기 ▸",
   "contact.fine": "홍콩 기반 · 전 세계 답변 · 보통 하루 이내",
   "footer.tag": "THE STORE ARCHITECT — 2016년 설립",
   "footer.copy": "© 2026 · 모든 신호 보유",
@@ -502,5 +502,16 @@
   "v2.hero.cta1": "아카이브 보기 ▸",
   "v2.hero.cta2": "상담 시작",
   "v2.tools.cta1": "툴 라이브러리 ▸",
-  "v2.contact.opened": "✓ 메일 클라이언트 열림"
+  "v2.contact.opened": "✓ 메일 클라이언트 열림",
+  "contact.f_work": "어떤 도움이 필요하신가요",
+  "contact.opt_unknown": "아직 모르겠어요 — 함께 정해요",
+  "contact.opt_new": "새 스토어 구축",
+  "contact.opt_theme": "기존 테마 수정",
+  "contact.opt_app": "맞춤 앱 / 연동",
+  "contact.opt_seo": "SEO와 속도",
+  "contact.opt_growth": "론칭后的 성장",
+  "faq.cost": "모든 프로젝트는 무료 첫 상담에서 범위를 정합니다. 코드를 작성하기 전에 범위·기술 스택·수치가 담긴 서면 설계도를 받으며, 그 수치를 확인하고 승인하기 전에는 착수하지 않습니다.",
+  "faq.timeline": "일정도 같은 설계도에 포함됩니다. 범위에 따라 달라지므로 스토어와 실제 제약을 보기 전에는 기간을 제시하지 않습니다.",
+  "faq.form": "버튼을 누르면 작성한 내용이 담긴 초안이 고객님의 메일 앱에서 열립니다. 이 사이트는 아무것도 전송하거나 저장하지 않으며, 보낼지 여부는 고객님이 결정합니다. <a href=\"/privacy/\">개인정보 페이지</a>를 참고하세요.",
+  "faq.proof": "네 — 위 아카이브에 17개 시스템이 모두 있으며, 각각 실제 운영 중인 스토어의 데스크톱·모바일 스크린샷, 시장, 사용 기술이 있습니다. 각 카드가 개별 사례 페이지로 연결됩니다."
 }

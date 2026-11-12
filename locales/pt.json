@@ -46,8 +46,8 @@
   "contact.lede": "Fale-me sobre a loja — ou a que ainda não construiu. Uma resposta, geralmente em um dia.",
   "contact.f_name": "NOME",
   "contact.f_mail": "EMAIL",
-  "contact.f_msg": "TRANSMISSÃO",
-  "contact.submit": "TRANSMITIR ▸",
+  "contact.f_msg": "SUA LOJA / O PROBLEMA",
+  "contact.submit": "ABRIR RASCUNHO ▸",
   "contact.fine": "Base em HK · respondo para todo o mundo · geralmente em um dia",
   "footer.tag": "THE STORE ARCHITECT — DESDE 2016",
   "footer.copy": "© 2026 · TODOS OS SINAIS RESERVADOS",
@@ -502,5 +502,16 @@
   "v2.hero.cta1": "VER O ARQUIVO ▸",
   "v2.hero.cta2": "INICIAR CONSULTA",
   "v2.tools.cta1": "ENTRAR NO ARSENAL ▸",
-  "v2.contact.opened": "✓ CLIENTE DE E-MAIL ABERTO"
+  "v2.contact.opened": "✓ CLIENTE DE E-MAIL ABERTO",
+  "contact.f_work": "DO QUE VOCÊ PRECISA",
+  "contact.opt_unknown": "Ainda não sei — vamos definir juntos",
+  "contact.opt_new": "Uma loja nova",
+  "contact.opt_theme": "Tema existente que precisa de trabalho",
+  "contact.opt_app": "Um app / integração sob medida",
+  "contact.opt_seo": "SEO e velocidade",
+  "contact.opt_growth": "Crescimento após o lançamento",
+  "faq.cost": "Cada projeto é dimensionado na consulta gratuita. Antes de qualquer código, você recebe um plano por escrito com escopo, stack e números; nada começa até você ver e aprovar esses números.",
+  "faq.timeline": "O prazo está nesse mesmo plano, porque depende do escopo. Não cito uma duração antes de ver a loja e a restrição real.",
+  "faq.form": "O botão abre um rascunho no seu próprio cliente de e-mail com a mensagem já preenchida. Este site não transmite nem armazena nada; você decide se envia. Veja a <a href=\"/privacy/\">política de privacidade</a>.",
+  "faq.proof": "Sim — os 17 sistemas estão no arquivo acima, cada um com capturas reais de desktop e mobile da loja em produção, o mercado e o stack usado. Cada card abre seu próprio estudo de caso."
 }

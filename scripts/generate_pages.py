@@ -13,6 +13,7 @@ Never invent client quotes, outcome metrics, pricing or years. Case pages
 contain only the name, copy, metadata and screenshots that already exist.
 """
 import json, re, os, html
+from case_scope import note
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -133,7 +134,7 @@ def breadcrumb_ld(crumbs, canonical):
 def footer():
     return '''<footer class="detail__footer">
   <p>// LOGAN SOLAMAN — THE STORE ARCHITECT · HONG KONG · EST. 2016</p>
-  <nav><a href="/">HOME</a> · <a href="/#services">SERVICES</a> · <a href="/#cases">ARCHIVE</a> · <a href="/#faq">FAQ</a> · <a href="/#contact">CONTACT</a></nav>
+  <nav><a href="/">HOME</a> · <a href="/#services">SERVICES</a> · <a href="/#cases">ARCHIVE</a> · <a href="/#faq">FAQ</a> · <a href="/#contact">CONTACT</a> · <a href="/privacy/">PRIVACY</a></nav>
 </footer>'''
 
 
@@ -187,6 +188,7 @@ def case_page(c, cases, loc):
             if c["url"] else '<span class="detail__status">SYSTEM UNDER CONSTRUCTION</span>')
 
     tags = "".join(f'<span class="tag">{html.escape(t)}</span>' for t in [c["cat"], c["city"]] + c["stack"])
+    constraint, _built, evidence = note(k)
     prev_k = ((k - 2) % 17) + 1
     next_k = (k % 17) + 1
 
@@ -231,8 +233,13 @@ def case_page(c, cases, loc):
 
   <div class="detail__body">
     <div class="detail__lead">
-      <h2>THE BUILD</h2>
+      <h2>THE BRIEF</h2>
+      <p class="prose">{html.escape(constraint)}.</p>
+      <h2>WHAT I BUILT</h2>
       <p class="prose">{copy}</p>
+      <h2>WHAT YOU CAN VERIFY</h2>
+      <p class="prose">{html.escape(evidence)}. {html.escape(" · ".join(c["stack"]))} is declared in the project metadata and visible in the tags above.</p>
+      <p class="prose detail__caveat">No performance or revenue figures are published for this project. If outcome numbers matter to your decision, ask for them in the consult and I will tell you what I can and cannot share.</p>
       <div class="detail__actions">{live}<a class="detail__btn detail__btn--ghost" href="/#contact">DISCUSS A BUILD ▸</a></div>
     </div>
     <div class="detail__facts">
