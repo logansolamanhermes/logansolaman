@@ -12,7 +12,7 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 ## Layout
 
-- `index.html` — one page, eight sections: Hero, About, **Service**, **Cases**, Tools, Process, **FAQ (16 questions)**, Contact. The contact form has a service-type selector and an honest "OPEN EMAIL DRAFT" label.
+- `index.html` — one page, nine sections: Hero, About, **Service**, **Cases**, **Client Words**, Tools, Process, **FAQ (16 questions)**, Contact. The contact form has a service-type selector and an honest "OPEN EMAIL DRAFT" label.
 - `index.html` head — canonical, OG/Twitter cards, and one connected JSON-LD `@graph` (WebSite, Person, WebPage, 2 × ItemList). No `FAQPage` (retired May 2026), `ProfilePage` (home is a service portfolio, not a person profile), `Organization` (personal site, not a company), or `SearchAction` (sitelinks searchbox retired Nov 2024).
 - `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, a 5-node `@graph` (WebSite, Person, CreativeWork, WebPage, BreadcrumbList), canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
 - `services/<slug>/` — 5 static service pages with scope, process, related cases, and a 5-node `@graph` (WebSite, Person, Service, WebPage, BreadcrumbList)
@@ -49,8 +49,8 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 | Key | Action |
 |---|---|
-| `1`–`7` | jump to section |
-| `/` | command line (`help`, `about`, `cases`, `filter outdoor`, `lang ja`, `theme`, …) |
+| `1`–`8` | jump to section |
+| `/` | command line (`help`, `about`, `cases`, `words`, `filter outdoor`, `lang ja`, `theme`, …) |
 | `[` `]` | cycle color theme |
 | `G` | CRT grid · `M` | matrix rain · `T` | glitch title |
 | `L` | language picker · `?` | help · `ESC` | close |

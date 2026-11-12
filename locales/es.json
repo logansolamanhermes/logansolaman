@@ -510,8 +510,8 @@
   "contact.opt_app": "Una app / integración a medida",
   "contact.opt_seo": "SEO y velocidad",
   "contact.opt_growth": "Crecimiento tras el lanzamiento",
-  "faq.cost": "Cada proyecto se define en la consulta gratuita. Antes de escribir código recibes un plan por escrito con alcance, stack y cifras; no empezamos hasta que hayas visto y aprobado esas cifras.",
-  "faq.timeline": "El calendario está en ese mismo plan, porque depende del alcance. No doy una duración antes de ver la tienda y el problema real.",
+  "faq.cost": "Se ha entregado una tienda de alcance acotado por HK$12,000; los builds personalizados de agencias de Hong Kong van desde unos HK$38,000 hasta HK$150,000 o más. Cada proyecto se dimensiona en la consulta gratuita y se confirma en un plan escrito antes de escribir código — son referencias de mercado, no un precio fijo.",
+  "faq.timeline": "Un build acotado tarda unas 2 semanas desde la aprobación del diseño; un tema personalizado con contenido y QA suele tomar 4–8 semanas. El calendario se confirma en el plan escrito, porque depende del alcance.",
   "faq.form": "El botón abre un borrador en tu propio cliente de correo con el mensaje ya rellenado. Este sitio no transmite ni almacena nada; tú decides si lo envías. Consulta la <a href=\"/privacy/\">política de privacidad</a>.",
   "faq.proof": "Sí — los 17 sistemas están en el archivo de arriba, cada uno con capturas reales de escritorio y móvil de la tienda en vivo, el mercado y el stack usado. Cada tarjeta abre su propio caso de estudio."
 }

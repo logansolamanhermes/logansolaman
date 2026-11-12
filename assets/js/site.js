@@ -42,7 +42,7 @@
   ];
   const FILTERS = ["ALL", "OUTDOOR", "LUXURY", "ART", "RETAIL", "SERVICE", "WINE", "AUDIO", "INFRA", "BUILDING"];
 
-  const SECTIONS = ["about", "services", "cases", "tools", "process", "faq", "contact"];
+  const SECTIONS = ["about", "services", "cases", "words", "tools", "process", "faq", "contact"];
 
   /* ---------- state ---------- */
   let themeIdx = 0, rainOn = true, activeFilter = "ALL", currentCard = 0;
@@ -317,11 +317,12 @@
     const goto = id => { const el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); };
 
     const CMDS = {
-      help: () => "commands: about · services · cases · tools · process · faq · contact · theme · grid · rain · glitch · langs · lang <code> · clear",
+      help: () => "commands: about · services · cases · words · tools · process · faq · contact · theme · grid · rain · glitch · langs · lang <code> · clear",
       about: () => { goto("about"); return "opening FILE 02 / MANIFESTO …"; },
       services: () => { goto("services"); return "opening FILE 03 / SYSTEM MODULES …"; },
       service: () => CMDS.services(),
       cases: () => { goto("cases"); return "opening FILE 04 / MISSION ARCHIVE …"; },
+      words: () => { goto("words"); return "opening FILE 09 / CLIENT WORDS …"; },
       case: () => CMDS.cases(),
       tools: () => { goto("tools"); return "opening FILE 05 / OPEN ARMORY …"; },
       process: () => { goto("process"); return "opening FILE 06 / PROTOCOL …"; },
@@ -347,7 +348,7 @@
       },
       "sudo hire-me": () => { goto("contact"); return "permission GRANTED · opening transmission channel …"; },
       clear: () => { out.textContent = ""; return ""; },
-      ls: () => "about  services  cases  tools  process  faq  contact",
+      ls: () => "about  services  cases  words  tools  process  faq  contact",
     };
 
     function run(raw) {
@@ -422,7 +423,7 @@
       if (inField || cmdOpen) return;
       if (e.key === "?") { e.preventDefault(); window.__siteHelp?.open(); return; }
       if (e.key === "/") { e.preventDefault(); window.__siteCmd?.open(); return; }
-      if (/^[1-7]$/.test(e.key)) { document.getElementById(SECTIONS[parseInt(e.key, 10) - 1])?.scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); return; }
+      if (/^[1-8]$/.test(e.key)) { document.getElementById(SECTIONS[parseInt(e.key, 10) - 1])?.scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); return; }
       const k = e.key.toLowerCase();
       if (k === "[") setTheme(themeIdx - 1);
       if (k === "]") setTheme(themeIdx + 1);

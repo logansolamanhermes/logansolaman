@@ -170,6 +170,27 @@ body.grid-on .crt-grid { opacity: 1; }
 .module__arrow { font-size: 1.5rem; text-align: right; color: #4b7a0c; opacity: 0; transform: translate(-8px, 8px); transition: opacity .3s, transform .3s; }
 .module a:hover .module__arrow { opacity: 1; transform: none; }
 
+/* ---------- CLIENT WORDS (light band) ---------- */
+.words__lede { color: #4a5443; margin: 22px 0 0; }
+.words__list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 48px; }
+.word { margin: 0; padding: 26px; border: 1px solid rgba(16,21,14,.18); border-radius: 18px;
+  background: rgba(255,255,255,.5); display: flex; flex-direction: column; }
+.word__q { margin: 0; font: 600 clamp(1rem, 1.5vw, 1.22rem)/1.55 var(--display); letter-spacing: -.015em; color: var(--ivory-ink); }
+.word__tr { margin: 14px 0 0; font: 400 .78rem/1.7 var(--mono); color: #4a5443; }
+.word__tr b { color: #3d6b0a; letter-spacing: .1em; }
+.word__by { margin-top: auto; padding-top: 26px; display: flex; flex-direction: column; gap: 5px; }
+.word__by strong { font: 700 12px/1.2 var(--display); letter-spacing: .04em; color: var(--ivory-ink); }
+.word__by span { font: 500 9px/1.5 var(--mono); letter-spacing: .12em; color: #4a5443; }
+.words__note { margin: 30px 0 0; font: 500 9px/1.7 var(--mono); letter-spacing: .08em; color: #4a5443; }
+
+/* ---------- INVESTMENT / TIMELINE ---------- */
+.invest__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 56px; }
+.invest__card { border: 1px solid var(--line); border-radius: 20px; padding: 30px; background: rgba(5,7,5,.55); }
+.invest__card b { display: block; font: 500 10px/1 var(--mono); letter-spacing: .18em; color: var(--accent); }
+.invest__card strong { display: block; margin: 18px 0 12px; font: 800 clamp(1.8rem, 3vw, 2.8rem)/1 var(--display); letter-spacing: -.05em; color: var(--ink); }
+.invest__card p { margin: 0; font: 400 .8rem/1.7 var(--mono); color: var(--dim); }
+.invest__note { margin: 26px 0 0; font: 500 9px/1.7 var(--mono); letter-spacing: .08em; color: var(--dim); max-width: 90ch; }
+
 /* ---------- CASES: explore rail ---------- */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; }
 .filter { min-height: 44px; padding: 10px 18px; border-radius: 999px; border: 1px solid var(--line-strong);
@@ -329,7 +350,7 @@ body.grid-on .crt-grid { opacity: 1; }
   .hud__nav { gap: 16px; }
   .hud__nav a i { display: none; }
   .hud__cta { display: none; }
-  .about__grid, .tools__grid, .contact__grid { grid-template-columns: 1fr; }
+  .about__grid, .tools__grid, .contact__grid, .invest__grid { grid-template-columns: 1fr; }
   .module a { grid-template-columns: 54px 1fr 30px; }
   .module__body { grid-column: 2 / 3; }
   .module__arrow { grid-column: 3; grid-row: 1; }

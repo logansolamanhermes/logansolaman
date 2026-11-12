@@ -508,8 +508,8 @@
   "contact.opt_app": "A custom app / integration",
   "contact.opt_seo": "SEO & page speed",
   "contact.opt_growth": "Post-launch growth",
-  "faq.cost": "Every project is scoped in the free first consult. You receive a written blueprint with scope, stack and numbers before any code is written — no build starts until you have seen and approved those numbers.",
-  "faq.timeline": "The schedule is part of that same written blueprint, because it depends on the scope. I don't quote a duration before I have seen the store and the constraint.",
+  "faq.cost": "A tightly scoped storefront has been delivered at HK$12,000; custom builds at Hong Kong agencies run from about HK$38,000 to HK$150,000+. Every project is scoped in the free first consult and confirmed in a written blueprint before any code is written — those are benchmarks, not a fixed quote.",
+  "faq.timeline": "A scoped build is about 2 weeks from design sign-off; a customised theme with content and QA typically takes 4–8 weeks. The schedule is confirmed in the written blueprint, because it depends on the scope.",
   "faq.form": "The button opens a draft in your own mail application with your message already filled in. This site transmits nothing and stores nothing; you decide whether to press send. See the <a href=\"/privacy/\">privacy page</a> for the full data policy.",
   "faq.proof": "Yes — all 17 systems are in the archive above, each with real desktop and mobile screenshots of the live storefront, the market, and the stack used. Every card opens its own case study."
 }

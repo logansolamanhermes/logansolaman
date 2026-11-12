@@ -28,6 +28,21 @@ A static portfolio with 17 individual case-study pages and 5 service pages for L
 4. **SEO & Velocity** — technical SEO built into the structure: Core Web Vitals, schema, international routing.
 5. **Growth Operations** — post-launch conversion systems: CRO, analytics, A/B discipline, retention flows.
 
+## Investment & timeline (Hong Kong market, 2026)
+
+- A tightly scoped storefront was delivered at HK$12,000 (custom design, custom app, performance/SEO work, 30 days post-launch support).
+- Hong Kong agency custom Shopify development starts around HK$38,000; bespoke themes and integration work at established HK agencies run HK$150,000+.
+- Timeline: about 2 weeks from design sign-off for a scoped build; 4–8 weeks for a customised theme with content and QA.
+- All figures are market benchmarks and a past delivered project, not a fixed quote. Every project is scoped in the free first consult and confirmed in a written blueprint before any code is written.
+
+## Client words (verbatim)
+
+- Anthony Wong, Topick Store HK: 「網站暫時公開run左一星期多啲 所有嘢都好順利！非常感激你！！🥹🥹🙏」 — "The site has been live for just over a week and everything is running smoothly. Very grateful to you!!"
+- Anthony Wong, Topick Store HK: 「Wow😱完全做到一樣咁 超勁！！」 — "Wow😱 You made it exactly the same. Incredible!!"
+- Jetty Cheung, HKU Press: 「宜家Shopify gen 更準確」 — "The reports Shopify generates are more accurate now." (replaced handwritten book-fair sales reports)
+
+Quotes are verbatim WhatsApp excerpts; English text is a labelled translation, not the clients' own English wording. No star ratings or aggregate scores are claimed.
+
 ## Process — three steps
 
 1. **Decrypt** — a free consult; find the real constraint.
@@ -95,12 +110,12 @@ https://logansolaman.com/tools/ — 50 browser-based merchant tools across five 
 
 ## Contact
 
-The consultation is free. Use the form at https://logansolaman.com/#contact — it opens a `mailto:` draft in the visitor's own mail client; the site stores nothing and transmits nothing until the visitor presses send. The form includes a service-type selector so enquiries arrive pre-qualified. See the privacy page for the full data policy. Reply target is configured in `assets/js/site.js` (`CONTACT_EMAIL`).
+The consultation is free. Use the form at https://logansolaman.com/#contact — it opens a `mailto:` draft in the visitor's own mail client; the site stores nothing and transmits nothing until the visitor presses send. The form includes a service-type selector so enquiries arrive pre-qualified. See the privacy page for the full data policy. Reply target is configured in `assets/js/site.js` (`CONTACT_EMAIL`, hello@logansolaman.com). Direct line: +852 5566 4977 (also on WhatsApp).
 
 ## Interaction notes (for agents rendering the page)
 
-- Keyboard: `1`–`7` jump to sections; `/` opens the command line; `[` `]` cycle color themes; `G` toggles the CRT grid; `M` toggles matrix rain; `T` glitches the title; `L` opens the language picker; `?` opens help; `ESC` closes.
-- Command line supports: `about`, `services`, `cases`, `tools`, `process`, `faq`, `contact`, `theme`, `grid`, `rain`, `glitch`, `langs`, `lang <code>`, `filter <category>`, `ls`, `clear`, `help`.
+- Keyboard: `1`–`8` jump to sections; `/` opens the command line; `[` `]` cycle color themes; `G` toggles the CRT grid; `M` toggles matrix rain; `T` glitches the title; `L` opens the language picker; `?` opens help; `ESC` closes.
+- Command line supports: `about`, `services`, `cases`, `words`, `tools`, `process`, `faq`, `contact`, `theme`, `grid`, `rain`, `glitch`, `langs`, `lang <code>`, `filter <category>`, `ls`, `clear`, `help`.
 - The home page ships its English copy as static HTML, so important content is available without JavaScript. The 17 case cards are rendered client-side from `assets/js/site.js` with names/descriptions from `locales/<lang>.json`, but each contains a real crawlable `<a>` to a static case-study page at `/cases/caseNN/`. A `<noscript>` block lists all 17 cases and 5 services as plain links. Case pages carry CreativeWork + BreadcrumbList JSON-LD; service pages carry Service + BreadcrumbList JSON-LD; `/tools/` carries WebApplication JSON-LD.
 - `prefers-reduced-motion` renders a static shader frame and disables reveals.
 - No analytics, no cookies, no tracking, no third-party storage. All fonts are self-hosted as local woff2; no third-party font requests.
