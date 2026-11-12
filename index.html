@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>LOGAN SOLAMAN — The Store Architect</title>
-<meta name="description" content="Logan Solaman — Shopify architecture specialist. Ten years engineering storefronts that compound: design, development, SEO, growth systems. Hong Kong, working globally." />
+<title data-meta-i18n="meta.home_title">LOGAN SOLAMAN — The Store Architect</title>
+<meta name="description" content="Logan Solaman — Shopify architecture specialist. Ten years engineering storefronts that compound: design, development, SEO, growth systems. Hong Kong, working globally." data-meta-i18n="meta.home_desc" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <meta name="theme-color" content="#050705" />
 <meta name="author" content="Logan Solaman" />
@@ -271,30 +271,30 @@
 <!-- ============ BOOT (once per session, skippable) ============ -->
 <div class="boot" id="boot" aria-hidden="true">
   <pre class="boot__log" id="bootLog"></pre>
-  <p class="boot__skip">[ SPACE ] SKIP</p>
+  <p class="boot__skip" data-i18n="chrome.boot_skip">[ SPACE ] SKIP</p>
 </div>
 
-<a class="skip" href="#main">Skip to main content</a>
+<a class="skip" href="#main" data-i18n="chrome.skip">Skip to main content</a>
 
 <!-- ============ HUD / NAV ============ -->
 <header class="hud">
   <div class="hud__inner">
     <a class="hud__logo" href="#home">LOGAN SOLAMAN<span>_</span></a>
     <nav class="hud__nav" id="nav" aria-label="Sections">
-      <a href="#about"><i>01</i> ABOUT</a>
-      <a href="#services"><i>02</i> SERVICE</a>
-      <a href="#cases"><i>03</i> CASES</a>
-      <a href="#words"><i>04</i> WORDS</a>
-      <a href="#tools"><i>05</i> TOOLS</a>
-      <a href="#process"><i>06</i> PROCESS</a>
-      <a href="#faq"><i>07</i> FAQ</a>
-      <a href="#contact"><i>08</i> CONTACT</a>
+      <a href="#about"><i>01</i> <span data-i18n="chrome.nav_about">ABOUT</span></a>
+      <a href="#services"><i>02</i> <span data-i18n="chrome.nav_service">SERVICE</span></a>
+      <a href="#cases"><i>03</i> <span data-i18n="chrome.nav_cases">CASES</span></a>
+      <a href="#words"><i>04</i> <span data-i18n="chrome.nav_words">WORDS</span></a>
+      <a href="#tools"><i>05</i> <span data-i18n="chrome.nav_tools">TOOLS</span></a>
+      <a href="#process"><i>06</i> <span data-i18n="chrome.nav_process">PROCESS</span></a>
+      <a href="#faq"><i>07</i> <span data-i18n="chrome.nav_faq">FAQ</span></a>
+      <a href="#contact"><i>08</i> <span data-i18n="chrome.nav_contact">CONTACT</span></a>
     </nav>
-    <a class="hud__cta" href="#contact">START A CONSULT ▸</a>
+    <a class="hud__cta" href="#contact" data-i18n="chrome.start_consult">START A CONSULT ▸</a>
     <div class="hud__meta">
-      <span class="hud__rec"><i></i> REC</span>
+      <span class="hud__rec"><i></i> <span data-i18n="chrome.rec">REC</span></span>
       <span id="clock">00:00:00</span>
-      <span class="hide-sm">THEME: <b id="themeName">MATRIX</b></span>
+      <span class="hide-sm"><span data-i18n="chrome.theme">THEME:</span> <b id="themeName">MATRIX</b></span>
       <button class="hud__lang" id="langSwitch" type="button" aria-label="Switch language">LANG: <b id="langName">EN</b></button>
       <button class="hud__menu" id="menuBtn" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span></button>
     </div>
@@ -305,16 +305,16 @@
 <div class="overlay" id="helpOverlay" hidden>
   <div class="overlay__panel glass" role="dialog" aria-modal="true" aria-label="Keyboard commands">
     <button class="overlay__close" id="helpClose" type="button" aria-label="Close">×</button>
-    <p class="eyebrow">// SYSTEM</p>
-    <h2 class="overlay__title">KEYBOARD<br />PROTOCOL<span class="dot">_</span></h2>
+    <p class="eyebrow" data-i18n="help.eyebrow">// SYSTEM</p>
+    <h2 class="overlay__title"><span data-i18n="help.title_a">KEYBOARD</span><br /><span data-i18n="help.title_b">PROTOCOL</span><span class="dot">_</span></h2>
     <ul class="overlay__list">
-      <li><kbd>1</kbd>–<kbd>8</kbd> jump to section</li>
-      <li><kbd>/</kbd> command line</li>
-      <li><kbd>[</kbd> <kbd>]</kbd> cycle color theme</li>
-      <li><kbd>G</kbd> CRT grid · <kbd>M</kbd> matrix rain</li>
-      <li><kbd>T</kbd> glitch the title · <kbd>L</kbd> language</li>
-      <li><kbd>ESC</kbd> close / clear</li>
-      <li>type <code>help</code> in the command line</li>
+      <li><kbd>1</kbd>–<kbd>8</kbd> <span data-i18n="help.jump">jump to section</span></li>
+      <li><kbd>/</kbd> <span data-i18n="help.cmd">command line</span></li>
+      <li><kbd>[</kbd> <kbd>]</kbd> <span data-i18n="help.theme">cycle color theme</span></li>
+      <li><kbd>G</kbd> <span data-i18n="help.grid">CRT grid ·</span> <kbd>M</kbd> <span data-i18n="help.matrix">matrix rain</span></li>
+      <li><kbd>T</kbd> <span data-i18n="help.glitch">glitch the title ·</span> <kbd>L</kbd> <span data-i18n="help.lang">language</span></li>
+      <li><kbd>ESC</kbd> <span data-i18n="help.esc">close / clear</span></li>
+      <li data-i18n="help.tip_whole" data-i18n-html>type <code>help</code> in the command line</li>
     </ul>
   </div>
 </div>
@@ -322,10 +322,10 @@
 <div class="overlay" id="langModal" hidden>
   <div class="overlay__panel glass" role="dialog" aria-modal="true" aria-label="Choose language">
     <button class="overlay__close" id="langClose" type="button" aria-label="Close">×</button>
-    <p class="eyebrow">system://locale</p>
-    <h2 class="overlay__title">LANGUAGE<span class="dot">_</span></h2>
+    <p class="eyebrow" data-i18n="langmodal.eyebrow">system://locale</p>
+    <h2 class="overlay__title"><span data-i18n="langmodal.title">LANGUAGE</span><span class="dot">_</span></h2>
     <div class="langgrid" id="langGrid" role="listbox" aria-label="Available languages"></div>
-    <p class="overlay__hint">auto-detects your browser language until you pick one</p>
+    <p class="overlay__hint" data-i18n="langmodal.hint">auto-detects your browser language until you pick one</p>
   </div>
 </div>
 
@@ -341,7 +341,7 @@
   <!-- ============ 01 HERO ============ -->
   <section class="hero" id="home">
     <div class="wrap hero__inner">
-      <p class="eyebrow hero__eyebrow">// FILE 01 — THE STORE ARCHITECT · EST. 2016</p>
+      <p class="eyebrow hero__eyebrow" data-i18n="chrome.hero_eyebrow">// FILE 01 — THE STORE ARCHITECT · EST. 2016</p>
       <h1 class="hero__title glitch" id="heroTitle" data-text="BY ACCIDENT.">
         <span data-i18n="v2.hero.title_a">STORES DON'T GROW</span><br />
         <em data-i18n="v2.hero.title_b">BY ACCIDENT.</em>
@@ -353,12 +353,12 @@
           <a class="btn btn--ghost" href="#contact" data-i18n="v2.hero.cta2">START A CONSULT</a>
         </div>
       </div>
-      <div class="hero__scroll" aria-hidden="true"><span>SCROLL TO DECRYPT</span><i>▼</i></div>
+      <div class="hero__scroll" aria-hidden="true"><span data-i18n="chrome.hero_scroll">SCROLL TO DECRYPT</span><i>▼</i></div>
     </div>
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>DESIGN → BUILD → OPTIMIZE → COMPOUND · <b>17 SYSTEMS</b> · ALL BUILT BY HAND · </span>
-        <span>DESIGN → BUILD → OPTIMIZE → COMPOUND · <b>17 SYSTEMS</b> · ALL BUILT BY HAND · </span>
+        <span><span data-i18n="chrome.hero_marquee">DESIGN → BUILD → OPTIMIZE → COMPOUND ·</span> <b data-i18n="chrome.hero_badge">17 SYSTEMS</b> <span data-i18n="chrome.hero_badge_all">· ALL BUILT BY HAND ·</span> </span>
+        <span><span data-i18n="chrome.hero_marquee">DESIGN → BUILD → OPTIMIZE → COMPOUND ·</span> <b data-i18n="chrome.hero_badge">17 SYSTEMS</b> <span data-i18n="chrome.hero_badge_all">· ALL BUILT BY HAND ·</span> </span>
       </div>
     </div>
   </section>
@@ -381,10 +381,10 @@
       <div class="stats">
         <div class="stat reveal"><strong data-count="10">0</strong><span data-i18n="hero.stat1">YRS ENGINEERING</span></div>
         <div class="stat reveal"><strong data-count="15">0</strong><span data-i18n="hero.stat2">STOREFRONTS BUILT</span></div>
-        <div class="stat reveal"><strong data-count="17">0</strong><span>SYSTEMS IN THE ARCHIVE</span></div>
+        <div class="stat reveal"><strong data-count="17">0</strong><span data-i18n="chrome.stat_systems">SYSTEMS IN THE ARCHIVE</span></div>
         <div class="stat reveal"><strong data-count="50">0</strong><span data-i18n="hero.stat3">FREE MERCHANT TOOLS</span></div>
-        <div class="stat reveal"><strong data-count="10">0</strong><span>LANGUAGES SUPPORTED</span></div>
-        <div class="stat reveal"><strong>2016</strong><span>ESTABLISHED</span></div>
+        <div class="stat reveal"><strong data-count="10">0</strong><span data-i18n="chrome.stat_langs">LANGUAGES SUPPORTED</span></div>
+        <div class="stat reveal"><strong>2016</strong><span data-i18n="chrome.stat_est">ESTABLISHED</span></div>
       </div>
     </div>
   </section>
@@ -422,7 +422,7 @@
             <em data-i18n="cases.title_b">All built by hand. All on Shopify.</em>
           </h2>
         </div>
-        <p class="cases__hint">← → BROWSE · ENTER OPEN · ESC CLOSE</p>
+        <p class="cases__hint" data-i18n="chrome.cases_hint">← → BROWSE · ENTER OPEN · ESC CLOSE</p>
       </div>
       <div class="filters" id="filters" role="group" aria-label="Filter archive"></div>
       <p class="cases__count" id="caseCount" aria-live="polite"></p>
@@ -474,31 +474,31 @@
   <section class="section section--invert words" id="words">
     <div class="wrap">
       <div class="panel-invert words__panel">
-        <p class="eyebrow eyebrow--dark">// FILE 09 — WHAT CLIENTS ACTUALLY SAID</p>
-        <h2 class="display display--dark">What clients <em>actually said.</em></h2>
-        <p class="prose words__lede">Verbatim excerpts from client WhatsApp threads, reproduced as written. English translations are labelled and are translations, not the clients' own English wording.</p>
+        <p class="eyebrow eyebrow--dark" data-i18n="words.eyebrow">// FILE 09 — WHAT CLIENTS ACTUALLY SAID</p>
+        <h2 class="display display--dark"><span data-i18n="words.title_a">What clients</span> <em data-i18n="words.title_b">actually said.</em></h2>
+        <p class="prose words__lede" data-i18n="words.lede">Verbatim excerpts from client WhatsApp threads, reproduced as written. English translations are labelled and are translations, not the clients' own English wording.</p>
         <div class="words__list">
 
           <figure class="word">
             <blockquote class="word__q" lang="zh-Hant">「網站暫時公開run左一星期多啲 所有嘢都好順利！非常感激你！！🥹🥹🙏」</blockquote>
-            <p class="word__tr" lang="en"><b>EN:</b> "The site has been live for just over a week and everything is running smoothly. Very grateful to you!! 🥹🥹🙏"</p>
-            <figcaption class="word__by"><strong>ANTHONY WONG</strong><span>TOPICK STORE HK · SHOPIFY BUILD · 2026</span></figcaption>
+            <p class="word__tr" lang="en"><b data-i18n="words.en_label">EN:</b> <span data-i18n="words.tr1">"The site has been live for just over a week and everything is running smoothly. Very grateful to you!! 🥹🥹🙏"</span></p>
+            <figcaption class="word__by"><strong>ANTHONY WONG</strong><span data-i18n="words.meta1">TOPICK STORE HK · SHOPIFY BUILD · 2026</span></figcaption>
           </figure>
 
           <figure class="word">
             <blockquote class="word__q" lang="zh-Hant">「Wow😱完全做到一樣咁 超勁！！」</blockquote>
-            <p class="word__tr" lang="en"><b>EN:</b> "Wow😱 You made it exactly the same. Incredible!!"</p>
-            <figcaption class="word__by"><strong>ANTHONY WONG</strong><span>TOPICK STORE HK · ON THE FIRST DEMO · 2026</span></figcaption>
+            <p class="word__tr" lang="en"><b data-i18n="words.en_label">EN:</b> <span data-i18n="words.tr2">"Wow😱 You made it exactly the same. Incredible!!"</span></p>
+            <figcaption class="word__by"><strong>ANTHONY WONG</strong><span data-i18n="words.meta2">TOPICK STORE HK · ON THE FIRST DEMO · 2026</span></figcaption>
           </figure>
 
           <figure class="word">
             <blockquote class="word__q" lang="zh-Hant">「宜家Shopify gen 更準確」</blockquote>
-            <p class="word__tr" lang="en"><b>EN:</b> "The reports Shopify generates are more accurate now."</p>
-            <figcaption class="word__by"><strong>JETTY CHEUNG</strong><span>HKU PRESS · REPLACED HANDWRITTEN BOOK-FAIR SALES REPORTS · 2026</span></figcaption>
+            <p class="word__tr" lang="en"><b data-i18n="words.en_label">EN:</b> <span data-i18n="words.tr3">"The reports Shopify generates are more accurate now."</span></p>
+            <figcaption class="word__by"><strong>JETTY CHEUNG</strong><span data-i18n="words.meta3">HKU PRESS · REPLACED HANDWRITTEN BOOK-FAIR SALES REPORTS · 2026</span></figcaption>
           </figure>
 
         </div>
-        <p class="words__note">Quotes are reproduced verbatim from the original threads; only line breaks and emoji spacing were normalised. No star ratings or aggregate scores are claimed. These are messages sent during live projects, not solicited reviews.</p>
+        <p class="words__note" data-i18n="words.note">Quotes are reproduced verbatim from the original threads; only line breaks and emoji spacing were normalised. No star ratings or aggregate scores are claimed. These are messages sent during live projects, not solicited reviews.</p>
       </div>
     </div>
   </section>
@@ -518,7 +518,7 @@
         <div class="actions">
           <a class="btn" href="tools/" data-i18n="v2.tools.cta1">ENTER THE ARMORY ▸</a>
         </div>
-        <p class="tools__note">NO ACCOUNT · NO UPLOAD · NO UPSELL</p>
+        <p class="tools__note" data-i18n="chrome.tools_foot">NO ACCOUNT · NO UPLOAD · NO UPSELL</p>
       </div>
     </div>
   </section>
@@ -535,13 +535,13 @@
       </ol>
 
       <div class="invest">
-        <p class="eyebrow">// INVESTMENT &amp; TIMELINE — HONG KONG MARKET, 2026</p>
+        <p class="eyebrow" data-i18n="invest.eyebrow">// INVESTMENT &amp; TIMELINE — HONG KONG MARKET, 2026</p>
         <div class="invest__grid">
-          <div class="invest__card"><b>SCOPED BUILD</b><strong>HK$12,000</strong><p>A delivered storefront with custom design, a custom app, performance/SEO work and 30 days of post-launch support. The benchmark for a tightly scoped build.</p></div>
-          <div class="invest__card"><b>CUSTOM BUILD</b><strong>HK$38,000+</strong><p>Hong Kong agency starter-tier custom Shopify development starts here; bespoke theme and integration work at established HK agencies runs to HK$150,000+.</p></div>
-          <div class="invest__card"><b>TIMELINE</b><strong>2–8 weeks</strong><p>About 2 weeks from design sign-off for a scoped build; 4–8 weeks is the industry band for a customised theme with content and QA.</p></div>
+          <div class="invest__card"><b data-i18n="invest.card1_label">SCOPED BUILD</b><strong data-i18n="invest.card1_value">HK$12,000</strong><p data-i18n="invest.card1_body">A delivered storefront with custom design, a custom app, performance/SEO work and 30 days of post-launch support. The benchmark for a tightly scoped build.</p></div>
+          <div class="invest__card"><b data-i18n="invest.card2_label">CUSTOM BUILD</b><strong data-i18n="invest.card2_value">HK$38,000+</strong><p data-i18n="invest.card2_body">Hong Kong agency starter-tier custom Shopify development starts here; bespoke theme and integration work at established HK agencies runs to HK$150,000+.</p></div>
+          <div class="invest__card"><b data-i18n="invest.card3_label">TIMELINE</b><strong data-i18n="invest.card3_value">2–8 weeks</strong><p data-i18n="invest.card3_body">About 2 weeks from design sign-off for a scoped build; 4–8 weeks is the industry band for a customised theme with content and QA.</p></div>
         </div>
-        <p class="invest__note">Every project is scoped in the free first consult and confirmed in a written blueprint before any code is written. The figures above are market benchmarks and a past delivered project, not a fixed quote — your number depends on scope, integrations and content readiness.</p>
+        <p class="invest__note" data-i18n="invest.note">Every project is scoped in the free first consult and confirmed in a written blueprint before any code is written. The figures above are market benchmarks and a past delivered project, not a fixed quote — your number depends on scope, integrations and content readiness.</p>
       </div>
     </div>
   </section>
@@ -550,26 +550,26 @@
   <section class="section section--invert faq" id="faq">
     <div class="wrap">
       <div class="panel-invert faq__panel">
-        <p class="eyebrow eyebrow--dark">// FILE 07 — FIELD NOTES / OBJECTIONS</p>
-        <h2 class="display display--dark">Questions, <em>answered plainly.</em></h2>
-        <p class="prose faq__lede">Sixteen things people ask before we start. Answers come from the working brief, not a sales script.</p>
+        <p class="eyebrow eyebrow--dark" data-i18n="faq.eyebrow">// FILE 07 — FIELD NOTES / OBJECTIONS</p>
+        <h2 class="display display--dark"><span data-i18n="faq.title_a">Questions,</span> <em data-i18n="faq.title_b">answered plainly.</em></h2>
+        <p class="prose faq__lede" data-i18n="faq.lede">Sixteen things people ask before we start. Answers come from the working brief, not a sales script.</p>
       <div class="faq__list" id="faqList">
-        <details class="faq__item"><summary class="faq__q">What do you actually do?</summary><p class="faq__a" data-i18n="about.p1" data-i18n-html="about.p1">For ten years I've done both jobs that usually fight each other: <strong>the operator chasing revenue</strong> and <strong>the engineer chasing clean systems</strong>. That tension is the whole craft — a storefront is not a website, it's a machine that turns attention into orders, and every part either compounds or leaks.</p></details>
-        <details class="faq__item"><summary class="faq__q">Is this just a theme with a logo?</summary><p class="faq__a" data-i18n="m1.body">Full Shopify builds from blank repo to launch day. Custom architecture tuned to your brand and your traffic — not a theme with a logo.</p></details>
-        <details class="faq__item"><summary class="faq__q">Can you work on an existing Shopify theme?</summary><p class="faq__a" data-i18n="m2.body">Off-the-shelf themes are starting points, not destinations. Deep Liquid/JS customization that keeps upgrade paths clean.</p></details>
-        <details class="faq__item"><summary class="faq__q">What if the app I need doesn't exist?</summary><p class="faq__a" data-i18n="m3.body">When no app exists, I build the one your store needs — private apps, checkout extensions, integrations that earn their monthly cost.</p></details>
-        <details class="faq__item"><summary class="faq__q">Is SEO bolted on at the end?</summary><p class="faq__a" data-i18n="m4.body">Technical SEO built into the structure: Core Web Vitals, schema, international routing. Rank because the machine deserves to.</p></details>
-        <details class="faq__item"><summary class="faq__q">What happens after launch?</summary><p class="faq__a" data-i18n="m5.body">Conversion systems after launch: CRO, analytics, A/B discipline, retention flows. The store is never finished — it's tuned.</p></details>
-        <details class="faq__item"><summary class="faq__q">What does the first conversation cost?</summary><p class="faq__a" data-i18n="proc1.b">A free consult. I listen for the real constraint — it's rarely the one you think it is.</p></details>
-        <details class="faq__item"><summary class="faq__q">What do I get before any code is written?</summary><p class="faq__a" data-i18n="proc2.b">A custom plan with scope, stack, and numbers. You see the machine before we build it.</p></details>
-        <details class="faq__item"><summary class="faq__q">How do you decide what ships?</summary><p class="faq__a" data-i18n="about.p2" data-i18n-html="about.p2">I build Shopify systems the way an architect builds load-bearing walls: theme engineering that survives updates, apps that earn their keep, SEO wired into the structure instead of painted on, and growth loops measured in weeks, not vibes. If it can't be measured, it doesn't ship.</p></details>
-        <details class="faq__item"><summary class="faq__q">Where are you based, and do you work remotely?</summary><p class="faq__a" data-i18n="about.p3" data-i18n-html="about.p3">Based in Hong Kong. Working globally. The mission is simple: <strong>give small brands the infrastructure of big ones</strong> — which is why my entire merchant toolset is free.</p></details>
-        <details class="faq__item"><summary class="faq__q">How quickly do you reply?</summary><p class="faq__a" data-i18n="contact.fine">HK based · replies worldwide · usually within a day</p></details>
-        <details class="faq__item"><summary class="faq__q">Are the 50 tools really free?</summary><p class="faq__a" data-i18n="tools.lede" data-i18n-html="tools.lede">The merchant toolset I use daily, opened to everyone — no account, no upsell. A few from the rack:</p></details>
-        <details class="faq__item"><summary class="faq__q">How much does a build cost?</summary><p class="faq__a" data-i18n="faq.cost">A tightly scoped storefront has been delivered at HK$12,000; custom builds at Hong Kong agencies run from about HK$38,000 to HK$150,000+. Every project is scoped in the free first consult and confirmed in a written blueprint before any code is written — those are benchmarks, not a fixed quote.</p></details>
-        <details class="faq__item"><summary class="faq__q">How long will it take?</summary><p class="faq__a" data-i18n="faq.timeline">A scoped build is about 2 weeks from design sign-off; a customised theme with content and QA typically takes 4–8 weeks. The schedule is confirmed in the written blueprint, because it depends on the scope.</p></details>
-        <details class="faq__item"><summary class="faq__q">What happens when I use the contact form?</summary><p class="faq__a" data-i18n="faq.form" data-i18n-html="faq.form">The button opens a draft in your own mail application with your message already filled in. This site transmits nothing and stores nothing; you decide whether to press send. See the <a href="/privacy/">privacy page</a> for the full data policy.</p></details>
-        <details class="faq__item"><summary class="faq__q">Can I see the actual work before we talk?</summary><p class="faq__a" data-i18n="faq.proof">Yes — all 17 systems are in the archive above, each with real desktop and mobile screenshots of the live storefront, the market, and the stack used. Every card opens its own case study.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q1">What do you actually do?</summary><p class="faq__a" data-i18n="about.p1" data-i18n-html="about.p1">For ten years I've done both jobs that usually fight each other: <strong>the operator chasing revenue</strong> and <strong>the engineer chasing clean systems</strong>. That tension is the whole craft — a storefront is not a website, it's a machine that turns attention into orders, and every part either compounds or leaks.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q2">Is this just a theme with a logo?</summary><p class="faq__a" data-i18n="m1.body">Full Shopify builds from blank repo to launch day. Custom architecture tuned to your brand and your traffic — not a theme with a logo.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q3">Can you work on an existing Shopify theme?</summary><p class="faq__a" data-i18n="m2.body">Off-the-shelf themes are starting points, not destinations. Deep Liquid/JS customization that keeps upgrade paths clean.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q4">What if the app I need doesn't exist?</summary><p class="faq__a" data-i18n="m3.body">When no app exists, I build the one your store needs — private apps, checkout extensions, integrations that earn their monthly cost.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q5">Is SEO bolted on at the end?</summary><p class="faq__a" data-i18n="m4.body">Technical SEO built into the structure: Core Web Vitals, schema, international routing. Rank because the machine deserves to.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q6">What happens after launch?</summary><p class="faq__a" data-i18n="m5.body">Conversion systems after launch: CRO, analytics, A/B discipline, retention flows. The store is never finished — it's tuned.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q7">What does the first conversation cost?</summary><p class="faq__a" data-i18n="proc1.b">A free consult. I listen for the real constraint — it's rarely the one you think it is.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q8">What do I get before any code is written?</summary><p class="faq__a" data-i18n="proc2.b">A custom plan with scope, stack, and numbers. You see the machine before we build it.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q9">How do you decide what ships?</summary><p class="faq__a" data-i18n="about.p2" data-i18n-html="about.p2">I build Shopify systems the way an architect builds load-bearing walls: theme engineering that survives updates, apps that earn their keep, SEO wired into the structure instead of painted on, and growth loops measured in weeks, not vibes. If it can't be measured, it doesn't ship.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q10">Where are you based, and do you work remotely?</summary><p class="faq__a" data-i18n="about.p3" data-i18n-html="about.p3">Based in Hong Kong. Working globally. The mission is simple: <strong>give small brands the infrastructure of big ones</strong> — which is why my entire merchant toolset is free.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q11">How quickly do you reply?</summary><p class="faq__a" data-i18n="contact.fine">HK based · replies worldwide · usually within a day</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q12">Are the 50 tools really free?</summary><p class="faq__a" data-i18n="tools.lede" data-i18n-html="tools.lede">The merchant toolset I use daily, opened to everyone — no account, no upsell. A few from the rack:</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q13">How much does a build cost?</summary><p class="faq__a" data-i18n="faq.cost">A tightly scoped storefront has been delivered at HK$12,000; custom builds at Hong Kong agencies run from about HK$38,000 to HK$150,000+. Every project is scoped in the free first consult and confirmed in a written blueprint before any code is written — those are benchmarks, not a fixed quote.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q14">How long will it take?</summary><p class="faq__a" data-i18n="faq.timeline">A scoped build is about 2 weeks from design sign-off; a customised theme with content and QA typically takes 4–8 weeks. The schedule is confirmed in the written blueprint, because it depends on the scope.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q15">What happens when I use the contact form?</summary><p class="faq__a" data-i18n="faq.form" data-i18n-html="faq.form">The button opens a draft in your own mail application with your message already filled in. This site transmits nothing and stores nothing; you decide whether to press send. See the <a href="/privacy/">privacy page</a> for the full data policy.</p></details>
+        <details class="faq__item"><summary class="faq__q" data-i18n="faq.q16">Can I see the actual work before we talk?</summary><p class="faq__a" data-i18n="faq.proof">Yes — all 17 systems are in the archive above, each with real desktop and mobile screenshots of the live storefront, the market, and the stack used. Every card opens its own case study.</p></details>
       </div>
       </div>
     </div>
@@ -579,7 +579,7 @@
   <section class="section contact" id="contact">
     <div class="wrap contact__grid">
       <div>
-        <p class="eyebrow">FILE 08 / OPEN CHANNEL</p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">FILE 08 / OPEN CHANNEL</p>
         <h2 class="display">
           <span data-i18n="contact.title_a">The consultation is free.</span><br />
           <em data-i18n="contact.title_b">The insight isn't cheap.</em>
@@ -589,16 +589,16 @@
           <span class="contact__monogram" aria-hidden="true">L<span>_</span></span>
           <span class="contact__id">
             <strong>LOGAN SOLAMAN</strong>
-            <span>THE STORE ARCHITECT · EST. 2016</span>
-            <span>HONG KONG · WORKING GLOBALLY</span>
+            <span data-i18n="contact.id_tagline">THE STORE ARCHITECT · EST. 2016</span>
+            <span data-i18n="contact.id_location">HONG KONG · WORKING GLOBALLY</span>
           </span>
         </div>
         <ul class="contact__facts">
-          <li><b>FIRST CONSULT</b> Free — no obligation</li>
-          <li><b>BEFORE BUILD</b> Written blueprint: scope, stack, numbers</li>
-          <li><b>REPLY TIME</b> Usually within one day, worldwide</li>
-          <li><b>DIRECT LINE</b> <a href="tel:+85255664977">+852 5566 4977</a> · <a href="https://wa.me/85255664977" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><b>YOUR DATA</b> The armory runs in your browser — no upload, no account</li>
+          <li><b data-i18n="contact.fact1_label">FIRST CONSULT</b> <span data-i18n="contact.fact1_val">Free — no obligation</span></li>
+          <li><b data-i18n="contact.fact2_label">BEFORE BUILD</b> <span data-i18n="contact.fact2_val">Written blueprint: scope, stack, numbers</span></li>
+          <li><b data-i18n="contact.fact3_label">REPLY TIME</b> <span data-i18n="contact.fact3_val">Usually within one day, worldwide</span></li>
+          <li><b data-i18n="contact.fact4_label">DIRECT LINE</b> <a href="tel:+85255664977">+852 5566 4977</a> · <a href="https://wa.me/85255664977" target="_blank" rel="noopener" data-i18n="contact.whatsapp">WhatsApp</a></li>
+          <li><b data-i18n="contact.fact5_label">YOUR DATA</b> <span data-i18n="contact.fact5_val">The armory runs in your browser — no upload, no account</span></li>
         </ul>
         <p class="contact__fine" data-i18n="contact.fine">HK based · replies worldwide · usually within a day</p>
       </div>
@@ -619,7 +619,7 @@
         <label for="f-msg" data-i18n="contact.f_msg">WHAT'S THE STORE / THE PROBLEM</label>
         <textarea id="f-msg" name="message" rows="5" placeholder="My store does X. I want Y. The problem is Z."></textarea>
         <button class="btn" type="submit" id="submitBtn" data-i18n="contact.submit">OPEN EMAIL DRAFT ▸</button>
-        <p class="form__note" id="formNote" aria-live="polite">THIS OPENS A DRAFT IN YOUR OWN MAIL CLIENT. NOTHING IS SENT OR STORED UNTIL YOU HIT SEND. USUALLY REPLIES WITHIN ONE DAY.</p>
+        <p class="form__note" id="formNote" aria-live="polite" data-i18n="contact.form_note">THIS OPENS A DRAFT IN YOUR OWN MAIL CLIENT. NOTHING IS SENT OR STORED UNTIL YOU HIT SEND. USUALLY REPLIES WITHIN ONE DAY.</p>
       </form>
     </div>
   </section>
@@ -633,7 +633,7 @@
   </div>
   <div class="wrap footer__row footer__row--meta">
     <span data-i18n="footer.copy">© 2026 · ALL SIGNALS RESERVED</span>
-    <span><a href="tools/">50 FREE TOOLS</a> · <a href="privacy/">PRIVACY</a> · <a href="https://github.com/logansolamanhermes/logansolaman">SOURCE</a></span>
+    <span><a href="tools/" data-i18n="chrome.foot_tools">50 FREE TOOLS</a> · <a href="privacy/" data-i18n="chrome.foot_privacy">PRIVACY</a> · <a href="https://github.com/logansolamanhermes/logansolaman" data-i18n="chrome.foot_source">SOURCE</a></span>
     <span data-i18n="footer.sys">SYSTEM: ONLINE</span>
   </div>
 </footer>
@@ -646,8 +646,8 @@
     <p class="casemodal__meta" id="caseMetaExtra"></p>
     <h2 class="casemodal__title" id="caseTitle"></h2>
     <p class="prose" id="caseCopy"></p>
-    <a class="btn" id="caseDetail" href="#">FULL CASE STUDY ▸</a>
-    <a class="btn" id="caseLink" href="#" target="_blank" rel="noopener">VISIT SITE ↗</a>
+    <a class="btn" id="caseDetail" href="#" data-i18n="chrome.modal_detail">FULL CASE STUDY ▸</a>
+    <a class="btn" id="caseLink" href="#" target="_blank" rel="noopener" data-i18n="chrome.modal_visit">VISIT SITE ↗</a>
   </div>
 </div>
 

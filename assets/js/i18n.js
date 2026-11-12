@@ -34,8 +34,13 @@
   let current = DEFAULT;
   const listeners = [];
 
-  // locale files live at site root; /tools/ pages sit one level down
-  const BASE = location.pathname.includes("/tools") ? "../" : "";
+  // Locale files live at site root. Compute the relative path from the current
+  // page's depth so /cases/case01/, /services/x/, /privacy/, /tools/ and /
+  // all resolve to the same /locales/<lang>.json.
+  let segs = location.pathname.replace(/^\//, "").replace(/\/$/, "").split("/").filter(Boolean);
+  if (segs.length && /\.[a-z0-9]+$/i.test(segs[segs.length - 1])) segs.pop();  // root-level /404.html
+  const depth = segs.length;
+  const BASE = depth > 0 ? "../".repeat(depth) : "";
 
   /* ---------- detect preferred language ----------
      Priority: ?lang= → manual choice (ls_lang + ls_lang_manual) → browser.
@@ -72,8 +77,19 @@
   function apply() {
     document.querySelectorAll("[data-i18n]").forEach((el) => {
       const key = el.getAttribute("data-i18n");
-      const val = dict[key] ?? fallback[key];
+      let val = dict[key] ?? fallback[key];
       if (val == null) return;
+      // data-i18n-vars='n:01;cat:OUTDOOR' -> substitute {n}/{cat} tokens
+      const vars = el.getAttribute("data-i18n-vars");
+      if (vars && typeof val === "string") {
+        vars.split(";").forEach((pair) => {
+          const i = pair.indexOf(":");
+          if (i < 0) return;
+          let v = pair.slice(i + 1);
+          if (v.startsWith("@")) v = dict[v.slice(1)] ?? fallback[v.slice(1)] ?? v;
+          val = val.replaceAll("{" + pair.slice(0, i) + "}", v);
+        });
+      }
       if (el.hasAttribute("data-i18n-html")) el.innerHTML = val;
       else el.textContent = val;
     });
@@ -86,12 +102,32 @@
         if (attr && val != null) el.setAttribute(attr, val);
       });
     });
+    // <title> and <meta name=description> (data-meta-i18n + optional vars)
+    document.querySelectorAll("[data-meta-i18n]").forEach((el) => {
+      let val = dict[el.getAttribute("data-meta-i18n")] ?? fallback[el.getAttribute("data-meta-i18n")];
+      if (val == null) return;
+      const vars = el.getAttribute("data-meta-vars");
+      if (vars && typeof val === "string") {
+        vars.split(";").forEach((pair) => {
+          const i = pair.indexOf(":");
+          if (i < 0) return;
+          let v = pair.slice(i + 1);
+          if (v.startsWith("@")) v = dict[v.slice(1)] ?? fallback[v.slice(1)] ?? v;
+          val = val.replaceAll("{" + pair.slice(0, i) + "}", v);
+        });
+      }
+      if (el.tagName === "TITLE") document.title = val;
+      else el.setAttribute("content", val);
+    });
     // document direction + lang
     document.documentElement.lang = current;
     document.documentElement.dir = RTL.has(current) ? "rtl" : "ltr";
     document.documentElement.dataset.lang = current;
-    const nameEl = document.getElementById("langName");
-    if (nameEl) nameEl.textContent = LABELS[current] || current.toUpperCase();
+    const label = LABELS[current] || current.toUpperCase();
+    ["langName", "detailLangName"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = label;
+    });
   }
 
   async function set(lang, pushUrl = true, manual = true) {

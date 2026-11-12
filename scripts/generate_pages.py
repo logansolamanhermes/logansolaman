@@ -32,14 +32,14 @@ def load_cases():
     return out
 
 
-def head(title, desc, canonical, extra_head=""):
+def head(title, desc, canonical, extra_head="", title_key="", title_vars="", desc_key="", desc_vars=""):
     return f'''<!DOCTYPE html>
 <html lang="en" data-theme="matrix">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>{html.escape(title)}</title>
-<meta name="description" content="{html.escape(desc)}" />
+<title data-meta-i18n="{title_key}" data-meta-vars="{title_vars}">{html.escape(title)}</title>
+<meta name="description" content="{html.escape(desc)}" data-meta-i18n="{desc_key}" data-meta-vars="{desc_vars}" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#050705" />
 <meta name="author" content="Logan Solaman" />
@@ -65,8 +65,10 @@ def head(title, desc, canonical, extra_head=""):
 def nav(crumb):
     return f'''<header class="detail__hud">
   <a class="detail__brand" href="/">L<span>_</span> <b>LOGAN SOLAMAN</b></a>
-  <nav class="detail__crumbs" aria-label="Breadcrumb"><a href="/">HOME</a> <span>/</span> <a href="/#cases">ARCHIVE</a> <span>/</span> <strong>{html.escape(crumb)}</strong></nav>
-  <a class="detail__cta" href="/#contact">START A CONSULT ▸</a>
+  <nav class="detail__crumbs" aria-label="Breadcrumb"><a href="/" data-i18n="detail.home">HOME</a> <span>/</span> <a href="/#cases" data-i18n="detail.archive">ARCHIVE</a> <span>/</span> <strong>{html.escape(crumb)}</strong></nav>
+  <button class="detail__lang" id="detailLang" type="button" data-i18n-attr="aria-label:chrome.switch_lang" aria-label="Switch language"><span data-i18n="chrome.lang">LANG:</span> <b id="detailLangName">EN</b></button>
+  <a class="detail__cta" href="/#contact" data-i18n="chrome.start_consult">START A CONSULT ▸</a>
+  <div class="langmodal" id="detailLangModal" hidden><div class="langmodal__grid" id="detailLangGrid" role="listbox" aria-label="Languages"></div></div>
 </header>'''
 
 
@@ -133,8 +135,8 @@ def breadcrumb_ld(crumbs, canonical):
 
 def footer():
     return '''<footer class="detail__footer">
-  <p>// LOGAN SOLAMAN — THE STORE ARCHITECT · HONG KONG · EST. 2016</p>
-  <nav><a href="/">HOME</a> · <a href="/#services">SERVICES</a> · <a href="/#cases">ARCHIVE</a> · <a href="/#faq">FAQ</a> · <a href="/#contact">CONTACT</a> · <a href="/privacy/">PRIVACY</a></nav>
+  <p data-i18n="detail.footer">// LOGAN SOLAMAN — THE STORE ARCHITECT · HONG KONG · EST. 2016</p>
+  <nav><a href="/">HOME</a> · <a href="/#services" data-i18n="detail.services">SERVICES</a> · <a href="/#cases">ARCHIVE</a> · <a href="/#faq" data-i18n="detail.faq">FAQ</a> · <a href="/#contact" data-i18n="detail.contact">CONTACT</a> · <a href="/privacy/" data-i18n="detail.privacy">PRIVACY</a></nav>
 </footer>'''
 
 
@@ -149,18 +151,18 @@ def case_page(c, cases, loc):
     canonical = f"https://logansolaman.com/cases/{slug}/"
 
     if c["url"]:
-        shot_label = "REAL STOREFRONT"
+        shot_label = "REAL STOREFRONT"; shot_key = "real"
     elif k == 15:
-        shot_label = "INTERNAL SYSTEM — NO PUBLIC SCREENSHOT"
+        shot_label = "INTERNAL SYSTEM — NO PUBLIC SCREENSHOT"; shot_key = "internal"
     else:
-        shot_label = "NOT YET LAUNCHED — PLACEHOLDER, NOT A REAL SCREENSHOT"
+        shot_label = "NOT YET LAUNCHED — PLACEHOLDER, NOT A REAL SCREENSHOT"; shot_key = "placeholder"
 
     if c["url"] and os.path.exists(os.path.join(ROOT, f"assets/cases/{slug}.webp")):
         imgs = f'''<figure class="shot shot--desktop">
         <img src="/assets/cases/{slug}.webp" srcset="/assets/cases/{slug}-400.webp 400w, /assets/cases/{slug}.webp 800w"
              sizes="(max-width: 800px) 92vw, 800px" width="800" height="600" loading="eager" decoding="async"
              alt="Desktop screenshot of the {html.escape(name)} storefront homepage" />
-        <figcaption>DESKTOP · HOMEPAGE</figcaption>
+        <figcaption data-i18n="detail.desktop">DESKTOP · HOMEPAGE</figcaption>
       </figure>'''
     else:
         # Internal system or not-yet-launched build: no screenshot exists, say so.
@@ -173,7 +175,7 @@ def case_page(c, cases, loc):
         <img src="/assets/cases/{slug}.webp" srcset="/assets/cases/{slug}-400.webp 400w, /assets/cases/{slug}.webp 800w"
              sizes="(max-width: 800px) 92vw, 800px" width="800" height="600" loading="eager" decoding="async"
              alt="Placeholder graphic for {html.escape(name)}, {"an internal system" if k == 15 else "a system still under construction"}" />
-        <figcaption>{shot_label}</figcaption>
+        <figcaption data-i18n="detail.figcaption_{shot_key}" data-i18n-vars="label:{shot_label}">{shot_label}</figcaption>
       </figure>'''
 
     if os.path.exists(os.path.join(ROOT, f"assets/cases/{slug}-mobile.webp")):
@@ -181,14 +183,16 @@ def case_page(c, cases, loc):
       <figure class="shot shot--mobile">
         <img src="/assets/cases/{slug}-mobile.webp" width="260" height="520" loading="lazy" decoding="async"
              alt="Mobile screenshot of the {html.escape(name)} storefront homepage" />
-        <figcaption>MOBILE · 390PX</figcaption>
+        <figcaption data-i18n="detail.mobile">MOBILE · 390PX</figcaption>
       </figure>'''
 
-    live = (f'<a class="detail__btn" href="{html.escape(c["url"])}" target="_blank" rel="noopener">VISIT LIVE SITE ↗</a>'
-            if c["url"] else '<span class="detail__status">SYSTEM UNDER CONSTRUCTION</span>')
+    live = (f'<a class="detail__btn" href="{html.escape(c["url"])}" target="_blank" rel="noopener" data-i18n="detail.visit_live">VISIT LIVE SITE ↗</a>'
+            if c["url"] else '<span class="detail__status" data-i18n="detail.under_construction">SYSTEM UNDER CONSTRUCTION</span>')
 
     tags = "".join(f'<span class="tag">{html.escape(t)}</span>' for t in [c["cat"], c["city"]] + c["stack"])
     constraint, _built, evidence = note(k)
+    evidence_key = ("detail.ev_internal" if k == 15 else
+                    "detail.ev_none" if not c["url"] else "detail.ev_live")
     prev_k = ((k - 2) % 17) + 1
     next_k = (k % 17) + 1
 
@@ -218,47 +222,50 @@ def case_page(c, cases, loc):
     ])
 
     return head(title, desc, canonical,
-                f'<script type="application/ld+json">\n{ld_json}\n</script>\n') + nav(name) + f'''
+                extra_head=f'<script type="application/ld+json">\n{ld_json}\n</script>\n',
+                title_key="meta.case_title", title_vars=f"name:{html.escape(name)}",
+                desc_key="meta.case_desc", desc_vars=f"name:{html.escape(name)};city:{html.escape(c['city'])}") + nav(name) + f'''
 <main class="detail__main">
-  <p class="eyebrow">// ARCHIVE / TAPE {k:02d} / {html.escape(c["cat"])}</p>
-  <h1 class="detail__title">{html.escape(name)}</h1>
-  <p class="detail__sub">{html.escape(c["city"])} · {"LIVE" if c["status"] == "live" else "IN PROGRESS"}</p>
+  <p class="eyebrow" data-i18n="detail.eyebrow_case" data-i18n-vars="n:{k:02d};cat:{html.escape(c["cat"])}">// ARCHIVE / TAPE {k:02d} / {html.escape(c["cat"])}</p>
+  <h1 class="detail__title" data-i18n="case{k}.name">{html.escape(name)}</h1>
+  <p class="detail__sub">{html.escape(c["city"])} · <span data-i18n="detail.{'live' if c["status"] == "live" else 'in_progress'}">{"LIVE" if c["status"] == "live" else "IN PROGRESS"}</span></p>
 
   <div class="detail__tags">{tags}</div>
 
   <section class="detail__shots detail__shots--lead" aria-label="Storefront screenshots">
-    <p class="eyebrow">// SCREEN CAPTURE — {shot_label}</p>
+    <p class="eyebrow" data-i18n="detail.shot_eyebrow_{shot_key}">// SCREEN CAPTURE — {shot_label}</p>
     <div class="shots">{imgs}</div>
   </section>
 
   <div class="detail__body">
     <div class="detail__lead">
-      <h2>THE BRIEF</h2>
-      <p class="prose">{html.escape(constraint)}.</p>
-      <h2>WHAT I BUILT</h2>
-      <p class="prose">{copy}</p>
-      <h2>WHAT YOU CAN VERIFY</h2>
-      <p class="prose">{html.escape(evidence)}. {html.escape(" · ".join(c["stack"]))} is declared in the project metadata and visible in the tags above.</p>
-      <p class="prose detail__caveat">No performance or revenue figures are published for this project. If outcome numbers matter to your decision, ask for them in the consult and I will tell you what I can and cannot share.</p>
-      <div class="detail__actions">{live}<a class="detail__btn detail__btn--ghost" href="/#contact">DISCUSS A BUILD ▸</a></div>
+      <h2 data-i18n="detail.brief">THE BRIEF</h2>
+      <p class="prose" data-i18n="case{k}.brief">{html.escape(constraint)}.</p>
+      <h2 data-i18n="detail.built">WHAT I BUILT</h2>
+      <p class="prose" data-i18n="case{k}.copy" data-i18n-html="case{k}.copy">{copy}</p>
+      <h2 data-i18n="detail.verify">WHAT YOU CAN VERIFY</h2>
+      <p class="prose" data-i18n="{evidence_key}">{html.escape(evidence)}.</p>
+      <p class="prose detail__stackline"><span data-i18n="detail.stack_declared">Stack, as shown in the tags above:</span> {html.escape(" · ".join(c["stack"]))}</p>
+      <p class="prose detail__caveat" data-i18n="detail.caveat">No performance or revenue figures are published for this project. If outcome numbers matter to your decision, ask for them in the consult and I will tell you what I can and cannot share.</p>
+      <div class="detail__actions">{live}<a class="detail__btn detail__btn--ghost" href="/#contact" data-i18n="detail.discuss">DISCUSS A BUILD ▸</a></div>
     </div>
     <div class="detail__facts">
       <dl>
-        <dt>CLIENT</dt><dd>{html.escape(name)}</dd>
-        <dt>MARKET</dt><dd>{html.escape(c["city"])}</dd>
-        <dt>STATUS</dt><dd>{"LIVE" if c["status"] == "live" else "IN PROGRESS"}</dd>
-        <dt>STACK</dt><dd>{html.escape(" · ".join(c["stack"]))}</dd>
+        <dt data-i18n="detail.client">CLIENT</dt><dd>{html.escape(name)}</dd>
+        <dt data-i18n="detail.market">MARKET</dt><dd>{html.escape(c["city"])}</dd>
+        <dt data-i18n="detail.status">STATUS</dt><dd data-i18n="detail.{'live' if c["status"] == "live" else 'in_progress'}">{"LIVE" if c["status"] == "live" else "IN PROGRESS"}</dd>
+        <dt data-i18n="detail.stack">STACK</dt><dd>{html.escape(" · ".join(c["stack"]))}</dd>
       </dl>
     </div>
   </div>
 
   <nav class="detail__pager" aria-label="Case navigation">
-    <a href="/cases/case{prev_k:02d}/">← TAPE {prev_k:02d} · {html.escape(loc[f"case{prev_k}.name"])}</a>
-    <a href="/#cases">ALL 17 SYSTEMS</a>
-    <a href="/cases/case{next_k:02d}/">TAPE {next_k:02d} · {html.escape(loc[f"case{next_k}.name"])} →</a>
+    <a href="/cases/case{prev_k:02d}/" data-i18n="detail.pager_prev" data-i18n-vars="n:{prev_k:02d};name:{html.escape(loc[f"case{prev_k}.name"])}">← TAPE {prev_k:02d} · {html.escape(loc[f"case{prev_k}.name"])}</a>
+    <a href="/#cases" data-i18n="detail.all_systems">ALL 17 SYSTEMS</a>
+    <a href="/cases/case{next_k:02d}/" data-i18n="detail.pager_next" data-i18n-vars="n:{next_k:02d};name:{html.escape(loc[f"case{next_k}.name"])}">TAPE {next_k:02d} · {html.escape(loc[f"case{next_k}.name"])} →</a>
   </nav>
 </main>
-''' + footer() + "</body></html>\n"
+''' + footer() + '<script src="/assets/js/i18n.js" defer></script>\n' + "</body></html>\n"
 
 
 SERVICE_CASES = {1: [1, 10, 6], 2: [2, 3, 9], 3: [15, 10, 13], 4: [11, 6, 14], 5: [10, 12, 17]}
@@ -306,38 +313,40 @@ def service_page(n, cases, loc):
     ])
     others = "".join(f'<a href="/services/{SERVICE_SLUG[m]}/" class="detail__svc{" is-current" if m == n else ""}">M{m} · {html.escape(loc[f"m{m}.name"])}</a>' for m in range(1, 6))
     return head(title, desc, canonical,
-                f'<script type="application/ld+json">\n{ld_json}\n</script>\n') + nav(name) + f'''
+                extra_head=f'<script type="application/ld+json">\n{ld_json}\n</script>\n',
+                title_key="meta.service_title", title_vars=f"name:@m{n}.name",
+                desc_key="meta.service_desc", desc_vars=f"name:@m{n}.name") + nav(name) + f'''
 <main class="detail__main">
-  <p class="eyebrow">// SERVICE / MODULE M{n}</p>
-  <h1 class="detail__title">{html.escape(name)}</h1>
-  <p class="detail__sub">ONE OF FIVE SYSTEMS · HONG KONG · WORKING GLOBALLY</p>
+  <p class="eyebrow" data-i18n="detail.service_eyebrow" data-i18n-vars="n:{n}">// SERVICE / MODULE M{n}</p>
+  <h1 class="detail__title" data-i18n="m{n}.name">{html.escape(name)}</h1>
+  <p class="detail__sub" data-i18n="detail.service_sub">ONE OF FIVE SYSTEMS · HONG KONG · WORKING GLOBALLY</p>
 
   <div class="detail__body">
     <div class="detail__lead">
-      <h2>WHAT IT IS</h2>
-      <p class="prose">{html.escape(body)}</p>
-      <h2>HOW IT STARTS</h2>
-      <p class="prose">A free first consult to find the real constraint. Then a written blueprint — scope, stack and numbers — before any code is written. <a href="/#faq">Read the FAQ</a> for what happens after launch.</p>
-      <div class="detail__actions"><a class="detail__btn" href="/#contact">START A CONSULT ▸</a><a class="detail__btn detail__btn--ghost" href="/#process">SEE THE PROCESS</a></div>
+      <h2 data-i18n="detail.what_it_is">WHAT IT IS</h2>
+      <p class="prose" data-i18n="m{n}.body">{html.escape(body)}</p>
+      <h2 data-i18n="detail.how_starts">HOW IT STARTS</h2>
+      <p class="prose" data-i18n="service.how_body" data-i18n-html>A free first consult to find the real constraint. Then a written blueprint — scope, stack and numbers — before any code is written. <a href="/#faq">Read the FAQ</a> for what happens after launch.</p>
+      <div class="detail__actions"><a class="detail__btn" href="/#contact" data-i18n="chrome.start_consult">START A CONSULT ▸</a><a class="detail__btn detail__btn--ghost" href="/#process" data-i18n="detail.see_process">SEE THE PROCESS</a></div>
     </div>
     <div class="detail__facts">
       <dl>
-        <dt>MODULE</dt><dd>M{n} / 5</dd>
-        <dt>FIRST STEP</dt><dd>FREE CONSULT</dd>
-        <dt>BEFORE BUILD</dt><dd>WRITTEN BLUEPRINT</dd>
-        <dt>REPLY TIME</dt><dd>USUALLY WITHIN ONE DAY</dd>
+        <dt data-i18n="detail.module">MODULE</dt><dd>M{n} / 5</dd>
+        <dt data-i18n="service.fact_first">FIRST STEP</dt><dd data-i18n="service.fact_first_val">FREE CONSULT</dd>
+        <dt data-i18n="service.fact_before">BEFORE BUILD</dt><dd data-i18n="service.fact_before_val">WRITTEN BLUEPRINT</dd>
+        <dt data-i18n="service.fact_reply">REPLY TIME</dt><dd data-i18n="service.fact_reply_val">USUALLY WITHIN ONE DAY</dd>
       </dl>
     </div>
   </div>
 
   <section class="detail__shots" aria-label="Related systems">
-    <p class="eyebrow">// RELATED SYSTEMS IN THE ARCHIVE</p>
+    <p class="eyebrow" data-i18n="detail.related">// RELATED SYSTEMS IN THE ARCHIVE</p>
     <div class="relcards">{cards}</div>
   </section>
 
   <nav class="detail__svcnav" aria-label="All services">{others}</nav>
 </main>
-''' + footer() + "</body></html>\n"
+''' + footer() + '<script src="/assets/js/i18n.js" defer></script>\n' + "</body></html>\n"
 
 
 def main():

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CHI WAI STUDIO — Case Study | Logan Solaman</title>
-<meta name="description" content="A Hong Kong artist&#x27;s digital gallery, built to let the work lead: a quiet, image-first archive for paintings, exhibitions, and a lifetime of…" />
+<title data-meta-i18n="meta.case_title" data-meta-vars="name:CHI WAI STUDIO">CHI WAI STUDIO — Case Study | Logan Solaman</title>
+<meta name="description" content="A Hong Kong artist&#x27;s digital gallery, built to let the work lead: a quiet, image-first archive for paintings, exhibitions, and a lifetime of…" data-meta-i18n="meta.case_desc" data-meta-vars="name:CHI WAI STUDIO;city:HONG KONG" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#050705" />
 <meta name="author" content="Logan Solaman" />
@@ -110,59 +110,63 @@
 </head>
 <body class="detail"><header class="detail__hud">
   <a class="detail__brand" href="/">L<span>_</span> <b>LOGAN SOLAMAN</b></a>
-  <nav class="detail__crumbs" aria-label="Breadcrumb"><a href="/">HOME</a> <span>/</span> <a href="/#cases">ARCHIVE</a> <span>/</span> <strong>CHI WAI STUDIO</strong></nav>
-  <a class="detail__cta" href="/#contact">START A CONSULT ▸</a>
+  <nav class="detail__crumbs" aria-label="Breadcrumb"><a href="/" data-i18n="detail.home">HOME</a> <span>/</span> <a href="/#cases" data-i18n="detail.archive">ARCHIVE</a> <span>/</span> <strong>CHI WAI STUDIO</strong></nav>
+  <button class="detail__lang" id="detailLang" type="button" data-i18n-attr="aria-label:chrome.switch_lang" aria-label="Switch language"><span data-i18n="chrome.lang">LANG:</span> <b id="detailLangName">EN</b></button>
+  <a class="detail__cta" href="/#contact" data-i18n="chrome.start_consult">START A CONSULT ▸</a>
+  <div class="langmodal" id="detailLangModal" hidden><div class="langmodal__grid" id="detailLangGrid" role="listbox" aria-label="Languages"></div></div>
 </header>
 <main class="detail__main">
-  <p class="eyebrow">// ARCHIVE / TAPE 16 / ART</p>
-  <h1 class="detail__title">CHI WAI STUDIO</h1>
-  <p class="detail__sub">HONG KONG · LIVE</p>
+  <p class="eyebrow" data-i18n="detail.eyebrow_case" data-i18n-vars="n:16;cat:ART">// ARCHIVE / TAPE 16 / ART</p>
+  <h1 class="detail__title" data-i18n="case16.name">CHI WAI STUDIO</h1>
+  <p class="detail__sub">HONG KONG · <span data-i18n="detail.live">LIVE</span></p>
 
   <div class="detail__tags"><span class="tag">ART</span><span class="tag">HONG KONG</span><span class="tag">SHOPIFY</span></div>
 
   <section class="detail__shots detail__shots--lead" aria-label="Storefront screenshots">
-    <p class="eyebrow">// SCREEN CAPTURE — REAL STOREFRONT</p>
+    <p class="eyebrow" data-i18n="detail.shot_eyebrow_real">// SCREEN CAPTURE — REAL STOREFRONT</p>
     <div class="shots"><figure class="shot shot--desktop">
         <img src="/assets/cases/case16.webp" srcset="/assets/cases/case16-400.webp 400w, /assets/cases/case16.webp 800w"
              sizes="(max-width: 800px) 92vw, 800px" width="800" height="600" loading="eager" decoding="async"
              alt="Desktop screenshot of the CHI WAI STUDIO storefront homepage" />
-        <figcaption>DESKTOP · HOMEPAGE</figcaption>
+        <figcaption data-i18n="detail.desktop">DESKTOP · HOMEPAGE</figcaption>
       </figure>
       <figure class="shot shot--mobile">
         <img src="/assets/cases/case16-mobile.webp" width="260" height="520" loading="lazy" decoding="async"
              alt="Mobile screenshot of the CHI WAI STUDIO storefront homepage" />
-        <figcaption>MOBILE · 390PX</figcaption>
+        <figcaption data-i18n="detail.mobile">MOBILE · 390PX</figcaption>
       </figure></div>
   </section>
 
   <div class="detail__body">
     <div class="detail__lead">
-      <h2>THE BRIEF</h2>
-      <p class="prose">A lifetime of paintings and exhibitions that should lead, not compete with UI.</p>
-      <h2>WHAT I BUILT</h2>
-      <p class="prose">A Hong Kong artist's digital gallery, built to let the work lead: a quiet, image-first archive for paintings, exhibitions, and a lifetime of making.</p>
-      <h2>WHAT YOU CAN VERIFY</h2>
-      <p class="prose">Desktop + mobile homepage captures; live store linked. SHOPIFY is declared in the project metadata and visible in the tags above.</p>
-      <p class="prose detail__caveat">No performance or revenue figures are published for this project. If outcome numbers matter to your decision, ask for them in the consult and I will tell you what I can and cannot share.</p>
-      <div class="detail__actions"><a class="detail__btn" href="https://chiwaistudio.com/" target="_blank" rel="noopener">VISIT LIVE SITE ↗</a><a class="detail__btn detail__btn--ghost" href="/#contact">DISCUSS A BUILD ▸</a></div>
+      <h2 data-i18n="detail.brief">THE BRIEF</h2>
+      <p class="prose" data-i18n="case16.brief">A lifetime of paintings and exhibitions that should lead, not compete with UI.</p>
+      <h2 data-i18n="detail.built">WHAT I BUILT</h2>
+      <p class="prose" data-i18n="case16.copy" data-i18n-html="case16.copy">A Hong Kong artist's digital gallery, built to let the work lead: a quiet, image-first archive for paintings, exhibitions, and a lifetime of making.</p>
+      <h2 data-i18n="detail.verify">WHAT YOU CAN VERIFY</h2>
+      <p class="prose" data-i18n="detail.ev_live">Desktop + mobile homepage captures; live store linked.</p>
+      <p class="prose detail__stackline"><span data-i18n="detail.stack_declared">Stack, as shown in the tags above:</span> SHOPIFY</p>
+      <p class="prose detail__caveat" data-i18n="detail.caveat">No performance or revenue figures are published for this project. If outcome numbers matter to your decision, ask for them in the consult and I will tell you what I can and cannot share.</p>
+      <div class="detail__actions"><a class="detail__btn" href="https://chiwaistudio.com/" target="_blank" rel="noopener" data-i18n="detail.visit_live">VISIT LIVE SITE ↗</a><a class="detail__btn detail__btn--ghost" href="/#contact" data-i18n="detail.discuss">DISCUSS A BUILD ▸</a></div>
     </div>
     <div class="detail__facts">
       <dl>
-        <dt>CLIENT</dt><dd>CHI WAI STUDIO</dd>
-        <dt>MARKET</dt><dd>HONG KONG</dd>
-        <dt>STATUS</dt><dd>LIVE</dd>
-        <dt>STACK</dt><dd>SHOPIFY</dd>
+        <dt data-i18n="detail.client">CLIENT</dt><dd>CHI WAI STUDIO</dd>
+        <dt data-i18n="detail.market">MARKET</dt><dd>HONG KONG</dd>
+        <dt data-i18n="detail.status">STATUS</dt><dd data-i18n="detail.live">LIVE</dd>
+        <dt data-i18n="detail.stack">STACK</dt><dd>SHOPIFY</dd>
       </dl>
     </div>
   </div>
 
   <nav class="detail__pager" aria-label="Case navigation">
-    <a href="/cases/case15/">← TAPE 15 · HKU PRESS — POS</a>
-    <a href="/#cases">ALL 17 SYSTEMS</a>
-    <a href="/cases/case17/">TAPE 17 · MASTER PEST HK →</a>
+    <a href="/cases/case15/" data-i18n="detail.pager_prev" data-i18n-vars="n:15;name:HKU PRESS — POS">← TAPE 15 · HKU PRESS — POS</a>
+    <a href="/#cases" data-i18n="detail.all_systems">ALL 17 SYSTEMS</a>
+    <a href="/cases/case17/" data-i18n="detail.pager_next" data-i18n-vars="n:17;name:MASTER PEST HK">TAPE 17 · MASTER PEST HK →</a>
   </nav>
 </main>
 <footer class="detail__footer">
-  <p>// LOGAN SOLAMAN — THE STORE ARCHITECT · HONG KONG · EST. 2016</p>
-  <nav><a href="/">HOME</a> · <a href="/#services">SERVICES</a> · <a href="/#cases">ARCHIVE</a> · <a href="/#faq">FAQ</a> · <a href="/#contact">CONTACT</a> · <a href="/privacy/">PRIVACY</a></nav>
-</footer></body></html>
+  <p data-i18n="detail.footer">// LOGAN SOLAMAN — THE STORE ARCHITECT · HONG KONG · EST. 2016</p>
+  <nav><a href="/">HOME</a> · <a href="/#services" data-i18n="detail.services">SERVICES</a> · <a href="/#cases">ARCHIVE</a> · <a href="/#faq" data-i18n="detail.faq">FAQ</a> · <a href="/#contact" data-i18n="detail.contact">CONTACT</a> · <a href="/privacy/" data-i18n="detail.privacy">PRIVACY</a></nav>
+</footer><script src="/assets/js/i18n.js" defer></script>
+</body></html>
