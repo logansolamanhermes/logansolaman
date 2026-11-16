@@ -48,7 +48,6 @@
   let themeIdx = 0, rainOn = true, activeFilter = "ALL", currentCard = 0;
   const themeNames = ["MATRIX", "SYNTH", "VAPOR"];
   const themeAccents = ["#b6ff3c", "#ff5cf0", "#5cf0ff"];
-  const rainDensity = 1;
 
   function setTheme(i) {
     themeIdx = ((i % 3) + 3) % 3;
@@ -59,18 +58,37 @@
   }
   function setRain(on) {
     rainOn = on;
-    if (window.MatrixGL) window.MatrixGL.setDensity(on ? rainDensity : 0);
+    if (window.MatrixGL) window.MatrixGL.setDensity(on ? 1 : 0);
     document.body.classList.toggle("rain-off", !on);
   }
   function toggleGrid() { document.body.classList.toggle("grid-on"); }
 
   /* ---------- boot ---------- */
   function boot() {
-    const el = $("#boot");
+    const el = $("#boot"), log = $("#bootLog");
     if (!el) return;
-    // The quiet design has no boot sequence; keep the DOM node for the engine.
-    el.classList.add("is-done");
-    el.style.display = "none";
+    if (reduced || sessionStorage.getItem("ls_booted")) { el.classList.add("is-done"); return; }
+    const lines = [
+      "LOGAN.SYS v4.0 — ONLINE",
+      "MATRIX.SHADER [WEBGL2]",
+      "ARCHIVE 17 · LOCALE 10",
+      "READY_",
+    ];
+    let i = 0;
+    const done = () => {
+      el.classList.add("is-done");
+      try { sessionStorage.setItem("ls_booted", "1"); } catch (e) {}
+      // Hard hide: in a background tab CSS transitions can be throttled forever.
+      setTimeout(() => { el.style.display = "none"; }, 600);
+    };
+    setTimeout(done, 1800); // never let boot strand the page
+    const step = () => {
+      if (i < lines.length) { log.textContent += lines[i++] + "\n"; setTimeout(step, reduced ? 0 : 45 + Math.random() * 40); }
+      else setTimeout(done, reduced ? 0 : 160);
+    };
+    addEventListener("keydown", e => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); done(); } }, { once: true });
+    el.addEventListener("click", done, { once: true });
+    step();
   }
 
   /* ---------- clock ---------- */
@@ -359,10 +377,6 @@
   function glitch() {
     const el = $("#heroTitle");
     if (!el || reduced) return;
-    // The ::after copies the em's own text (attr(data-text) reads from the em,
-    // not the h1) so the effect works in every locale.
-    const em = el.querySelector("em");
-    if (em) em.setAttribute("data-text", em.textContent.trim());
     el.classList.add("is-glitching");
     setTimeout(() => el.classList.remove("is-glitching"), 600);
   }

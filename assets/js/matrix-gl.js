@@ -60,19 +60,16 @@
     };
     resize2d(); addEventListener("resize", resize2d);
     const draw = () => {
-      const fade = Math.min(1, Math.max(0.15, 1 - scrollY / (innerHeight * 1.1)));
       ctx.fillStyle = "rgba(5,7,5,.09)"; ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.globalAlpha = fade;
       ctx.fillStyle = tint; ctx.font = '16px "MatrixKana", monospace';
       cols.forEach((y, i) => {
         ctx.fillText(KANA.charAt(Math.floor(Math.random() * KANA.length)), i * 16, y * 16);
         cols[i] = y > canvas.height / 16 + Math.random() * 40 ? 0 : y + 1;
       });
-      ctx.globalAlpha = 1;
       if (active && !reduced && !document.hidden) requestAnimationFrame(draw);
     };
     draw();
-    window.MatrixGL = { mode: "2d-fallback", atlas: "kana", themes: PALETTES.map(p => p.name), setTheme(i) { tint = ["#b6ff3c", "#ff5cf0", "#5cf0ff"][((i % 3) + 3) % 3]; }, setDensity(v) { active = v > 0; if (active) draw(); }, get on() { return active; } };
+    window.MatrixGL = { mode: "2d-fallback", atlas: "kana", themes: PALETTES.map(p => p.name), setTheme(i) { tint = ["#b6ff3c", "#ff5cf0", "#5cf0ff"][i]; }, setDensity(v) { active = v > 0; if (active) draw(); }, get on() { return active; } };
     return;
   }
 
@@ -128,9 +125,9 @@
     vec2 d = (uv - u_pointer) * vec2(u_res.x / u_res.y, 1.0);
     float ripple = exp(-dot(d, d) * 9.0);
 
-    // Calm the middle so big headlines stay readable.
-    float focus = 1.0 - 0.55 * exp(-pow((uv.x - 0.5) * 1.9, 2.0) - pow((uv.y - 0.48) * 2.2, 2.0));
-    float vignette = smoothstep(1.05, 0.20, length((uv - 0.5) * vec2(1.2, 1.0)));
+    // calm the middle so big headlines stay readable
+    float focus = 1.0 - 0.50 * exp(-pow((uv.x - 0.5) * 2.1, 2.0) - pow((uv.y - 0.48) * 2.6, 2.0));
+    float vignette = smoothstep(1.15, 0.25, length((uv - 0.5) * vec2(1.25, 1.0)));
     float value = rain * focus * vignette * (0.95 + ripple * 0.8);
 
     vec3 c = u_color * value;
@@ -191,7 +188,7 @@
     }).catch(() => {});
   }
 
-  let themeIdx = 0, density = 1, scrollVel = 0, pointer = [0.5, 0.5], heroFade = 1;
+  let themeIdx = 0, density = 1, scrollVel = 0, pointer = [0.5, 0.5];
   let color = PALETTES[0].color, cellPx = 16;
 
   function resize() {
@@ -204,18 +201,11 @@
   addEventListener("pointermove", e => { pointer = [e.clientX / innerWidth, 1 - e.clientY / innerHeight]; }, { passive: true });
 
   let lastY = scrollY, lastT = performance.now();
-  // Hero-localised rain: full strength at the top, quiet texture below the fold.
-  const updateHeroFade = () => {
-    heroFade = Math.min(1, Math.max(0.15, 1 - scrollY / (innerHeight * 1.1)));
-  };
-  updateHeroFade();
   addEventListener("scroll", () => {
     const now = performance.now(), dy = scrollY - lastY;
     scrollVel = Math.min(Math.abs(dy) / Math.max(now - lastT, 16) * 0.06, 1.4);
-    updateHeroFade();
     lastY = scrollY; lastT = now;
   }, { passive: true });
-  addEventListener("resize", updateHeroFade, { passive: true });
 
   const t0 = performance.now();
   function frame(now) {
@@ -224,7 +214,7 @@
     gl.uniform1f(U.u_time, reduced ? 0 : (now - t0) / 1000);
     gl.uniform2f(U.u_pointer, pointer[0], pointer[1]);
     gl.uniform1f(U.u_scroll, scrollVel);
-    gl.uniform1f(U.u_density, density * heroFade);
+    gl.uniform1f(U.u_density, density);
     gl.uniform1f(U.u_cell, cellPx);
     gl.uniform3fv(U.u_color, color);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
