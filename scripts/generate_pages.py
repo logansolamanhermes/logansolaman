@@ -28,7 +28,7 @@ def load_cases():
             k, cat, status, url, city, stack_raw = m.groups()
             stack = re.findall(r'"([^"]+)"', stack_raw)
             out.append(dict(k=int(k), cat=cat, status=status, url=url, city=city, stack=stack))
-    assert len(out) == 17, f"expected 17 cases, parsed {len(out)}"
+    assert len(out) == 18, f"expected 18 cases, parsed {len(out)}"
     return out
 
 
@@ -193,8 +193,8 @@ def case_page(c, cases, loc):
     constraint, _built, evidence = note(k)
     evidence_key = ("detail.ev_internal" if k == 15 else
                     "detail.ev_none" if not c["url"] else "detail.ev_live")
-    prev_k = ((k - 2) % 17) + 1
-    next_k = (k % 17) + 1
+    prev_k = ((k - 2) % 18) + 1
+    next_k = (k % 18) + 1
 
     work_id = canonical + "#work"
     creative = {
@@ -261,7 +261,7 @@ def case_page(c, cases, loc):
 
   <nav class="detail__pager" aria-label="Case navigation">
     <a href="/cases/case{prev_k:02d}/" data-i18n="detail.pager_prev" data-i18n-vars="n:{prev_k:02d};name:{html.escape(loc[f"case{prev_k}.name"])}">← TAPE {prev_k:02d} · {html.escape(loc[f"case{prev_k}.name"])}</a>
-    <a href="/#cases" data-i18n="detail.all_systems">ALL 17 SYSTEMS</a>
+    <a href="/#cases" data-i18n="detail.all_systems">ALL 18 SYSTEMS</a>
     <a href="/cases/case{next_k:02d}/" data-i18n="detail.pager_next" data-i18n-vars="n:{next_k:02d};name:{html.escape(loc[f"case{next_k}.name"])}">TAPE {next_k:02d} · {html.escape(loc[f"case{next_k}.name"])} →</a>
   </nav>
 </main>
@@ -365,7 +365,7 @@ def main():
         p = os.path.join(d, "index.html")
         open(p, "w", encoding="utf-8").write(service_page(n, cases, loc))
         made.append(p)
-    print(f"generated {len(made)} pages (17 cases + 5 services)")
+    print(f"generated {len(made)} pages (18 cases + 5 services)")
     for p in made:
         print(" ", os.path.relpath(p, ROOT))
 

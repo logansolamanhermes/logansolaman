@@ -16,9 +16,9 @@
      the form builds a mailto: link and lets the visitor's mail client send it. */
   const CONTACT_EMAIL = "hello@logansolaman.com";
 
-  /* ---------- 17-case archive. Keys map to caseN.name / caseN.copy
+  /* ---------- 18-case archive. Keys map to caseN.name / caseN.copy
      in locales/*.json, so all ten languages come from the dictionaries. ---------- */
-  /* ---------- 17-case archive. Keys map to caseN.name / caseN.copy
+  /* ---------- 18-case archive. Keys map to caseN.name / caseN.copy
      in locales/*.json, so all ten languages come from the dictionaries.
      year/stack fields are omitted rather than guessed. ---------- */
   const CASES = [
@@ -39,8 +39,9 @@
     { k: 15, cat: "INFRA",   status: "live",     url: "",                                city: "HONG KONG",     stack: ["CUSTOM POS", "INVENTORY SYNC"] },
     { k: 16, cat: "ART",     status: "live",     url: "https://chiwaistudio.com/",       city: "HONG KONG",     stack: ["SHOPIFY"] },
     { k: 17, cat: "SERVICE", status: "live",     url: "https://masterpesthk.com/",       city: "HONG KONG",     stack: ["SHOPIFY", "BOOKINGS"] },
+    { k: 18, cat: "LIFESTYLE", status: "live",   url: "https://chachabang.com/",          city: "HONG KONG",     stack: ["SHOPIFY", "DAWN", "I18N"] },
   ];
-  const FILTERS = ["ALL", "OUTDOOR", "LUXURY", "ART", "RETAIL", "SERVICE", "WINE", "AUDIO", "INFRA", "BUILDING"];
+  const FILTERS = ["ALL", "OUTDOOR", "LUXURY", "ART", "RETAIL", "SERVICE", "WINE", "AUDIO", "INFRA", "LIFESTYLE", "BUILDING"];
 
   const SECTIONS = ["about", "services", "cases", "words", "tools", "process", "faq", "contact"];
 
@@ -71,7 +72,7 @@
     const lines = [
       "LOGAN.SYS v4.0 — ONLINE",
       "MATRIX.SHADER [WEBGL2]",
-      "ARCHIVE 17 · LOCALE 10",
+      "ARCHIVE 18 · LOCALE 10",
       "READY_",
     ];
     let i = 0;
@@ -225,7 +226,7 @@
         card.classList.toggle("is-hidden", !match);
         if (match) visible++;
       });
-      if (countEl) countEl.textContent = `${String(visible).padStart(2, "0")} / 17 SYSTEMS SHOWN · FILTER: ${activeFilter}`;
+      if (countEl) countEl.textContent = `${String(visible).padStart(2, "0")} / 18 SYSTEMS SHOWN · FILTER: ${activeFilter}`;
       $$(".filter", filtersEl).forEach(b => b.classList.toggle("is-active", b.dataset.f === activeFilter));
       rail.scrollLeft = 0; currentCard = 0; updateRail();
     }

@@ -7,11 +7,11 @@
 - **Tagline**: THE STORE ARCHITECT — EST. 2016
 - **Location**: Hong Kong; works globally
 - **Languages**: 10 — English, 繁體中文, 简体中文, Español, العربية, Français, Português, 日本語, Tiếng Việt, 한국어
-- **At a glance**: 10 years engineering · 15 storefronts built · 50 free merchant tools · 17 systems in the mission archive
+- **At a glance**: 10 years engineering · 15 storefronts built · 50 free merchant tools · 18 systems in the mission archive
 
 ## What this site is
 
-A static portfolio with 17 individual case-study pages and 5 service pages for Logan Solaman's Shopify storefront architecture practice, plus a browser-based 50-tool armory. There is no build step at deploy time: plain HTML, CSS and JavaScript served by GitHub Pages. Case and service pages are generated from `assets/js/site.js` and `locales/en.json` by `scripts/generate_pages.py`. The visual background is a WebGL2 matrix-rain shader built from a self-hosted katakana glyph atlas. All content is available in 10 languages via `locales/*.json`.
+A static portfolio with 18 individual case-study pages and 5 service pages for Logan Solaman's Shopify storefront architecture practice, plus a browser-based 50-tool armory. There is no build step at deploy time: plain HTML, CSS and JavaScript served by GitHub Pages. Case and service pages are generated from `assets/js/site.js` and `locales/en.json` by `scripts/generate_pages.py`. The visual background is a WebGL2 matrix-rain shader built from a self-hosted katakana glyph atlas. All content is available in 10 languages via `locales/*.json`.
 
 ## Positioning
 
@@ -57,13 +57,13 @@ Answers are drawn from the same service, process, manifesto and contact copy use
 
 ## Facts at a glance
 
-- 10 years engineering · 15 storefronts built · 17 systems in the archive · 50 free merchant tools · 10 languages · established 2016
+- 10 years engineering · 15 storefronts built · 18 systems in the archive · 50 free merchant tools · 10 languages · established 2016
 - First consult: free, no obligation
 - Before build: written blueprint with scope, stack and numbers
 - Reply time: usually within one day, worldwide
 - The 50-tool armory runs entirely client-side: no account, no upload, no upsell
 
-## Mission archive — 17 systems, all built by hand, all on Shopify
+## Mission archive — 18 systems, all built by hand, all on Shopify
 
 - **ALPAKA GEAR HK** (Outdoor, live, Hong Kong · Shopify) — https://alpakagear.hk
 - **SUUNTO HK** (Outdoor, live, Hong Kong · Shopify, localization) — https://suunto.com.hk
@@ -82,6 +82,8 @@ Answers are drawn from the same service, process, manifesto and contact copy use
 - **HKU PRESS — POS** (Infrastructure, Hong Kong · custom POS, inventory sync) — internal system, not a storefront
 - **CHI WAI STUDIO** (Art, live, Hong Kong · Shopify) — https://chiwaistudio.com/
 - **MASTER PEST HK** (Service, live, Hong Kong · Shopify, bookings) — https://masterpesthk.com/
+- **CHA CHA BANG** (Lifestyle, live, Hong Kong · Shopify, Dawn, i18n) — https://chachabang.com
+- **CHA CHA BANG** (Lifestyle, live, Hong Kong · Shopify, Dawn, i18n) — https://chachabang.com
 
 ## Open Armory — 50 free tools
 
@@ -105,8 +107,8 @@ https://logansolaman.com/tools/ — 50 browser-based merchant tools across five 
 - Home: https://logansolaman.com/
 - Tool armory (50 tools): https://logansolaman.com/tools/
 - Service pages: /services/storefront-engineering/, /services/theme-customization/, /services/app-development/, /services/seo-velocity/, /services/growth-operations/
-- Case studies (17, real screenshots): /cases/case01/ through /cases/case17/ — each has its own canonical URL, description, CreativeWork JSON-LD, desktop and mobile captures, client/market/stack metadata and prev/next navigation.
-- Full URL list: https://logansolaman.com/sitemap.xml (26 URLs)
+- Case studies (18, real screenshots): /cases/case01/ through /cases/case18/ — each has its own canonical URL, description, CreativeWork JSON-LD, desktop and mobile captures, client/market/stack metadata and prev/next navigation.
+- Full URL list: https://logansolaman.com/sitemap.xml (27 URLs)
 
 ## Contact
 
@@ -116,7 +118,7 @@ The consultation is free. Use the form at https://logansolaman.com/#contact — 
 
 - Keyboard: `1`–`8` jump to sections; `/` opens the command line; `[` `]` cycle color themes; `G` toggles the CRT grid; `M` toggles matrix rain; `T` glitches the title; `L` opens the language picker; `?` opens help; `ESC` closes.
 - Command line supports: `about`, `services`, `cases`, `words`, `tools`, `process`, `faq`, `contact`, `theme`, `grid`, `rain`, `glitch`, `langs`, `lang <code>`, `filter <category>`, `ls`, `clear`, `help`.
-- The home page ships its English copy as static HTML, so important content is available without JavaScript. The 17 case cards are rendered client-side from `assets/js/site.js` with names/descriptions from `locales/<lang>.json`, but each contains a real crawlable `<a>` to a static case-study page at `/cases/caseNN/`. A `<noscript>` block lists all 17 cases and 5 services as plain links. Case pages carry CreativeWork + BreadcrumbList JSON-LD; service pages carry Service + BreadcrumbList JSON-LD; `/tools/` carries WebApplication JSON-LD.
+- The home page ships its English copy as static HTML, so important content is available without JavaScript. The 18 case cards are rendered client-side from `assets/js/site.js` with names/descriptions from `locales/<lang>.json`, but each contains a real crawlable `<a>` to a static case-study page at `/cases/caseNN/`. A `<noscript>` block lists all 18 cases and 5 services as plain links. Case pages carry CreativeWork + BreadcrumbList JSON-LD; service pages carry Service + BreadcrumbList JSON-LD; `/tools/` carries WebApplication JSON-LD.
 - `prefers-reduced-motion` renders a static shader frame and disables reveals.
 - No analytics, no cookies, no tracking, no third-party storage. All fonts are self-hosted as local woff2; no third-party font requests.
 

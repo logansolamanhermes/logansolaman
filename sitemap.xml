@@ -209,6 +209,18 @@
     </image:image>
   </url>
   <url>
+    <loc>https://logansolaman.com/cases/case18/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case18.webp</image:loc>
+      <image:title>Desktop screenshot of the CHA CHA BANG storefront</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://logansolaman.com/assets/cases/case18-mobile.webp</image:loc>
+      <image:title>Mobile screenshot of the CHA CHA BANG storefront</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://logansolaman.com/services/app-development/</loc>
     <lastmod>2026-11-11</lastmod>
   </url>

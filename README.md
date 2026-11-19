@@ -14,10 +14,10 @@ Repository: `https://github.com/logansolamanhermes/logansolaman` (public).
 
 - `index.html` — one page, nine sections: Hero, About, **Service**, **Cases**, **Client Words**, Tools, Process, **FAQ (16 questions)**, Contact. The contact form has a service-type selector and an honest "OPEN EMAIL DRAFT" label.
 - `index.html` head — canonical, OG/Twitter cards, and one connected JSON-LD `@graph` (WebSite, Person, WebPage, 2 × ItemList). No `FAQPage` (retired May 2026), `ProfilePage` (home is a service portfolio, not a person profile), `Organization` (personal site, not a company), or `SearchAction` (sitelinks searchbox retired Nov 2024).
-- `cases/case01/` … `cases/case17/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, a 5-node `@graph` (WebSite, Person, CreativeWork, WebPage, BreadcrumbList), canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
+- `cases/case01/` … `cases/case18/` — static case-study pages: real desktop/mobile storefront screenshots, client/market/stack metadata, a 5-node `@graph` (WebSite, Person, CreativeWork, WebPage, BreadcrumbList), canonical + OG, prev/next navigation. Cases 04/05 and 15 are explicitly labelled in-progress / internal rather than given fabricated screenshots.
 - `services/<slug>/` — 5 static service pages with scope, process, related cases, and a 5-node `@graph` (WebSite, Person, Service, WebPage, BreadcrumbList)
 - `tools/index.html` — canonical + OG, one `@graph` (WebSite, WebApplication, WebPage, 50-item ItemList, BreadcrumbList), and a `<noscript>` index of all 50 tool names. ItemList names come from that visible index.
-- `scripts/generate_pages.py` — regenerates all 22 pages from `assets/js/site.js` (CASES) + `locales/en.json`. Run after changing case metadata or copy.
+- `scripts/generate_pages.py` — regenerates all 23 pages from `assets/js/site.js` (CASES) + `locales/en.json`. Run after changing case metadata or copy.
 - `assets/cases/*.webp` — 14 real storefront captures (desktop + mobile) and 3 honest placeholders, ~976 KB total
 - `scripts/capture_stores.py` — headless-Chromium CDP capture with lazy-image wake, popup dismissal, video-poster substitution, mobile-UA reload and browser-error retries. Recaptures all live cases; `scripts/make_video_posters.py` regenerates the video frames.
 - `scripts/local_proxy.py` — temporary HTTP/1.1 proxy for one storefront whose HTTP/2 is broken; screenshot-only, never deployed as a route.

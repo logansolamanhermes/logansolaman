@@ -1,4 +1,4 @@
-"""Buyer-facing scope notes for the 17 case studies.
+"""Buyer-facing scope notes for the 18 case studies.
 
 Grounded strictly in the existing case copy (locales/en.json), the CASES
 metadata in assets/js/site.js, and the visible screenshots. Nothing here
@@ -61,6 +61,9 @@ SCOPE = {
     17: ("An urgent pest problem where the visitor needs confidence before they call",
          "Service system with education-first content and clear booking paths",
          "Desktop + mobile homepage captures; live store linked"),
+    18: ("An oolong tea brand whose playful visual identity had to survive a commerce layout",
+         "Image-led Shopify storefront with market and language selectors and a campaign-driven homepage",
+         "Desktop + mobile homepage captures of the published storefront; live store linked"),
 }
 
 
